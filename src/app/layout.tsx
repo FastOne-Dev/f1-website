@@ -4,10 +4,15 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { LanguageProvider } from "@/lib/language";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const englishFont = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Fast One Cambodia | Fiber Internet Service Provider",
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("scroll-smooth", "font-sans", inter.variable)}
+      className={cn("scroll-smooth", "font-sans", englishFont.variable)}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

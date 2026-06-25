@@ -297,29 +297,33 @@ export default function SiteHeader() {
 
   function navLinkClasses(active: boolean) {
     return cx(
-      "inline-flex min-h-[38px] cursor-pointer items-center gap-[5px] px-[11px] text-[18px] transition-colors duration-150 focus-visible:outline-none",
+      "relative inline-flex min-h-[38px] cursor-pointer items-center gap-[5px] px-[14px] text-[18px] transition-colors duration-200 focus-visible:outline-none",
       language === "km" ? "tracking-normal" : "tracking-[0.01em]",
       active
-        ? "font-semibold text-[#00C2FF]"
-        : "font-medium text-[#F8FAFC] focus-visible:text-[#081120]",
+        ? "font-semibold text-white after:absolute after:bottom-[5px] after:left-4 after:right-4 after:h-[2px] after:rounded-full after:bg-[#38BDF8]"
+        : "font-medium text-white/[0.78] after:absolute after:bottom-[5px] after:left-1/2 after:right-1/2 after:h-[2px] after:rounded-full after:bg-[#38BDF8] after:opacity-0 after:transition-all after:duration-200 hover:text-white hover:after:left-4 hover:after:right-4 hover:after:opacity-80 focus-visible:text-white focus-visible:after:left-4 focus-visible:after:right-4 focus-visible:after:opacity-80",
     );
   }
 
   function mobileLinkClasses(active: boolean) {
     return cx(
-      "flex min-h-10 items-center rounded-[8px] px-3 text-[0.92rem] transition-colors",
+      "relative flex min-h-10 items-center rounded-[8px] border px-3 text-[0.92rem] transition-colors duration-150",
       language === "km" ? "tracking-normal" : "tracking-[0.005em]",
       active
-        ? "bg-[#0067AC] font-semibold text-[#F8FAFC]"
-        : "font-medium text-white hover:bg-[#F3F4F6] hover:text-[#081120]",
+        ? "border-white/15 bg-white/[0.12] font-semibold text-white shadow-[inset_3px_0_0_#38BDF8]"
+        : "border-transparent font-medium text-white/80 hover:border-white/10 hover:bg-white/[0.09] hover:text-white",
     );
   }
 
-  function mobileSectionButtonClasses(active: boolean) {
+  function mobileSectionButtonClasses(active: boolean, open = false) {
     return cx(
-      "flex min-h-12 w-full items-center justify-between rounded-[8px] px-3 text-left text-[1rem] font-semibold transition-colors",
+      "flex min-h-12 w-full items-center justify-between rounded-[8px] border px-3 text-left text-[1rem] font-semibold transition-colors duration-150",
       language === "km" ? "tracking-normal" : "tracking-[0.005em]",
-      active ? "text-white" : "text-white hover:bg-[#F3F4F6]",
+      active
+        ? "border-white/15 bg-white/[0.12] text-white shadow-[inset_3px_0_0_#38BDF8]"
+        : open
+          ? "border-white/10 bg-white/[0.08] text-white"
+        : "border-transparent text-white/[0.84] hover:border-white/10 hover:bg-white/[0.09] hover:text-white",
     );
   }
 
@@ -329,11 +333,12 @@ export default function SiteHeader() {
     links: NavLink[],
   ) {
     const open = activeMobileDropdown === key;
+    const active = isGroupActive(links);
 
     return (
       <div>
         <button
-          className={mobileSectionButtonClasses(open)}
+          className={mobileSectionButtonClasses(active, open)}
           type="button"
           aria-expanded={open}
           onClick={() =>
@@ -372,10 +377,10 @@ export default function SiteHeader() {
       return (
         <Link
           className={cx(
-            "grid min-h-[58px] grid-cols-[42px_minmax(0,1fr)] items-center gap-2.5 rounded-[8px] p-2 transition-colors focus-visible:outline-none",
+            "group grid min-h-[58px] grid-cols-[42px_minmax(0,1fr)] items-center gap-2.5 rounded-[10px] border p-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]/40",
             active
-              ? "border-[#38BDF8] bg-[#0067AC]"
-              : "border-[#F8FAFC] bg-[#F8FAFC] hover:border-[#38BDF8] hover:bg-[#38BDF8] hover:text-[#081120]",
+              ? "border-[#38BDF8]/30 bg-[#38BDF8]/[0.10]"
+              : "border-transparent bg-transparent hover:border-[#38BDF8]/20 hover:bg-[#38BDF8]/[0.06]",
           )}
           key={`${item.label}-${item.href}`}
           href={item.href}
@@ -383,8 +388,10 @@ export default function SiteHeader() {
         >
           <span
             className={cx(
-              "inline-flex h-10 w-10 items-center justify-center rounded-[8px] text-[#F8FAFC] [&_svg]:h-[18px] [&_svg]:w-[18px]",
-              active ? "bg-[#01c7ea]" : "bg-[#0067AC]",
+              "inline-flex h-10 w-10 flex-none items-center justify-center rounded-[8px] transition-colors duration-150 [&_svg]:h-[18px] [&_svg]:w-[18px]",
+              active
+                ? "bg-[#0067AC] text-[#F8FAFC]"
+                : "bg-[#0067AC]/10 text-[#0067AC] group-hover:bg-[#0067AC] group-hover:text-[#F8FAFC]",
             )}
           >
             <Icon />
@@ -392,19 +399,13 @@ export default function SiteHeader() {
           <span>
             <strong
               className={cx(
-                "block text-[0.9rem] font-semibold leading-tight",
+                "block text-[0.9rem] font-semibold leading-tight text-[#081120]",
                 language === "km" ? "tracking-normal" : "tracking-[0.005em]",
-                active ? "text-[#F8FAFC]" : "text-[#081120]",
               )}
             >
               {item.label}
             </strong>
-            <small
-              className={cx(
-                "mt-0.5 block text-[0.76rem] font-medium leading-tight",
-                active ? "text-[#ffffff]" : "text-[#0F172A]/80",
-              )}
-            >
+            <small className="mt-0.5 block text-[0.76rem] font-medium leading-tight text-[#0F172A]/70">
               {item.description}
             </small>
           </span>
