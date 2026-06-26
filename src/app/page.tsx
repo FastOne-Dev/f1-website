@@ -52,44 +52,44 @@ const planCardClass =
 export default function Home() {
   return (
     <main className="bg-[#F8FAFC]">
-      <section className="relative isolate flex min-h-[calc(100svh-136px)] overflow-hidden bg-[#07111F] text-[#F8FAFC] max-[980px]:min-h-[calc(100svh-126px)]">
+      <section className="relative isolate flex min-h-[calc(100svh-74px)] overflow-hidden bg-[#05111F] text-[#F8FAFC] max-[640px]:min-h-[calc(100svh-66px)]">
         <Image
-          className="-z-30 object-cover"
+          className="-z-30 object-cover object-[58%_48%] saturate-[1.04] max-[780px]:object-[66%_50%]"
           src="/img/phnom_penh_photo.jpg"
           alt="Phnom Penh skyline served by Fast One fiber internet"
           fill
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,#07111F_0%,rgba(7,17,31,0.94)_36%,rgba(7,17,31,0.68)_66%,rgba(7,17,31,0.84)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-[linear-gradient(0deg,#07111F_0%,rgba(7,17,31,0)_100%)]" />
-        <Image
-          className="absolute bottom-[-20px] right-[max(18px,7vw)] -z-10 h-auto w-[min(48vw,620px)] object-contain opacity-95 max-[980px]:right-[-72px] max-[980px]:w-[min(78vw,560px)] max-[980px]:opacity-30 max-[640px]:bottom-[8px] max-[640px]:right-[-92px] max-[640px]:w-[520px] max-[640px]:opacity-20"
-          src="/img/router_1.png"
-          alt=""
-          width={768}
-          height={484}
-          priority
-        />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,#05111F_0%,rgba(5,17,31,0.96)_38%,rgba(5,17,31,0.68)_68%,rgba(5,17,31,0.86)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-[34%] bg-[linear-gradient(0deg,#05111F_0%,rgba(5,17,31,0)_100%)]" />
+
+
         <div
-          className={`${sectionInner} flex flex-col justify-center py-[64px] max-[640px]:py-10`}
+          className={`${sectionInner} flex flex-col justify-center py-8 max-[640px]:py-7`}
         >
-          <p className="m-0 mb-3.5 text-[0.78rem] font-black uppercase tracking-[0.12em] text-[#7DD3FC]">
-            <LocalizedText value="Internet Service Provider in Cambodia" />
-          </p>
-          <h1 className="m-0 max-w-[760px] text-[4.15rem] font-black leading-[0.98] text-white max-[980px]:max-w-[680px] max-[980px]:text-[3.15rem] max-[640px]:text-[2.35rem] max-[640px]:leading-[1.04]">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-11 bg-[#38BDF8]" />
+            <p className="m-0 text-[0.78rem] font-black uppercase tracking-[0.13em] text-[#BAE6FD] max-[640px]:text-[0.72rem] max-[640px]:tracking-[0.08em]">
+              <LocalizedText value="Internet Service Provider in Cambodia" />
+            </p>
+          </div>
+          <h1 className="m-0 max-w-[760px] text-[4.2rem] font-black leading-[0.98] text-white [text-wrap:balance] max-[1180px]:text-[3.7rem] max-[780px]:max-w-[650px] max-[780px]:text-[2.9rem] max-[640px]:text-[2.18rem] max-[640px]:leading-[1.08]">
             <LocalizedText value="Fast fiber internet for home, office, and always-on business." />
           </h1>
-          <p className="mt-[22px] max-w-[590px] text-[1.12rem] leading-[1.65] text-white/86 max-[640px]:text-base max-[640px]:leading-[1.55]">
+          <p className="mt-5 max-w-[570px] text-[1.05rem] leading-[1.62] text-white/82 max-[640px]:mt-4 max-[640px]:text-[0.98rem] max-[640px]:leading-[1.52]">
             <LocalizedText value="Fast One delivers affordable, reliable connectivity with dedicated cable, dedicated bandwidth, and support from local engineers." />
           </p>
-          <div className="mt-[30px] flex flex-wrap items-center gap-3 max-[640px]:flex-col max-[640px]:items-stretch">
-            <Link className={primaryButton} href="/plans">
+          <div className="mt-7 flex flex-wrap items-center gap-3 max-[640px]:mt-5 max-[640px]:flex-col max-[640px]:items-stretch">
+            <Link
+              className={`${primaryButton} shadow-[0_14px_34px_rgba(0,102,255,0.28)]`}
+              href="/plans"
+            >
               <LocalizedText value="View plans" />
               <ArrowIcon />
             </Link>
             <a
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[8px] border border-white/35 bg-white/10 px-[18px] font-extrabold text-white backdrop-blur-sm transition duration-150 hover:-translate-y-px hover:border-[#7DD3FC] hover:bg-white/16 max-[640px]:w-full"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[8px] border border-white/28 bg-white/[0.09] px-[18px] font-extrabold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-md transition duration-150 hover:-translate-y-px hover:border-[#7DD3FC] hover:bg-white/16 max-[640px]:w-full"
               href={salesUrl}
               target="_blank"
               rel="noreferrer"
@@ -98,16 +98,16 @@ export default function Home() {
               <ArrowIcon />
             </a>
           </div>
-          <dl className="mt-10 grid w-[min(720px,100%)] grid-cols-3 gap-px overflow-hidden rounded-[8px] border border-white/18 bg-white/18 max-[640px]:grid-cols-1">
+          <dl className="mt-8 grid w-[min(680px,100%)] grid-cols-3 border-t border-white/18 pt-5 max-[640px]:mt-6 max-[640px]:grid-cols-3 max-[640px]:gap-3 max-[640px]:pt-4">
             {heroStats.map(([value, label]) => (
               <div
-                className="min-h-[96px] bg-[#081120]/62 p-[18px] backdrop-blur-md"
+                className="pr-5 max-[640px]:pr-0"
                 key={value}
               >
-                <dt className="text-[1.15rem] font-black text-white">
+                <dt className="text-[1.08rem] font-black text-white max-[640px]:text-[0.95rem]">
                   {value}
                 </dt>
-                <dd className="mt-2 text-sm font-semibold text-white/76">
+                <dd className="mt-1 text-sm font-semibold leading-snug text-white/62 max-[640px]:text-[0.72rem]">
                   <LocalizedText value={label} />
                 </dd>
               </div>
