@@ -152,8 +152,8 @@ const Footer = () => {
                 </a>
 
                 <p className="text-base font-normal text-muted-foreground">
-                  Empowering businesses with innovative solutions. Let&apos;s create
-                  something amazing together.
+                  Empowering businesses with innovative solutions. Let&apos;s
+                  create something amazing together.
                 </p>
 
                 {/* social links */}
@@ -213,12 +213,13 @@ const Footer = () => {
             <div className="col-span-3">
               <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
                 <p className="text-base font-medium text-foreground">
-                  Contact Details
+                  Location
                 </p>
                 <ul className="flex flex-col gap-3">
                   <li>
                     <p className="text-base font-normal text-muted-foreground">
-                      81 Rivington Street London EC2A 3AY
+                      #29, Mao Tse Toung Blvd, Sangkat Toul Tompoung II, Khan
+                      Chamkarmorn, Phnom Penh
                     </p>
                   </li>
                   <li>
@@ -226,15 +227,7 @@ const Footer = () => {
                       href="mailto:contact@example.com"
                       className="text-base font-normal text-muted-foreground hover:text-foreground"
                     >
-                      hello@shadcnspace.com
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="tel:+01051923556"
-                      className="text-base font-normal text-muted-foreground hover:text-foreground"
-                    >
-                      0105 192 3556
+                      fastone_info@fastone.com.kh
                     </a>
                   </li>
                 </ul>
