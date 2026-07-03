@@ -55,7 +55,7 @@ const heroChips = [
     delay: "1.1s",
   },
   {
-    label: "Super Fast Downloads",
+    label: "Super fast downloads",
     icon: DownloadIcon,
     className: "bottom-[16%] right-[26%]",
     delay: "2.2s",
