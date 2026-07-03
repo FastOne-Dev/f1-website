@@ -37,6 +37,31 @@ export const kmDictionary: Record<string, string> = {
     "Fast One ចាប់ផ្តើមពីបេសកកម្មក្នុងស្រុក៖ ធ្វើឱ្យអ៊ីនធឺណិតគុណភាពខ្ពស់មានតម្លៃសមរម្យ និងងាយប្រើសម្រាប់ប្រជាជន និងអាជីវកម្មដែលកំពុងកសាងអនាគតកម្ពុជា។",
   "Explore coverage": "មើលតំបន់សេវាកម្ម",
 
+  "Why Choose": "ហេតុអ្វីត្រូវជ្រើសរើស",
+  "Dedicated Cable Infrastructure, Guaranteed Bandwidth, and Professional 24/7 Technical Support — delivering a fast, stable, and reliable network experience for your business.":
+    "ហេដ្ឋារចនាសម្ព័ន្ធខ្សែឯកជន បណ្ដាញធានា និងជំនួយបច្ចេកទេសជំនាញ 24/7 — ផ្តល់នូវបទពិសោធន៍បណ្តាញលឿន មានស្ថេរភាព និងជឿទុកចិត្តបានសម្រាប់អាជីវកម្មរបស់អ្នក។",
+  "Ultra-fast speed": "ល្បឿនលឿនបំផុត",
+  "Blazing fiber internet for browsing, streaming, work, and play.":
+    "អ៊ីនធឺណិតហ្វាយបឺរលឿនខ្លាំងសម្រាប់បើកគេហទំព័រ មើលវីដេអូ ធ្វើការ និងកម្សាន្ត។",
+  "Reliable connection": "ការតភ្ជាប់ដែលជឿទុកចិត្តបាន",
+  "Stable service designed for always-on home and business use.":
+    "សេវាមានស្ថេរភាពដែលរចនាឡើងសម្រាប់ការប្រើប្រាស់នៅផ្ទះ និងអាជីវកម្មជានិច្ច។",
+  "24/7 support": "ជំនួយ 24/7",
+  "Local customer care and technical support when you need help.":
+    "ការថែទាំអតិថិជន និងជំនួយបច្ចេកទេសក្នុងស្រុកនៅពេលអ្នកត្រូវការជំនួយ។",
+  "Easy setup": "ការរៀបចំងាយស្រួល",
+  "Availability checks, installation guidance, and router-ready plans.":
+    "ការពិនិត្យតំបន់សេវា ការណែនាំដំឡើង និងកញ្ចប់ដែលត្រៀមរ៉ោតទ័រ។",
+  "Choose the Perfect Plan for You": "ជ្រើសរើសកញ្ចប់ដ៏ល្អឥតខ្ចោះសម្រាប់អ្នក",
+  "High-speed internet plans designed for every home and business.":
+    "កញ្ចប់អ៊ីនធឺណិតល្បឿនលឿនដែលរចនាឡើងសម្រាប់គ្រប់ផ្ទះ និងអាជីវកម្ម។",
+  "Up to": "រហូតដល់",
+  "Explore service": "ស្វែងយល់សេវា",
+  "Ready to connect?": "ត្រៀមខ្លួនតភ្ជាប់ហើយឬនៅ?",
+  "Check your location and get the right Fast One plan.":
+    "ពិនិត្យទីតាំងរបស់អ្នក ហើយជ្រើសរើសកញ្ចប់ Fast One ដ៏សមស្រប។",
+  "Get support": "ទទួលបានជំនួយ",
+
   "About Fast One": "អំពី Fast One",
   "A local ISP focused on affordable, reliable internet.":
     "ISP ក្នុងស្រុកដែលផ្តោតលើអ៊ីនធឺណិតតម្លៃសមរម្យ និងជឿទុកចិត្តបាន។",
@@ -458,4 +483,57 @@ export const kmDictionary: Record<string, string> = {
     "ប្រាប់ Fast One អំពីអ្វីដែលអ្នកត្រូវការ និងទីតាំងដែលអ្នកត្រូវការ។",
   "A clear first message helps the team confirm coverage, recommend service, and prepare the right follow-up.":
     "សារដំបូងដែលច្បាស់លាស់ជួយឱ្យក្រុមការងារបញ្ជាក់តំបន់សេវា ណែនាំសេវា និងរៀបចំការតាមដានសមស្រប។",
+
+  "4K streaming": "មើលវីដេអូ 4K",
+  "Online gaming": "លេងហ្គេមអនឡាញ",
+  "Super fast downloads": "ទាញយកលឿនរហ័ស",
+  "Video calls": "ហៅវីដេអូ",
+
+  "How it works": "របៀបដំណើរការ",
+  "Get connected in four simple steps.": "តភ្ជាប់បានក្នុង 4 ជំហានងាយៗ។",
+  "From location check to activation, Fast One keeps every step clear and simple.":
+    "ចាប់ពីការពិនិត្យទីតាំង ដល់ការបើកដំណើរការ Fast One រក្សាគ្រប់ជំហានឱ្យច្បាស់លាស់ និងសាមញ្ញ។",
+  "Send your home or office location to Fast One sales to confirm coverage for your street and building.":
+    "ផ្ញើទីតាំងផ្ទះ ឬការិយាល័យរបស់អ្នកទៅផ្នែកលក់ Fast One ដើម្បីបញ្ជាក់តំបន់សេវាសម្រាប់ផ្លូវ និងអគាររបស់អ្នក។",
+  "Choose your plan": "ជ្រើសរើសកញ្ចប់របស់អ្នក",
+  "Pick the speed that fits your home or business, with clear monthly pricing and no surprises.":
+    "ជ្រើសរើសល្បឿនដែលសមស្របសម្រាប់ផ្ទះ ឬអាជីវកម្មរបស់អ្នក ជាមួយតម្លៃប្រចាំខែច្បាស់លាស់ និងគ្មានការភ្ញាក់ផ្អើល។",
+  "Schedule installation": "កំណត់ពេលដំឡើង",
+  "The technical team installs your fiber connection, usually within 3-5 days of confirmation.":
+    "ក្រុមបច្ចេកទេសដំឡើងការតភ្ជាប់ហ្វាយបឺររបស់អ្នក ជាធម្មតាក្នុងរយៈពេល 3-5 ថ្ងៃបន្ទាប់ពីការបញ្ជាក់។",
+  "Get connected": "ចាប់ផ្តើមតភ្ជាប់",
+  "Enjoy fast, reliable internet with local support ready whenever you need help.":
+    "រីករាយជាមួយអ៊ីនធឺណិតលឿន និងជឿទុកចិត្តបាន ជាមួយជំនួយក្នុងស្រុកដែលត្រៀមរួចរាល់នៅពេលអ្នកត្រូវការ។",
+
+  "Testimonials": "មតិអតិថិជន",
+  "Trusted by homes and businesses across Phnom Penh.":
+    "ទទួលបានទំនុកចិត្តពីផ្ទះ និងអាជីវកម្មទូទាំងភ្នំពេញ។",
+  "Real experiences from Fast One customers.": "បទពិសោធន៍ពិតពីអតិថិជន Fast One។",
+  "Installation was quick and the connection has been stable ever since. Streaming and video calls just work.":
+    "ការដំឡើងលឿន ហើយការតភ្ជាប់មានស្ថេរភាពរហូតមក។ ការមើលវីដេអូ និងហៅវីដេអូដំណើរការបានល្អ។",
+  "Home customer, Toul Kork": "អតិថិជនផ្ទះ ទួលគោក",
+  "Our cafe depends on Wi-Fi every day. Fast One support responds quickly whenever we have a question.":
+    "ហាងកាហ្វេរបស់យើងពឹងផ្អែកលើ Wi-Fi រាល់ថ្ងៃ។ ជំនួយ Fast One ឆ្លើយតបរហ័ស រាល់ពេលយើងមានសំណួរ។",
+  "Cafe owner, BKK1": "ម្ចាស់ហាងកាហ្វេ បឹងកេងកង",
+  "We upgraded to dedicated internet for our office and the difference is clear. Predictable speed all day.":
+    "យើងបានប្តូរទៅអ៊ីនធឺណិតឯកជនសម្រាប់ការិយាល័យ ហើយភាពខុសគ្នាច្បាស់ណាស់។ ល្បឿនស្ថិតស្ថេរពេញមួយថ្ងៃ។",
+  "Office manager, Chamkarmon": "អ្នកគ្រប់គ្រងការិយាល័យ ចំការមន",
+
+  "FAQ": "សំណួរញឹកញាប់",
+  "Frequently asked questions": "សំណួរដែលសួរញឹកញាប់",
+  "Answers to common questions about coverage, installation, and plans.":
+    "ចម្លើយចំពោះសំណួរទូទៅអំពីតំបន់សេវា ការដំឡើង និងកញ្ចប់។",
+  "How do I know if Fast One covers my area?":
+    "តើខ្ញុំដឹងដោយរបៀបណាថា Fast One មានសេវានៅតំបន់របស់ខ្ញុំ?",
+  "Send your home or office location to Fast One sales via Telegram. The team will confirm service availability, cable requirements, and installation timing before you commit.":
+    "ផ្ញើទីតាំងផ្ទះ ឬការិយាល័យរបស់អ្នកទៅផ្នែកលក់ Fast One តាម Telegram។ ក្រុមការងារនឹងបញ្ជាក់តំបន់សេវា តម្រូវការខ្សែ និងពេលវេលាដំឡើង មុនពេលអ្នកសម្រេចចិត្ត។",
+  "How long does installation take?": "តើការដំឡើងត្រូវការរយៈពេលប៉ុន្មាន?",
+  "Is there a contract for home plans?": "តើកញ្ចប់ផ្ទះមានកិច្ចសន្យាទេ?",
+  "Is a Wi-Fi router included?": "តើមានរ៉ោតទ័រ Wi-Fi រួមបញ្ចូលទេ?",
+  "Home plans are Wi-Fi router ready. The team confirms router setup and placement during installation.":
+    "កញ្ចប់ផ្ទះត្រៀមរួចរាល់សម្រាប់រ៉ោតទ័រ Wi-Fi។ ក្រុមការងារបញ្ជាក់ការរៀបចំ និងទីតាំងរ៉ោតទ័រកំឡុងពេលដំឡើង។",
+  "What if I need more than a home plan?": "ចុះបើខ្ញុំត្រូវការច្រើនជាងកញ្ចប់ផ្ទះ?",
+  "Fast One offers dedicated internet, DPLC, IPLC, and IP Transit for businesses that need guaranteed bandwidth and private circuits.":
+    "Fast One ផ្តល់អ៊ីនធឺណិតឯកជន DPLC IPLC និង IP Transit សម្រាប់អាជីវកម្មដែលត្រូវការបណ្ដាញធានា និងខ្សែឯកជន។",
+  "Still have questions?": "នៅមានសំណួរទៀតទេ?",
 };

@@ -65,6 +65,74 @@ export const qualities = [
   { value: "2010", label: "Operating since" },
 ];
 
+export const connectionSteps = [
+  {
+    title: "Check availability",
+    text: "Send your home or office location to Fast One sales to confirm coverage for your street and building.",
+  },
+  {
+    title: "Choose your plan",
+    text: "Pick the speed that fits your home or business, with clear monthly pricing and no surprises.",
+  },
+  {
+    title: "Schedule installation",
+    text: "The technical team installs your fiber connection, usually within 3-5 days of confirmation.",
+  },
+  {
+    title: "Get connected",
+    text: "Enjoy fast, reliable internet with local support ready whenever you need help.",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Installation was quick and the connection has been stable ever since. Streaming and video calls just work.",
+    name: "Sokha Chan",
+    role: "Home customer, Toul Kork",
+  },
+  {
+    quote:
+      "Our cafe depends on Wi-Fi every day. Fast One support responds quickly whenever we have a question.",
+    name: "Dara Kim",
+    role: "Cafe owner, BKK1",
+  },
+  {
+    quote:
+      "We upgraded to dedicated internet for our office and the difference is clear. Predictable speed all day.",
+    name: "Vibol Sok",
+    role: "Office manager, Chamkarmon",
+  },
+];
+
+export const faqs = [
+  {
+    question: "How do I know if Fast One covers my area?",
+    answer:
+      "Send your home or office location to Fast One sales via Telegram. The team will confirm service availability, cable requirements, and installation timing before you commit.",
+  },
+  {
+    question: "How long does installation take?",
+    answer:
+      "Installation is usually completed within 3-5 days after payment and availability confirmation.",
+  },
+  {
+    question: "Is there a contract for home plans?",
+    answer:
+      "Home packages require a minimum one year contract, keeping the monthly price simple and predictable.",
+  },
+  {
+    question: "Is a Wi-Fi router included?",
+    answer:
+      "Home plans are Wi-Fi router ready. The team confirms router setup and placement during installation.",
+  },
+  {
+    question: "What if I need more than a home plan?",
+    answer:
+      "Fast One offers dedicated internet, DPLC, IPLC, and IP Transit for businesses that need guaranteed bandwidth and private circuits.",
+  },
+];
+
 export const homeHighlights = [
   {
     title: "Premium bandwidth",

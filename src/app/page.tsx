@@ -4,6 +4,7 @@ import {
   ArrowRight as ArrowIcon,
   BadgeCheck as BadgeCheckIcon,
   Check as CheckIcon,
+  ChevronDown as ChevronDownIcon,
   Download as DownloadIcon,
   Gamepad2 as GamepadIcon,
   Gauge as GaugeIcon,
@@ -14,12 +15,21 @@ import {
   Phone as PhoneIcon,
   Router as RouterIcon,
   ShieldCheck as ShieldIcon,
+  Star as StarIcon,
   Video as VideoIcon,
   Wifi as WifiIcon,
   Zap as ZapIcon,
 } from "lucide-react";
 import LocalizedText from "@/components/LocalizedText";
-import { businessServices, plans, qualities, salesUrl } from "@/lib/site-data";
+import {
+  businessServices,
+  connectionSteps,
+  faqs,
+  plans,
+  qualities,
+  salesUrl,
+  testimonials,
+} from "@/lib/site-data";
 import { cx } from "@/lib/ui-classes";
 
 const wideInner =
@@ -31,28 +41,32 @@ const heroStats = [
   ["24/7", "Technical support"],
 ];
 
-// const heroChips = [
-//   {
-//     label: "4K streaming",
-//     icon: MonitorPlayIcon,
-//     className: "right-[11%] top-[16%]",
-//   },
-//   {
-//     label: "Online gaming",
-//     icon: GamepadIcon,
-//     className: "right-[43%] top-[40%]",
-//   },
-//   {
-//     label: "Super fast downloads",
-//     icon: DownloadIcon,
-//     className: "bottom-[18%] right-[34%]",
-//   },
-//   {
-//     label: "Video calls",
-//     icon: VideoIcon,
-//     className: "bottom-[24%] right-[4%]",
-//   },
-// ];
+const heroChips = [
+  {
+    label: "4K streaming",
+    icon: MonitorPlayIcon,
+    className: "right-[6%] top-[15%]",
+    delay: "0s",
+  },
+  {
+    label: "Online gaming",
+    icon: GamepadIcon,
+    className: "right-[43%] top-[40%]",
+    delay: "1.1s",
+  },
+  {
+    label: "Super fast downloads",
+    icon: DownloadIcon,
+    className: "bottom-[16%] right-[26%]",
+    delay: "2.2s",
+  },
+  {
+    label: "Video calls",
+    icon: VideoIcon,
+    className: "bottom-[30%] right-[5%]",
+    delay: "3.3s",
+  },
+];
 
 const featureHighlights = [
   {
@@ -85,6 +99,8 @@ const planAccents = [
 
 const serviceIcons = [GaugeIcon, ShieldIcon, NetworkIcon, MapPinIcon];
 
+const stepIcons = [MapPinIcon, WifiIcon, RouterIcon, ZapIcon];
+
 const serviceHrefs: Record<string, string> = {
   "Dedicated Internet": "/business",
   DPLC: "/business/dplc",
@@ -95,10 +111,10 @@ const serviceHrefs: Record<string, string> = {
 function SplitTitle() {
   return (
     <>
-      <LocalizedText value="Fast Internet for a" />
+      <LocalizedText value="Why Choose" />
       <br />
       <span className="text-[#0066FF]">
-        <LocalizedText value="Better Life" />
+        <LocalizedText value="Fast One ?" />
       </span>
     </>
   );
@@ -120,20 +136,45 @@ export default function Home() {
           />
           <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,#F8FBFF_0%,rgba(248,251,255,0.96)_30%,rgba(248,251,255,0.55)_55%,rgba(248,251,255,0.05)_100%)] max-[980px]:bg-[linear-gradient(180deg,#F8FBFF_0%,rgba(248,251,255,0.92)_38%,rgba(248,251,255,0.22)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 -z-10 h-[36%] bg-[linear-gradient(0deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)]" />
+          <div className="pointer-events-none absolute inset-0 z-10 max-[980px]:hidden">
+            {heroChips.map((chip) => {
+              const Icon = chip.icon;
+
+              return (
+                <div
+                  className={cx(
+                    "absolute animate-[chip-float_5.5s_ease-in-out_infinite]",
+                    chip.className,
+                  )}
+                  style={{ animationDelay: chip.delay }}
+                  key={chip.label}
+                >
+                  <span className="pointer-events-auto relative inline-flex cursor-default items-center gap-2.5 overflow-hidden rounded-full border border-[#8FCBFF] bg-[linear-gradient(135deg,#E3F2FF,#BFE0FF)] px-4 py-2.5 text-[0.85rem] font-black text-[#0053D6] shadow-[0_16px_38px_rgba(0,141,255,0.36)] ring-1 ring-white/60 backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-[linear-gradient(180deg,rgba(255,255,255,0.6),transparent)]">
+                    <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-[#0066FF] text-white shadow-[0_4px_12px_rgba(0,102,255,0.5)]">
+                      <Icon className="size-4" />
+                    </span>
+                    <span className="relative">
+                      <LocalizedText value={chip.label} />
+                    </span>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
           <div
-            className={`${wideInner} relative z-10 grid min-h-[620px] grid-cols-[minmax(0,0.78fr)_minmax(420px,0.92fr)] items-center gap-12 pb-[102px] pt-10 max-[980px]:grid-cols-1 max-[980px]:items-start max-[980px]:pb-[128px] max-[980px]:pt-10 max-[640px]:min-h-[690px] max-[640px]:gap-6 max-[640px]:pb-[118px]`}
+            className={`${wideInner} relative z-10 grid min-h-[720px] grid-cols-[minmax(0,0.78fr)_minmax(420px,0.92fr)] items-center gap-12 pb-[110px] pt-16 max-[980px]:grid-cols-1 max-[980px]:items-start max-[980px]:pb-[128px] max-[980px]:pt-10 max-[640px]:min-h-[690px] max-[640px]:gap-6 max-[640px]:pb-[118px]`}
           >
             <div className="max-w-[670px]">
-              <p className="mb-7 inline-flex min-h-9 items-center rounded-full border border-[#C9E0F7] bg-white/78 px-4 text-[0.78rem] font-black uppercase tracking-[0.08em] text-[#005EEE] shadow-[0_12px_28px_rgba(0,102,255,0.08)] backdrop-blur-md max-[640px]:mb-5 max-[640px]:text-[0.68rem]">
+              {/* <p className="mb-3 inline-flex min-h-9 items-center rounded-full border border-[#C9E0F7] bg-white/78 px-4 text-[0.78rem] font-black uppercase tracking-[0.08em] text-[#005EEE] shadow-[0_12px_28px_rgba(0,102,255,0.08)] backdrop-blur-md max-[640px]:mb-5 max-[640px]:text-[0.68rem]">
                 <LocalizedText value="High speed. Reliable. Always connected." />
-              </p>
+              </p> */}
 
               <h1 className="m-0 text-[4.65rem] font-black leading-[1.02] text-[#061B46] [text-wrap:balance] max-[1180px]:text-[4rem] max-[980px]:max-w-[620px] max-[980px]:text-[3.35rem] max-[640px]:text-[2.45rem] max-[640px]:leading-[1.08]">
                 <SplitTitle />
               </h1>
 
-              <p className="mt-6 max-w-[540px] text-[1.08rem] leading-[1.64] text-[#335077] max-[640px]:mt-4 max-[640px]:text-[0.98rem] max-[640px]:leading-[1.56]">
-                <LocalizedText value="Experience ultra-fast, reliable, and secure internet designed for everything you love to do online." />
+              <p className="mt-5 max-w-[540px] text-[1.08rem] leading-[1.64] text-[#335077] max-[640px]:mt-4 max-[640px]:text-[0.98rem] max-[640px]:leading-[1.56]">
+                <LocalizedText value="Dedicated Cable Infrastructure, Guaranteed Bandwidth, and Professional 24/7 Technical Support — delivering a fast, stable, and reliable network experience for your business." />
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4 max-[640px]:mt-6 max-[640px]:grid max-[640px]:grid-cols-1">
@@ -155,7 +196,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <dl className="mt-8 grid w-[min(580px,100%)] grid-cols-3 gap-3 max-[520px]:grid-cols-1">
+              {/* <dl className="mt-10 grid w-[min(580px,100%)] grid-cols-3 gap-3 max-[640px]:mt-8 max-[520px]:grid-cols-1">
                 {heroStats.map(([value, label]) => (
                   <div
                     className="rounded-[8px] border border-[#D8E8F8] bg-white/72 p-4 shadow-[0_12px_26px_rgba(16,45,82,0.06)] backdrop-blur-md"
@@ -169,7 +210,7 @@ export default function Home() {
                     </dd>
                   </div>
                 ))}
-              </dl>
+              </dl> */}
             </div>
           </div>
         </div>
@@ -337,6 +378,50 @@ export default function Home() {
       </section>
 
       <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
+        <div className={wideInner}>
+          <div className="mx-auto mb-10 max-w-[720px] text-center max-[640px]:mb-7">
+            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF]">
+              <LocalizedText value="How it works" />
+            </p>
+            <h2 className="mb-0 mt-3 text-[2.35rem] font-black leading-[1.1] text-[#061B46] max-[640px]:text-[1.85rem]">
+              <LocalizedText value="Get connected in four simple steps." />
+            </h2>
+            <p className="mx-auto mb-0 mt-3 max-w-[600px] text-[1rem] leading-[1.6] text-[#526C8D]">
+              <LocalizedText value="From location check to activation, Fast One keeps every step clear and simple." />
+            </p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-6 max-[1120px]:grid-cols-2 max-[640px]:grid-cols-1">
+            {connectionSteps.map((step, index) => {
+              const Icon = stepIcons[index];
+
+              return (
+                <article
+                  className="rounded-[8px] border border-[#D8E8F8] bg-white p-7 shadow-[0_16px_36px_rgba(13,39,77,0.07)]"
+                  key={step.title}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-[8px] bg-[#EAF6FF] text-[#0066FF]">
+                      <Icon className="size-6" />
+                    </span>
+                    <span className="text-[2rem] font-black leading-none text-[#C9E0F7]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="mb-0 mt-6 text-[1.12rem] font-black text-[#061B46]">
+                    <LocalizedText value={step.title} />
+                  </h3>
+                  <p className="mb-0 mt-3 text-[0.94rem] leading-[1.55] text-[#526C8D]">
+                    <LocalizedText value={step.text} />
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-[92px] max-[640px]:py-[66px]">
         <div
           className={`${wideInner} grid grid-cols-[minmax(320px,0.78fr)_minmax(0,1fr)] items-start gap-12 max-[980px]:grid-cols-1`}
         >
@@ -408,6 +493,51 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
+        <div className={wideInner}>
+          <div className="mx-auto mb-10 max-w-[720px] text-center max-[640px]:mb-7">
+            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF]">
+              <LocalizedText value="Testimonials" />
+            </p>
+            <h2 className="mb-0 mt-3 text-[2.35rem] font-black leading-[1.1] text-[#061B46] max-[640px]:text-[1.85rem]">
+              <LocalizedText value="Trusted by homes and businesses across Phnom Penh." />
+            </h2>
+            <p className="mx-auto mb-0 mt-3 max-w-[600px] text-[1rem] leading-[1.6] text-[#526C8D]">
+              <LocalizedText value="Real experiences from Fast One customers." />
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-7 max-[980px]:grid-cols-1">
+            {testimonials.map((testimonial) => (
+              <figure
+                className="m-0 grid grid-rows-[auto_1fr_auto] rounded-[8px] border border-[#D8E8F8] bg-white p-7 shadow-[0_16px_36px_rgba(13,39,77,0.07)]"
+                key={testimonial.name}
+              >
+                <div
+                  className="flex items-center gap-1 text-[#F5A623]"
+                  aria-label="5 out of 5 stars"
+                >
+                  {Array.from({ length: 5 }).map((_, starIndex) => (
+                    <StarIcon className="size-4 fill-current" key={starIndex} />
+                  ))}
+                </div>
+                <blockquote className="m-0 pt-5 text-[1rem] leading-[1.65] text-[#334E6F]">
+                  “<LocalizedText value={testimonial.quote} />”
+                </blockquote>
+                <figcaption className="pt-6">
+                  <p className="m-0 text-[0.98rem] font-black text-[#061B46]">
+                    {testimonial.name}
+                  </p>
+                  <p className="mb-0 mt-1 text-[0.85rem] font-bold text-[#56708F]">
+                    <LocalizedText value={testimonial.role} />
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-[92px] max-[640px]:py-[66px]">
         <div
           className={`${wideInner} grid grid-cols-[minmax(0,0.82fr)_minmax(320px,0.68fr)] items-center gap-12 max-[980px]:grid-cols-1`}
@@ -457,6 +587,51 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
+        <div className={wideInner}>
+          <div className="mx-auto mb-10 max-w-[720px] text-center max-[640px]:mb-7">
+            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF]">
+              <LocalizedText value="FAQ" />
+            </p>
+            <h2 className="mb-0 mt-3 text-[2.35rem] font-black leading-[1.1] text-[#061B46] max-[640px]:text-[1.85rem]">
+              <LocalizedText value="Frequently asked questions" />
+            </h2>
+            <p className="mx-auto mb-0 mt-3 max-w-[600px] text-[1rem] leading-[1.6] text-[#526C8D]">
+              <LocalizedText value="Answers to common questions about coverage, installation, and plans." />
+            </p>
+          </div>
+
+          <div className="mx-auto grid w-[min(860px,100%)] gap-4">
+            {faqs.map((faq) => (
+              <details
+                className="group rounded-[8px] border border-[#D8E8F8] bg-white shadow-[0_14px_32px_rgba(13,39,77,0.05)] open:border-[#0066FF]"
+                key={faq.question}
+              >
+                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 text-[1.02rem] font-black text-[#061B46] [&::-webkit-details-marker]:hidden">
+                  <LocalizedText value={faq.question} />
+                  <ChevronDownIcon className="size-5 flex-none text-[#0066FF] transition-transform duration-150 group-open:rotate-180" />
+                </summary>
+                <p className="m-0 px-6 pb-5 text-[0.96rem] leading-[1.6] text-[#526C8D]">
+                  <LocalizedText value={faq.answer} />
+                </p>
+              </details>
+            ))}
+          </div>
+
+          <p className="mb-0 mt-8 text-center text-[0.96rem] font-bold text-[#526C8D]">
+            <LocalizedText value="Still have questions?" />{" "}
+            <a
+              className="font-black text-[#0066FF] hover:underline"
+              href={salesUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LocalizedText value="Contact sales" />
+            </a>
+          </p>
         </div>
       </section>
 
