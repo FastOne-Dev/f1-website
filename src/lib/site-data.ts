@@ -18,21 +18,36 @@ export const plans = [
     speed: "35 Mbps",
     price: "$18",
     note: "For everyday browsing, calls, and HD streaming.",
-    features: ["Premium bandwidth", "3-5 day installation", "One year minimum contract"],
+    features: [
+      "35 Mbps Premium Bandwidth",
+      "A minimum contract duration of one year is required.",
+      "Installation is completed within 3-5 days after payment",
+      "The installation fee is $50, with additional charges for cable lengths exceeding 350 meters.",
+    ],
   },
   {
     name: "Home 50",
     speed: "50 Mbps",
     price: "$30",
     note: "For busy homes with gaming, video calls, and streaming.",
-    features: ["Stable fiber connection", "Wi-Fi router ready", "Local support team"],
+    features: [
+      "50 Mbps Premium Bandwidth",
+      "A minimum contract duration of one year is required.",
+      "Installation is completed within 3-5 days after payment",
+      "The installation fee is $50, with additional charges for cable lengths exceeding 350 meters.",
+    ],
   },
   {
     name: "Home 100",
     speed: "100 Mbps",
     price: "$50",
     note: "For high demand households and creators.",
-    features: ["Higher capacity", "Smooth 4K streaming", "Priority installation support"],
+    features: [
+      "100 Mbps Premium Bandwidth",
+      "A minimum contract duration of one year is required.",
+      "Installation is completed within 3-5 days after payment",
+      "The installation fee is $50, with additional charges for cable lengths exceeding 350 meters.",
+    ],
   },
 ];
 

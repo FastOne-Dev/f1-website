@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   ArrowRight as ArrowIcon,
   BadgeCheck as BadgeCheckIcon,
-  Check as CheckIcon,
   ChevronDown as ChevronDownIcon,
   Download as DownloadIcon,
   Gamepad2 as GamepadIcon,
@@ -21,11 +20,11 @@ import {
   Zap as ZapIcon,
 } from "lucide-react";
 import LocalizedText from "@/components/LocalizedText";
+import PricingSection from "@/components/PricingSection";
 import {
   businessServices,
   connectionSteps,
   faqs,
-  plans,
   qualities,
   salesUrl,
   testimonials,
@@ -89,12 +88,6 @@ const featureHighlights = [
     text: "Availability checks, installation guidance, and router-ready plans.",
     icon: RouterIcon,
   },
-];
-
-const planAccents = [
-  "from-[#EAF6FF] to-white",
-  "from-[#0066FF] to-[#009DFF]",
-  "from-[#EEFBFF] to-white",
 ];
 
 const serviceIcons = [GaugeIcon, ShieldIcon, NetworkIcon, MapPinIcon];
@@ -256,126 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white pb-[94px] max-[640px]:pb-[66px]">
-        <div className={wideInner}>
-          <div className="mx-auto mb-10 max-w-[720px] text-center max-[640px]:mb-7">
-            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF]">
-              <LocalizedText value="Home internet" />
-            </p>
-            <h2 className="mb-0 mt-3 text-[2.35rem] font-black leading-[1.1] text-[#061B46] max-[640px]:text-[1.85rem]">
-              <LocalizedText value="Choose the Perfect Plan for You" />
-            </h2>
-            <p className="mx-auto mb-0 mt-3 max-w-[600px] text-[1rem] leading-[1.6] text-[#526C8D]">
-              <LocalizedText value="High-speed internet plans designed for every home and business." />
-            </p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-7 max-[980px]:grid-cols-1">
-            {plans.map((plan, index) => {
-              const featured = index === 1;
-
-              return (
-                <article
-                  className={cx(
-                    "relative grid min-h-[392px] grid-rows-[auto_1fr_auto] rounded-[8px] border p-7 shadow-[0_18px_44px_rgba(13,39,77,0.08)]",
-                    featured
-                      ? "border-[#0066FF] bg-[linear-gradient(145deg,#0066FF,#009DFF)] text-white"
-                      : "border-[#D8E8F8] bg-[linear-gradient(145deg,var(--tw-gradient-stops))] text-[#061B46]",
-                    planAccents[index],
-                  )}
-                  key={plan.name}
-                >
-                  {featured && (
-                    <span className="absolute left-1/2 top-0 inline-flex min-h-8 -translate-x-1/2 -translate-y-1/2 items-center rounded-[8px] bg-[#0B4ACC] px-4 text-[0.78rem] font-black text-white shadow-[0_12px_24px_rgba(0,57,150,0.2)]">
-                      <LocalizedText value="Popular" />
-                    </span>
-                  )}
-
-                  <div className="flex items-start gap-4">
-                    <span
-                      className={cx(
-                        "flex h-14 w-14 items-center justify-center rounded-[8px]",
-                        featured
-                          ? "bg-white/18 text-white"
-                          : "bg-[#EAF6FF] text-[#0066FF]",
-                      )}
-                    >
-                      <WifiIcon className="size-8" />
-                    </span>
-                    <div>
-                      <h3 className="m-0 text-[1.28rem] font-black">
-                        <LocalizedText value={plan.name} />
-                      </h3>
-                      <p
-                        className={cx(
-                          "mb-0 mt-1 text-[0.95rem] font-bold",
-                          featured ? "text-white/86" : "text-[#44617F]",
-                        )}
-                      >
-                        <LocalizedText value="Up to" /> {plan.speed}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-7">
-                    <p className="m-0 text-[3rem] font-black leading-none">
-                      {plan.price}
-                      <span
-                        className={cx(
-                          "text-[0.95rem] font-bold",
-                          featured ? "text-white/78" : "text-[#607693]",
-                        )}
-                      >
-                        <LocalizedText value="/month" />
-                      </span>
-                    </p>
-                    <p
-                      className={cx(
-                        "mb-0 mt-4 min-h-[48px] text-[0.96rem] leading-[1.55]",
-                        featured ? "text-white/82" : "text-[#526C8D]",
-                      )}
-                    >
-                      <LocalizedText value={plan.note} />
-                    </p>
-                    <ul className="mt-6 grid gap-3 p-0">
-                      {plan.features.map((feature) => (
-                        <li
-                          className={cx(
-                            "flex items-start gap-2.5 text-[0.92rem] font-bold leading-[1.35]",
-                            featured ? "text-white/88" : "text-[#334E6F]",
-                          )}
-                          key={feature}
-                        >
-                          <CheckIcon
-                            className={cx(
-                              "mt-0.5 size-4 flex-none",
-                              featured ? "text-white" : "text-[#00A884]",
-                            )}
-                          />
-                          <LocalizedText value={feature} />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    className={cx(
-                      "mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-[8px] text-[0.96rem] font-black transition duration-150 hover:-translate-y-px",
-                      featured
-                        ? "bg-white text-[#0066FF]"
-                        : "border border-[#0066FF] bg-white text-[#0066FF]",
-                    )}
-                    href="/plans"
-                  >
-                    <LocalizedText value="Compare plans" />
-                    <ArrowIcon className="size-5" />
-                  </Link>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <PricingSection />
 
       <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
         <div className={wideInner}>
