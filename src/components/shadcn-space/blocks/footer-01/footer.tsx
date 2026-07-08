@@ -83,9 +83,9 @@ const Footer = () => {
                   <Image
                     src="/img/Fast_One_Logo.png"
                     alt="Fast One"
-                    width={64}
-                    height={64}
-                    className="h-15 w-50 object-contain"
+                    width={200}
+                    height={52}
+                    className="h-auto w-50 object-contain"
                   />
                 </Link>
 
