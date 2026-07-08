@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import { useLanguage } from "@/lib/language";
 import {
   FaFacebook,
   FaInstagram,
@@ -9,61 +12,110 @@ import {
   FaTiktok,
 } from "react-icons/fa6";
 
+const footerCopy = {
+  en: {
+    description:
+      "Delivers reliable high-speed internet and business connectivity across Cambodia.",
+    company: "Company",
+    companyProfile: "Company Profile",
+    mission: "Mission",
+    vision: "Vision",
+    networkCoverage: "Network Coverage",
+    career: "Career",
+    services: "Services",
+    internetPackages: "Internet Packages",
+    ipTransit: "IP Transit",
+    dplc: "DPLC",
+    iplc: "IPLC",
+    hotlineSupport: "Hotline Support",
+    location: "Location",
+    address:
+      "#29, Mao Tse Toung Blvd, Sangkat Toul Tompoung II, Khan Chamkarmorn, Phnom Penh",
+    email: "Email",
+    phone: "Phone",
+    copyright: "©2026 Fast One (Cambodia). All Rights Reserved",
+  },
+  km: {
+    description:
+      "ផ្តល់ជូនសេវាអ៊ីនធឺណិតល្បឿនលឿនដែលអាចទុកចិត្តបាន និងការតភ្ជាប់អាជីវកម្មទូទាំងប្រទេសកម្ពុជា",
+    company: "ក្រុមហ៊ុន",
+    companyProfile: "ប្រវត្តិក្រុមហ៊ុន",
+    mission: "បេសកកម្ម",
+    vision: "ចក្ខុវិស័យ",
+    networkCoverage: "តំបន់គ្របដណ្តប់",
+    career: "អាជីព",
+    services: "សេវាកម្ម",
+    internetPackages: "កញ្ចប់អ៊ីនធឺណិត",
+    ipTransit: "IP Transit",
+    dplc: "DPLC",
+    iplc: "IPLC",
+    hotlineSupport: "ជំនួយតាមទូរស័ព្ទ",
+    location: "ទីតាំង",
+    address:
+      "អគារលេខ ២៩, មហាវិថីម៉ៅសេទុង ភូមិ ៣, សង្កាត់ទូលទំពូង ២, ខណ្ឌចំការមន, រាជធានីភ្នំពេញ",
+    email: "អ៊ីមែល",
+    phone: "ទូរស័ព្ទ",
+    copyright: "©2026 Fast One (Cambodia). រក្សាសិទ្ធិគ្រប់យ៉ាង",
+  },
+} as const;
+
+type FooterCopyKey = keyof (typeof footerCopy)["en"];
+
 type FooterData = {
-  title: string;
+  titleKey: FooterCopyKey;
   links: {
-    title: string;
+    titleKey: FooterCopyKey;
     href: string;
   }[];
 };
 
 const footerSections: FooterData[] = [
   {
-    title: "Company",
+    titleKey: "company",
     links: [
       {
-        title: "Company Profile",
+        titleKey: "companyProfile",
         href: "/about/company-profile",
       },
       {
-        title: "Mission",
+        titleKey: "mission",
         href: "/about/mission",
       },
       {
-        title: "Vision",
+        titleKey: "vision",
         href: "/about/vision",
       },
       {
-        title: "Network Coverage",
+        titleKey: "networkCoverage",
         href: "/coverage",
       },
       {
-        title: "Career",
+        titleKey: "career",
         href: "/about/career",
       },
     ],
   },
   {
-    title: "Services",
+    titleKey: "services",
     links: [
       {
-        title: "Internet Packages",
+        titleKey: "internetPackages",
         href: "/plans",
       },
       {
-        title: "IP Transit",
+        titleKey: "ipTransit",
         href: "/business/ip-transit",
       },
       {
-        title: "DPLC",
+        titleKey: "dplc",
         href: "/business/dplc",
       },
       {
-        title: "IPLC",
+        titleKey: "iplc",
         href: "/business/iplc",
       },
       {
-        title: "Hotline Support",
+        titleKey: "hotlineSupport",
         href: "/support/hotline",
       },
     ],
@@ -71,8 +123,12 @@ const footerSections: FooterData[] = [
 ];
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = footerCopy[language];
+  const bodyTextClass = "text-[0.98rem] leading-[1.6]";
+
   return (
-    <footer className="border-t border-[#38BDF8] bg-gradient-to-r from-[#0067AC] to-[#01c7ea] py-6 text-white">
+    <footer className="bg-gradient-to-r from-[#0067AC] to-[#01c7ea] py-6 text-white">
       <div className="max-w-7xl xl:px-16 lg:px-8 px-4 mx-auto ">
         <div className="flex flex-col gap-6  ">
           <div className="py-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 lg:grid-cols-12 gap-x-6 gap-y-10 px-6 xl:px-0">
@@ -89,9 +145,8 @@ const Footer = () => {
                   />
                 </Link>
 
-                <p className="text-base font-normal text-white/80">
-                  Delivers reliable high-speed internet and business
-                  connectivity across Cambodia.
+                <p className={`${bodyTextClass} font-normal text-white/80`}>
+                  {t.description}
                 </p>
 
                 {/* social links */}
@@ -137,18 +192,20 @@ const Footer = () => {
 
             <div className="col-span-1 lg:block hidden "></div>
 
-            {footerSections.map(({ title, links }) => (
-              <div key={title} className="col-span-2 ">
+            {footerSections.map(({ titleKey, links }) => (
+              <div key={titleKey} className="col-span-2 ">
                 <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-                  <p className="text-lg font-semibold text-white">{title}</p>
+                  <p className="text-lg font-semibold text-white">
+                    {t[titleKey]}
+                  </p>
                   <ul className="flex flex-col gap-3">
-                    {links.map(({ title, href }) => (
-                      <li key={title}>
+                    {links.map(({ titleKey, href }) => (
+                      <li key={titleKey}>
                         <Link
                           href={href}
-                          className="text-base font-normal text-white/80 hover:text-white"
+                          className={`${bodyTextClass} font-normal text-white/80 hover:text-white`}
                         >
-                          {title}
+                          {t[titleKey]}
                         </Link>
                       </li>
                     ))}
@@ -159,40 +216,47 @@ const Footer = () => {
 
             <div className="col-span-3">
               <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-                <p className="text-lg font-semibold text-white">Location</p>
+                <p className="text-lg font-semibold text-white">{t.location}</p>
                 <ul className="flex flex-col gap-3">
                   <li>
                     <a
                       href="https://maps.app.goo.gl/H4gJkNtFVhPhi8db8"
                       target="_blank"
                       rel="noreferrer"
-                      className="block text-base font-normal text-white/80 hover:text-white"
+                      className={`block ${bodyTextClass} font-normal text-white/80 hover:text-white`}
                     >
-                      #29, Mao Tse Toung Blvd, Sangkat Toul Tompoung II, Khan
-                      Chamkarmorn, Phnom Penh
+                      {t.address}
                     </a>
                   </li>
-                  <li className="flex flex-row gap-1">
-                    <p className="font-semibold"> Email :</p>
+                  <li
+                    className={`flex flex-wrap items-baseline gap-x-1 gap-y-1 ${bodyTextClass} text-white/80`}
+                  >
+                    <span className="shrink-0 font-semibold text-white">
+                      {t.email}:
+                    </span>
                     <a
                       href="mailto:contact@example.com"
-                      className="text-base font-normal text-white/80 hover:text-white"
+                      className="min-w-0 break-all font-normal hover:text-white"
                     >
                       fastone_info@fastone.com.kh
                     </a>
                   </li>
-                  <li className="flex flex-row gap-1 ">
-                    <p className="font-semibold">Phone :</p>
+                  <li
+                    className={`flex flex-wrap items-baseline gap-x-1 gap-y-1 ${bodyTextClass} text-white/80`}
+                  >
+                    <span className="shrink-0 font-semibold text-white">
+                      {t.phone}:
+                    </span>
                     <a
                       href="tel:+85589222551"
-                      className="text-base font-normal text-white/80 hover:text-white"
+                      className="font-normal hover:text-white"
                     >
                       089 222 551
                     </a>{" "}
                     /{" "}
                     <a
                       href="tel:+85569709900"
-                      className="text-base font-normal text-white/80 hover:text-white"
+                      className="font-normal hover:text-white"
                     >
                       069 709 900
                     </a>
@@ -203,7 +267,7 @@ const Footer = () => {
           </div>
           <Separator orientation="horizontal" className="bg-white/25" />
           <p className=" text-sm font-normal text-white/75 text-center animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-            &copy;2026 Fast One (Cambodia). All Rights Reserved
+            {t.copyright}
           </p>
         </div>
       </div>

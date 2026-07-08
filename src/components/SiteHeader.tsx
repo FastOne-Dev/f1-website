@@ -323,7 +323,7 @@ export default function SiteHeader() {
         ? "border-white/15 bg-white/[0.12] text-white shadow-[inset_3px_0_0_#38BDF8]"
         : open
           ? "border-white/10 bg-white/[0.08] text-white"
-        : "border-transparent text-white/[0.84] hover:border-white/10 hover:bg-white/[0.09] hover:text-white",
+          : "border-transparent text-white/[0.84] hover:border-white/10 hover:bg-white/[0.09] hover:text-white",
     );
   }
 
@@ -498,7 +498,7 @@ export default function SiteHeader() {
     <>
       <header
         className={cx(
-          "sticky top-0 z-50 grid min-h-[74px] grid-cols-[minmax(180px,1fr)_auto_minmax(180px,1fr)] items-center gap-8 border-b border-[#38BDF8] bg-gradient-to-r from-[#0067AC] to-[#01c7ea] px-[clamp(24px,8vw,124px)] antialiased backdrop-blur-[16px] max-[980px]:grid-cols-[minmax(0,1fr)_auto] max-[980px]:px-6 max-[640px]:min-h-[66px] max-[640px]:gap-3.5 max-[640px]:px-[18px]",
+          "sticky top-0 z-50 grid min-h-[74px] grid-cols-[minmax(180px,1fr)_auto_minmax(180px,1fr)] items-center gap-8 bg-gradient-to-r from-[#0067AC] to-[#01c7ea] px-[clamp(24px,8vw,124px)] antialiased backdrop-blur-[16px] max-[980px]:grid-cols-[minmax(0,1fr)_auto] max-[980px]:px-6 max-[640px]:min-h-[66px] max-[640px]:gap-3.5 max-[640px]:px-[18px]",
           language === "km" ? "font-['Kantumruy_Pro',sans-serif]" : "font-sans",
         )}
       >
