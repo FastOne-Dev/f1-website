@@ -115,20 +115,23 @@ function SplitTitle() {
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-white text-[#071735]">
-      <section className="relative isolate bg-[#F1F8FF]">
-        <div className="relative min-h-[700px] overflow-hidden max-[980px]:min-h-[680px] max-[640px]:min-h-[650px]">
-          {" "}
-          <Image
-            className="-z-30 object-cover object-[50%_20%] max-[980px]:object-[62%_44%]"
-            src="/img/home-fiber-family-hero.png"
-            alt="Family using Fast One fiber internet at home"
-            fill
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,#F8FBFF_0%,rgba(248,251,255,0.96)_30%,rgba(248,251,255,0.55)_55%,rgba(248,251,255,0.05)_100%)] max-[980px]:bg-[linear-gradient(180deg,#F8FBFF_0%,rgba(248,251,255,0.92)_38%,rgba(248,251,255,0.22)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 -z-10 h-[36%] bg-[linear-gradient(0deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)]" />
+    <main className="overflow-hidden  text-[#071735]">
+      <section className="relative isolate mx-auto w-full max-w-[1440px] overflow-visible  max-[980px]:w-[calc(100%_-_40px)] max-[640px]:w-[calc(100%_-_28px)]">
+        <div className="relative min-h-[700px] max-[980px]:min-h-[680px] max-[640px]:min-h-[650px]">
+          <div className="absolute inset-0 -z-30  ">
+            <div className="absolute inset-y-0 left-[30%] right-[calc(50%_-_50vw)] max-[980px]:left-0 max-[980px]:right-0">
+              <Image
+                className="object-cover object-[50%] max-[980px]:object-cover max-[980px]:object-[62%_44%]"
+                src="/img/home-fiber-family-hero.png"
+                alt="Family using Fast One fiber internet at home"
+                fill
+                sizes="(max-width: 1440px) 100vw, 1440px"
+                priority
+              />
+            </div>
+          </div>
+          <div className="absolute inset-y-0 left-0 right-[calc(50%_-_50vw)] -z-20 bg-[linear-gradient(90deg,#F8FBFF_0%,rgba(248,251,255,0.96)_30%,rgba(248,251,255,0.55)_55%,rgba(248,251,255,0.05)_100%)] max-[980px]:right-0 max-[980px]:bg-[linear-gradient(180deg,#F8FBFF_0%,rgba(248,251,255,0.92)_38%,rgba(248,251,255,0.22)_100%)]" />
+          <div className="absolute bottom-0 left-0 right-[calc(50%_-_50vw)] -z-10 h-[36%] bg-[linear-gradient(0deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)] max-[980px]:right-0" />
           <div className="pointer-events-none absolute inset-0 z-10 max-[980px]:hidden">
             {heroChips.map((chip) => {
               const Icon = chip.icon;
@@ -155,7 +158,7 @@ export default function Home() {
             })}
           </div>
           <div
-            className={`${wideInner} relative z-10 grid min-h-[720px] grid-cols-[minmax(0,0.78fr)_minmax(420px,0.92fr)] items-center gap-12 pb-[110px] pt-16 max-[980px]:grid-cols-1 max-[980px]:items-start max-[980px]:pb-[128px] max-[980px]:pt-10 max-[640px]:min-h-[690px] max-[640px]:gap-6 max-[640px]:pb-[118px]`}
+            className={`${wideInner} relative z-10 flex min-h-[720px] items-center pb-[110px] pt-16 max-[980px]:items-start max-[980px]:pb-[128px] max-[980px]:pt-10 max-[640px]:min-h-[690px] max-[640px]:pb-[118px]`}
           >
             <div className="max-w-[670px]">
               {/* <p className="mb-3 inline-flex min-h-9 items-center rounded-full border border-[#C9E0F7] bg-white/78 px-4 text-[0.78rem] font-black uppercase tracking-[0.08em] text-[#005EEE] shadow-[0_12px_28px_rgba(0,102,255,0.08)] backdrop-blur-md max-[640px]:mb-5 max-[640px]:text-[0.68rem]">
