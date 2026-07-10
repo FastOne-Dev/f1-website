@@ -217,34 +217,32 @@ export default function Home() {
         aria-label="Service highlights"
       >
         <div className={wideInner}>
-          <div className="grid grid-cols-4 rounded-[8px] border border-[#D8E8F8] bg-white shadow-[0_22px_54px_rgba(12,37,78,0.12)] max-[1120px]:grid-cols-2 max-[640px]:grid-cols-1">
+          <div className="grid grid-cols-4 overflow-hidden rounded-[10px] bg-white shadow-[0_1px_2px_rgba(12,37,78,0.04),0_18px_44px_-12px_rgba(12,37,78,0.20)] ring-1 ring-[#0C254E]/[0.06] max-[1120px]:grid-cols-2 max-[640px]:grid-cols-1">
             {featureHighlights.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <article
                   className={cx(
-                    "grid min-h-[132px] grid-cols-[58px_minmax(0,1fr)] items-center gap-4 p-7 max-[640px]:min-h-0 max-[640px]:p-5",
-                    index > 0 &&
-                      "border-l border-[#D8E8F8] max-[1120px]:border-l-0",
-                    index % 2 === 1 &&
-                      "max-[1120px]:border-l max-[640px]:border-l-0",
-                    index > 1 && "max-[1120px]:border-t",
+                    "border-[#0C254E]/[0.06] p-7 max-[640px]:p-6",
+                    index > 0 && "min-[1121px]:border-l",
+                    index % 2 === 1 && "max-[1120px]:min-[641px]:border-l",
+                    index > 1 && "max-[1120px]:min-[641px]:border-t",
                     index > 0 && "max-[640px]:border-t",
                   )}
                   key={item.title}
                 >
-                  <span className="flex h-[58px] w-[58px] items-center justify-center rounded-[8px] bg-[#EAF6FF] text-[#0066FF]">
-                    <Icon className="size-8" />
-                  </span>
-                  <span>
-                    <h2 className="m-0 text-[1.05rem] font-black text-[#061B46]">
+                  <div className="flex items-center gap-3.5">
+                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-[13px] bg-[linear-gradient(140deg,#EDF5FF,#D9EAFF)] text-[#0066FF] ring-1 ring-inset ring-white/80">
+                      <Icon className="size-[22px]" />
+                    </span>
+                    <h2 className="m-0 text-[1.0625rem] font-semibold leading-[1.25] tracking-[-0.01em] text-[#0A2240]">
                       <LocalizedText value={item.title} />
                     </h2>
-                    <p className="mt-2 text-[0.9rem] leading-[1.5] text-[#4C6685]">
-                      <LocalizedText value={item.text} />
-                    </p>
-                  </span>
+                  </div>
+                  <p className="mt-3.5 text-[0.9rem] leading-[1.6] text-[#5B7593]">
+                    <LocalizedText value={item.text} />
+                  </p>
                 </article>
               );
             })}
