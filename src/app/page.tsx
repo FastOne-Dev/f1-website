@@ -130,7 +130,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute inset-y-0 left-0 right-[calc(50%_-_50vw)] -z-20 bg-[linear-gradient(90deg,#F8FBFF_0%,rgba(248,251,255,0.96)_30%,rgba(248,251,255,0.55)_55%,rgba(248,251,255,0.05)_100%)] max-[980px]:right-0 max-[980px]:bg-[linear-gradient(180deg,#F8FBFF_0%,rgba(248,251,255,0.92)_38%,rgba(248,251,255,0.22)_100%)]" />
+          <div className="absolute inset-y-0 left-0 right-[calc(50%_-_50vw)] -z-20 bg-[linear-gradient(90deg,#F8FBFF_0%,rgba(248,251,255,0.84)_30%,rgba(248,251,255,0.1)_55%,rgba(248,251,255,0)_100%)] max-[980px]:right-0 max-[980px]:bg-[linear-gradient(180deg,#F8FBFF_0%,rgba(248,251,255,0.92)_38%,rgba(248,251,255,0.22)_100%)]" />
           <div className="absolute bottom-0 left-0 right-[calc(50%_-_50vw)] -z-10 h-[36%] bg-[linear-gradient(0deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)] max-[980px]:right-0" />
           <div className="pointer-events-none absolute inset-0 z-10 max-[980px]:hidden">
             {heroChips.map((chip) => {
