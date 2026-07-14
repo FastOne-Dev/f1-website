@@ -536,4 +536,5 @@ export const kmDictionary: Record<string, string> = {
   "Fast One offers dedicated internet, DPLC, IPLC, and IP Transit for businesses that need guaranteed bandwidth and private circuits.":
     "Fast One ផ្តល់អ៊ីនធឺណិតឯកជន DPLC IPLC និង IP Transit សម្រាប់អាជីវកម្មដែលត្រូវការបណ្ដាញធានា និងខ្សែឯកជន។",
   "Still have questions?": "នៅមានសំណួរទៀតទេ?",
+
 };

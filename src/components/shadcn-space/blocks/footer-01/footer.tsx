@@ -266,9 +266,9 @@ const Footer = () => {
             </div>
           </div>
           <Separator orientation="horizontal" className="bg-white/25" />
-          <p className=" text-sm font-normal text-white/75 text-center animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-            {t.copyright}
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-normal text-white/75 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+            <p className="m-0">{t.copyright}</p>
+          </div>
         </div>
       </div>
     </footer>

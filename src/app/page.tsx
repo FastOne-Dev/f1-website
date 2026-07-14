@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight as ArrowIcon,
-  BadgeCheck as BadgeCheckIcon,
   ChevronDown as ChevronDownIcon,
+  CircleCheck as CircleCheckIcon,
   Download as DownloadIcon,
   Gamepad2 as GamepadIcon,
   Gauge as GaugeIcon,
@@ -14,6 +14,7 @@ import {
   Phone as PhoneIcon,
   Router as RouterIcon,
   ShieldCheck as ShieldIcon,
+  Smartphone as SmartphoneIcon,
   Star as StarIcon,
   Video as VideoIcon,
   Wifi as WifiIcon,
@@ -22,23 +23,55 @@ import {
 import LocalizedText from "@/components/LocalizedText";
 import PricingSection from "@/components/PricingSection";
 import {
+  address,
   businessServices,
   connectionSteps,
-  faqs,
   qualities,
   salesUrl,
   testimonials,
 } from "@/lib/site-data";
 import { cx } from "@/lib/ui-classes";
+import Faq from "@/components/shadcn-space/blocks/faq-01/faq";
 
 const wideInner =
   "mx-auto w-[min(1380px,calc(100%_-_96px))] max-[980px]:w-[min(100%_-_40px,760px)] max-[640px]:w-[min(100%_-_28px,560px)]";
 
-const heroStats = [
-  ["35-100 Mbps", "Home fiber plans"],
-  ["3-5 days", "Typical installation"],
-  ["24/7", "Technical support"],
-];
+const officeMapQuery = encodeURIComponent(`Fast One Cambodia, ${address}`);
+const officeDirectionsUrl = `https://www.google.com/maps/search/?api=1&query=${officeMapQuery}`;
+
+const cambodiaMapBounds = {
+  north: 14.8,
+  south: 9.9,
+  west: 102.2,
+  east: 107.9,
+};
+
+const coverageLocations = [
+  { name: "Phnom Penh", latitude: 11.5564, longitude: 104.9282 },
+  { name: "Preah Sihanouk", latitude: 10.625, longitude: 103.523 },
+  { name: "Kampot", latitude: 10.6104, longitude: 104.1814 },
+  { name: "Osmach", latitude: 14.4248, longitude: 103.6957 },
+  { name: "Chrey Thom", latitude: 10.9449, longitude: 105.0792 },
+  { name: "Anlong Chrey", latitude: 11.6348, longitude: 105.8287 },
+  { name: "Poi Pet", latitude: 13.6564, longitude: 102.5622 },
+  { name: "Banteay Meanchey", latitude: 13.5858, longitude: 102.9736 },
+  { name: "Koh Kong", latitude: 11.6175, longitude: 102.9849 },
+  { name: "Trapeang Phlong", latitude: 11.6982, longitude: 105.9587 },
+] as const;
+
+const coverageMarkerShifts: Record<string, string> = {
+  "Anlong Chrey": "-translate-x-3 translate-y-2",
+  "Trapeang Phlong": "translate-x-3 -translate-y-2",
+  "Poi Pet": "-translate-x-1 -translate-y-1",
+  "Banteay Meanchey": "translate-x-1 translate-y-1",
+};
+
+function getCambodiaMapPosition(latitude: number, longitude: number) {
+  return {
+    left: `${((longitude - cambodiaMapBounds.west) / (cambodiaMapBounds.east - cambodiaMapBounds.west)) * 100}%`,
+    top: `${((cambodiaMapBounds.north - latitude) / (cambodiaMapBounds.north - cambodiaMapBounds.south)) * 100}%`,
+  };
+}
 
 const heroChips = [
   {
@@ -122,7 +155,7 @@ export default function Home() {
             <div className="absolute inset-y-0 left-[30%] right-[calc(50%_-_50vw)] max-[980px]:left-0 max-[980px]:right-0">
               <Image
                 className="object-cover object-[50%] max-[980px]:object-cover max-[980px]:object-[62%_44%]"
-                src="/img/home-fiber-family-hero.png"
+                src="/img/home-fiber-family-hero.webp"
                 alt="Family using Fast One fiber internet at home"
                 fill
                 sizes="(max-width: 1440px) 100vw, 1440px"
@@ -251,6 +284,102 @@ export default function Home() {
       </section>
 
       <PricingSection />
+
+      <section className="bg-[#F5FAFF] pb-[92px] max-[640px]:pb-[66px]">
+        <div className={wideInner}>
+          <div className="relative isolate grid min-h-[500px] grid-cols-[1.05fr_0.95fr] items-center overflow-hidden  bg-[linear-gradient(115deg,#061B46_0%,#082E68_58%,#075A8F_100%)] text-white shadow-[0_24px_64px_rgba(6,27,70,0.2)] max-[900px]:grid-cols-1">
+            <div className="absolute inset-0 -z-20 opacity-20 [background-image:linear-gradient(rgba(125,211,252,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.22)_1px,transparent_1px)] [background-size:42px_42px] [mask-image:linear-gradient(to_right,black,transparent_72%)]" />
+            <div className="absolute -right-24 -top-36 -z-10 size-[430px] rounded-full bg-[#06B6D4]/25 blur-[80px]" />
+            <div className="absolute bottom-[-180px] left-[35%] -z-10 size-[420px] rounded-full bg-[#0066FF]/35 blur-[90px]" />
+
+            <div className="relative z-10 px-[clamp(34px,6vw,82px)] py-16 max-[640px]:px-7 max-[640px]:py-11">
+              <p className="m-0 inline-flex min-h-8 items-center rounded-full border border-[#7DD3FC]/35 bg-[#7DD3FC]/10 px-3.5 text-[0.7rem] font-black uppercase tracking-[0.13em] text-[#9EE8FA]">
+                <LocalizedText value={{ en: "Who we are", km: "យើងជានរណា" }} />
+              </p>
+              <h2 className="mb-0 mt-5 max-w-[650px] text-[2.75rem] font-black leading-[1.1] tracking-[-0.035em] [text-wrap:balance] max-[640px]:text-[2rem]">
+                <LocalizedText
+                  value={{
+                    en: "Reliable internet. Practical prices. Local support.",
+                    km: "អ៊ីនធឺណិតដែលអាចទុកចិត្តបាន។ តម្លៃសមរម្យ។ ជំនួយក្នុងស្រុក។",
+                  }}
+                />
+              </h2>
+              <p className="mb-0 mt-5 max-w-[580px] text-[1rem] leading-[1.7] text-white/68">
+                <LocalizedText
+                  value={{
+                    en: "Fast One keeps homes and businesses connected with dependable fiber service and a team that understands Cambodia.",
+                    km: "Fast One រក្សាការតភ្ជាប់សម្រាប់គេហដ្ឋាន និងអាជីវកម្ម ជាមួយសេវាហ្វាយបឺរដែលអាចទុកចិត្តបាន និងក្រុមការងារដែលយល់ពីកម្ពុជា។",
+                  }}
+                />
+              </p>
+
+              <ul className="m-0 mt-7 grid list-none gap-3 p-0">
+                {[
+                  {
+                    en: "Home and business internet solutions",
+                    km: "ដំណោះស្រាយអ៊ីនធឺណិតសម្រាប់ផ្ទះ និងអាជីវកម្ម",
+                  },
+                  {
+                    en: "Quality service at a practical price",
+                    km: "សេវាកម្មមានគុណភាពក្នុងតម្លៃសមរម្យ",
+                  },
+                  {
+                    en: "Local technical support available 24/7",
+                    km: "ជំនួយបច្ចេកទេសក្នុងស្រុក 24/7",
+                  },
+                ].map((item) => (
+                  <li
+                    className="flex items-center gap-3 text-[0.92rem] font-bold text-white/82"
+                    key={item.en}
+                  >
+                    <CircleCheckIcon className="size-5 flex-none text-[#5EE7F2]" />
+                    <LocalizedText value={item} />
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                className="mt-9 inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-[#0757C7] shadow-[0_14px_30px_rgba(0,0,0,0.16)] transition hover:-translate-y-0.5 hover:bg-[#EAF7FF]"
+                href="/about/company-profile"
+              >
+                <LocalizedText
+                  value={{ en: "Discover Fast One", km: "ស្វែងយល់ពី Fast One" }}
+                />
+                <ArrowIcon className="size-5" />
+              </Link>
+            </div>
+
+            <div className="relative flex min-h-[500px] items-center justify-center overflow-hidden max-[900px]:min-h-[390px] max-[900px]:border-t max-[900px]:border-white/10">
+              <div className="absolute size-[360px] rounded-full border border-[#7DD3FC]/15" />
+              <div className="absolute size-[270px] rounded-full border border-[#7DD3FC]/20" />
+              <div className="absolute size-[185px] rounded-full bg-[#0EA5E9]/15 blur-xl" />
+
+              <span className="absolute left-[18%] top-[24%] size-2 rounded-full bg-[#A5F3FC] shadow-[0_0_14px_#67E8F9]" />
+              <span className="absolute right-[17%] top-[29%] size-1.5 rounded-full bg-white shadow-[0_0_12px_white]" />
+              <span className="absolute bottom-[23%] left-[24%] size-1.5 rounded-full bg-[#38BDF8] shadow-[0_0_12px_#38BDF8]" />
+              <span className="absolute bottom-[18%] right-[20%] size-2 rounded-full bg-[#67E8F9] shadow-[0_0_14px_#67E8F9]" />
+
+              <div className="relative mt-16 h-[270px] w-[142px] rotate-[7deg] rounded-[28px] border-[4px] border-[#A5F3FC] bg-[linear-gradient(155deg,#0B3D78,#061B46)] p-2 shadow-[0_0_28px_rgba(103,232,249,0.48),0_30px_48px_rgba(0,0,0,0.34)]">
+                <div className="absolute left-1/2 top-2 z-10 h-2 w-12 -translate-x-1/2 rounded-full bg-[#061B46]" />
+                <div className="relative h-full overflow-hidden rounded-[21px] border border-white/10 bg-[radial-gradient(circle_at_68%_24%,rgba(94,234,242,0.42),transparent_27%),linear-gradient(160deg,#0B52A1,#071B42)]">
+                  <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(125,211,252,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.22)_1px,transparent_1px)] [background-size:18px_18px]" />
+                  <div className="absolute inset-x-0 bottom-8 flex justify-center">
+                    <SmartphoneIcon
+                      className="size-12 text-white/25"
+                      strokeWidth={1}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute left-1/2 top-[14%] -translate-x-1/2 text-[#A5F3FC] drop-shadow-[0_0_18px_rgba(103,232,249,0.8)]">
+                <WifiIcon className="size-24" strokeWidth={1.7} />
+              </div>
+              <div className="absolute bottom-[12%] h-2 w-48 rounded-full bg-[#38BDF8]/55 blur-md" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
         <div className={wideInner}>
@@ -399,13 +528,25 @@ export default function Home() {
                 <blockquote className="m-0 pt-5 text-[1rem] leading-[1.65] text-[#334E6F]">
                   “<LocalizedText value={testimonial.quote} />”
                 </blockquote>
-                <figcaption className="pt-6">
-                  <p className="m-0 text-[0.98rem] font-black text-[#061B46]">
-                    {testimonial.name}
-                  </p>
-                  <p className="mb-0 mt-1 text-[0.85rem] font-bold text-[#56708F]">
-                    <LocalizedText value={testimonial.role} />
-                  </p>
+                <figcaption className="flex items-center gap-3.5 pt-6">
+                  <span
+                    className="flex size-11 flex-none items-center justify-center rounded-full bg-[linear-gradient(135deg,#0066FF,#06B6D4)] text-[0.78rem] font-black text-white shadow-[0_8px_18px_rgba(0,102,255,0.2)] ring-4 ring-[#EAF6FF]"
+                    aria-hidden="true"
+                  >
+                    {testimonial.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .join("")
+                      .slice(0, 2)}
+                  </span>
+                  <div>
+                    <p className="m-0 text-[0.98rem] font-black text-[#061B46]">
+                      {testimonial.name}
+                    </p>
+                    <p className="mb-0 mt-1 text-[0.85rem] font-bold text-[#56708F]">
+                      <LocalizedText value={testimonial.role} />
+                    </p>
+                  </div>
                 </figcaption>
               </figure>
             ))}
@@ -413,102 +554,175 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-[92px] max-[640px]:py-[66px]">
-        <div
-          className={`${wideInner} grid grid-cols-[minmax(0,0.82fr)_minmax(320px,0.68fr)] items-center gap-12 max-[980px]:grid-cols-1`}
-        >
-          <div>
-            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF]">
-              <LocalizedText value="Coverage" />
-            </p>
-            <h2 className="mb-0 mt-3 max-w-[720px] text-[2.35rem] font-black leading-[1.1] text-[#061B46] max-[640px]:text-[1.85rem]">
-              <LocalizedText value="Built for Phnom Penh and Cambodia's growing digital economy." />
-            </h2>
-            <p className="mb-0 mt-5 max-w-[620px] text-[1rem] leading-[1.65] text-[#526C8D]">
-              <LocalizedText value="Fast One started with a local mission: make high quality internet more affordable and more accessible for the people and businesses building Cambodia's future." />
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4 max-[640px]:grid max-[640px]:grid-cols-1">
-              <Link
-                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-[8px] bg-[#0066FF] px-6 text-[0.98rem] font-black text-white shadow-[0_16px_34px_rgba(0,102,255,0.22)] transition duration-150 hover:-translate-y-px hover:bg-[#008DFF]"
-                href="/coverage"
-              >
-                <LocalizedText value="Explore coverage" />
-                <ArrowIcon className="size-5" />
-              </Link>
-              <a
-                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-[8px] border border-[#C9E0F7] bg-white px-6 text-[0.98rem] font-black text-[#061B46] shadow-[0_12px_28px_rgba(13,39,77,0.06)] transition duration-150 hover:-translate-y-px hover:border-[#0066FF]"
-                href={salesUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LocalizedText value="Send location" />
-                <MapPinIcon className="size-5 text-[#0066FF]" />
-              </a>
-            </div>
-          </div>
+      <section className="relative isolate overflow-hidden bg-white py-[100px] max-[640px]:py-[66px]">
+        <div className="relative">
+          <div
+            className={`${wideInner} relative grid grid-cols-[0.88fr_1.12fr] items-center gap-[clamp(40px,6vw,92px)] max-[980px]:grid-cols-1`}
+          >
+            <div className="flex flex-col justify-center">
+              <p className="m-0 flex items-center gap-3 text-[0.76rem] font-black uppercase tracking-[0.16em] text-[#0066FF]">
+                <span className="h-px w-9 bg-[#0066FF]" />
+                <LocalizedText value="Coverage" />
+              </p>
+              <h2 className="mb-0 mt-5 max-w-[590px] text-[clamp(2.15rem,3.4vw,3.6rem)] font-black leading-[1.02] tracking-[-0.045em] text-[#061B46] [text-wrap:balance]">
+                <LocalizedText value="Built for Phnom Penh and Cambodia's growing digital economy." />
+              </h2>
+              <p className="mb-0 mt-6 max-w-[560px] text-[1rem] leading-[1.75] text-[#526C8D]">
+                <LocalizedText value="Fast One started with a local mission: make high quality internet more affordable and more accessible for the people and businesses building Cambodia's future." />
+              </p>
 
-          <div className="relative min-h-[390px] overflow-hidden rounded-[8px] border border-[#D8E8F8] shadow-[0_18px_44px_rgba(13,39,77,0.08)] max-[640px]:min-h-[290px]">
-            <Image
-              className="object-cover"
-              src="/img/map_bg.png"
-              alt="Fast One coverage map"
-              fill
-              sizes="(max-width: 980px) 100vw, 42vw"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(6,27,70,0.86)_0%,rgba(6,27,70,0)_100%)] p-6 text-white">
-              <div className="flex items-center gap-2.5 text-[0.95rem] font-black">
-                <BadgeCheckIcon className="size-5 text-[#5EEAD4]" />
-                <LocalizedText value="Installation guidance before payment" />
+              <div className="mt-7 flex flex-wrap gap-2.5">
+                <span className="rounded-full border border-[#D5E6F5] bg-[#F4F9FD] px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
+                  <LocalizedText value="10 network locations" />
+                </span>
+                <span className="rounded-full border border-[#D5E6F5] bg-[#F4F9FD] px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
+                  <LocalizedText value="Local support" />
+                </span>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid">
+                <a
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-[#087FF5] px-6 text-[0.94rem] font-black text-white shadow-[0_14px_30px_rgba(0,102,255,0.3)] transition hover:-translate-y-0.5 hover:bg-[#1395FF]"
+                  href={salesUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <LocalizedText value="Send location" />
+                  <MapPinIcon className="size-5" />
+                </a>
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-[#BED8EB] bg-white px-6 text-[0.94rem] font-black text-[#061B46] transition hover:-translate-y-0.5 hover:border-[#0066FF] hover:bg-[#F7FBFF]"
+                  href="/coverage"
+                >
+                  <LocalizedText value="Explore coverage" />
+                  <ArrowIcon className="size-5 text-[#0066FF]" />
+                </Link>
+              </div>
+
+              <div className="mt-9 flex items-start gap-3 border-t border-[#DCE9F3] pt-6">
+                <MapPinIcon className="mt-0.5 size-5 flex-none text-[#0066FF]" />
+                <div>
+                  <strong className="block text-[0.82rem] font-black text-[#173B65]">
+                    <LocalizedText
+                      value={{
+                        en: "Fast One office",
+                        km: "ការិយាល័យ Fast One",
+                      }}
+                    />
+                  </strong>
+                  <p className="mb-0 mt-1 max-w-[520px] text-[0.76rem] font-bold leading-[1.55] text-[#607890]">
+                    {address}
+                  </p>
+                  <a
+                    className="mt-2 inline-flex items-center gap-1.5 text-[0.75rem] font-black text-[#0066FF] hover:underline"
+                    href={officeDirectionsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <LocalizedText
+                      value={{
+                        en: "Open in Google Maps",
+                        km: "បើកក្នុង Google Maps",
+                      }}
+                    />
+                    <ArrowIcon className="size-3.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex min-h-[620px] items-center max-[980px]:min-h-0">
+              <div className="relative mx-auto aspect-[1346/1215] w-full max-w-[720px] overflow-visible">
+                <Image
+                  className="object-contain opacity-90 saturate-[0.82] drop-shadow-[0_18px_24px_rgba(6,27,70,0.1)]"
+                  src="/img/cambodia-location-map.svg"
+                  alt="Map of Cambodia showing Fast One network locations"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 54vw"
+                  style={{
+                    maskImage:
+                      "radial-gradient(ellipse 88% 84% at center, black 58%, rgba(0, 0, 0, 0.82) 76%, transparent 100%)",
+                    WebkitMaskImage:
+                      "radial-gradient(ellipse 88% 84% at center, black 58%, rgba(0, 0, 0, 0.82) 76%, transparent 100%)",
+                  }}
+                />
+
+                <a
+                  className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 focus:outline-none"
+                  href={officeDirectionsUrl}
+                  style={getCambodiaMapPosition(
+                    coverageLocations[0].latitude,
+                    coverageLocations[0].longitude,
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Fast One Cambodia office in Google Maps"
+                >
+                  <span className="relative flex size-8 items-center justify-center rounded-full border-2 border-white bg-white p-1 shadow-[0_4px_12px_rgba(6,27,70,0.32)] transition duration-150 group-hover:scale-125 group-focus-visible:scale-125 max-[520px]:size-7">
+                    <Image
+                      className="h-auto w-full"
+                      src="/img/fastone_mini_logo.png"
+                      alt=""
+                      width={24}
+                      height={18}
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <span className="pointer-events-none absolute bottom-[calc(100%+8px)] left-1/2 w-max -translate-x-1/2 rounded-[6px] bg-[#061B46] px-2.5 py-1.5 text-white opacity-0 shadow-[0_8px_20px_rgba(6,27,70,0.24)] transition group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <strong className="block text-[0.78rem] font-black">
+                      <LocalizedText
+                        value={{
+                          en: "Fast One office",
+                          km: "ការិយាល័យ Fast One",
+                        }}
+                      />
+                    </strong>
+                    <small className="mt-0.5 block text-[0.66rem] font-bold text-white/70">
+                      <LocalizedText value="Phnom Penh" />
+                    </small>
+                  </span>
+                </a>
+
+                {coverageLocations.slice(1).map((location) => (
+                  <a
+                    className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 focus:outline-none"
+                    href={`https://www.google.com/maps/search/?api=1&query=${location.latitude}%2C${location.longitude}`}
+                    style={getCambodiaMapPosition(
+                      location.latitude,
+                      location.longitude,
+                    )}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${location.name} in Google Maps`}
+                    key={location.name}
+                  >
+                    <span
+                      className={cx(
+                        "relative flex size-8 items-center justify-center rounded-full border-2 border-white bg-white p-1 shadow-[0_4px_12px_rgba(6,27,70,0.32)] transition duration-150 group-hover:scale-125 group-focus-visible:scale-125 max-[520px]:size-7",
+                        coverageMarkerShifts[location.name],
+                      )}
+                    >
+                      <Image
+                        className="h-auto w-full"
+                        src="/img/fastone_mini_logo.png"
+                        alt=""
+                        width={24}
+                        height={18}
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span className="pointer-events-none absolute bottom-[calc(100%+8px)] left-1/2 w-max -translate-x-1/2 rounded-[6px] bg-[#061B46] px-2.5 py-1.5 text-[0.68rem] font-black text-white opacity-0 shadow-[0_8px_20px_rgba(6,27,70,0.24)] transition group-hover:opacity-100 group-focus-visible:opacity-100">
+                      {location.name}
+                    </span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
-        <div className={wideInner}>
-          <div className="mx-auto mb-10 max-w-[720px] text-center max-[640px]:mb-7">
-            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF]">
-              <LocalizedText value="FAQ" />
-            </p>
-            <h2 className="mb-0 mt-3 text-[2.35rem] font-black leading-[1.1] text-[#061B46] max-[640px]:text-[1.85rem]">
-              <LocalizedText value="Frequently asked questions" />
-            </h2>
-            <p className="mx-auto mb-0 mt-3 max-w-[600px] text-[1rem] leading-[1.6] text-[#526C8D]">
-              <LocalizedText value="Answers to common questions about coverage, installation, and plans." />
-            </p>
-          </div>
-
-          <div className="mx-auto grid w-[min(860px,100%)] gap-4">
-            {faqs.map((faq) => (
-              <details
-                className="group rounded-[8px] border border-[#D8E8F8] bg-white shadow-[0_14px_32px_rgba(13,39,77,0.05)] open:border-[#0066FF]"
-                key={faq.question}
-              >
-                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 text-[1.02rem] font-black text-[#061B46] [&::-webkit-details-marker]:hidden">
-                  <LocalizedText value={faq.question} />
-                  <ChevronDownIcon className="size-5 flex-none text-[#0066FF] transition-transform duration-150 group-open:rotate-180" />
-                </summary>
-                <p className="m-0 px-6 pb-5 text-[0.96rem] leading-[1.6] text-[#526C8D]">
-                  <LocalizedText value={faq.answer} />
-                </p>
-              </details>
-            ))}
-          </div>
-
-          <p className="mb-0 mt-8 text-center text-[0.96rem] font-bold text-[#526C8D]">
-            <LocalizedText value="Still have questions?" />{" "}
-            <a
-              className="font-black text-[#0066FF] hover:underline"
-              href={salesUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LocalizedText value="Contact sales" />
-            </a>
-          </p>
-        </div>
-      </section>
+      <Faq />
 
       <section className="bg-[#061B46] py-[68px] text-white max-[640px]:py-[54px]">
         <div

@@ -122,29 +122,54 @@ export const testimonials = [
 
 export const faqs = [
   {
-    question: "How do I know if Fast One covers my area?",
-    answer:
-      "Send your home or office location to Fast One sales via Telegram. The team will confirm service availability, cable requirements, and installation timing before you commit.",
+    question: {
+      en: "How do I know if Fast One covers my area?",
+      km: "តើខ្ញុំអាចដឹងថា Fast One មានសេវាគ្របដណ្តប់នៅតំបន់របស់ខ្ញុំដោយរបៀបណា?",
+    },
+    answer: {
+      en: "Send your home or office location to Fast One sales via Telegram. The team will confirm service availability, cable requirements, and installation timing before you commit.",
+      km: "សូមផ្ញើទីតាំងផ្ទះ ឬការិយាល័យរបស់អ្នកទៅក្រុមផ្នែកលក់ Fast One តាម Telegram។ ក្រុមការងារនឹងបញ្ជាក់ពីសេវាគ្របដណ្តប់ តម្រូវការខ្សែកាប និងពេលវេលាដំឡើងជូនអ្នក។",
+    },
   },
   {
-    question: "How long does installation take?",
-    answer:
-      "Installation is usually completed within 3-5 days after payment and availability confirmation.",
+    question: {
+      en: "How long does installation take?",
+      km: "តើការដំឡើងត្រូវចំណាយពេលប៉ុន្មានថ្ងៃ?",
+    },
+    answer: {
+      en: "Installation is usually completed within 3-5 days after payment and availability confirmation.",
+      km: "ជាទូទៅ ការដំឡើងត្រូវបានបញ្ចប់ក្នុងរយៈពេល ៣ ទៅ ៥ ថ្ងៃ បន្ទាប់ពីការទូទាត់ និងការបញ្ជាក់ថាទីតាំងរបស់អ្នកមានសេវាគ្របដណ្តប់។",
+    },
   },
   {
-    question: "Is there a contract for home plans?",
-    answer:
-      "Home packages require a minimum one year contract, keeping the monthly price simple and predictable.",
+    question: {
+      en: "Is there a contract for home plans?",
+      km: "តើគម្រោងអ៊ីនធឺណិតសម្រាប់គេហដ្ឋានមានកិច្ចសន្យាដែរឬទេ?",
+    },
+    answer: {
+      en: "Home packages require a minimum one year contract, keeping the monthly price simple and predictable.",
+      km: "គម្រោងសម្រាប់គេហដ្ឋានតម្រូវឱ្យមានកិច្ចសន្យាយ៉ាងតិចមួយឆ្នាំ ដើម្បីរក្សាតម្លៃប្រចាំខែឱ្យមានភាពច្បាស់លាស់ និងថេរ។",
+    },
   },
   {
-    question: "Is a Wi-Fi router included?",
-    answer:
-      "Home plans are Wi-Fi router ready. The team confirms router setup and placement during installation.",
+    question: {
+      en: "Is a Wi-Fi router included?",
+      km: "តើមានរ៉ោតទ័រ Wi-Fi រួមបញ្ចូលក្នុងគម្រោងដែរឬទេ?",
+    },
+    answer: {
+      en: "Home plans are Wi-Fi router ready. The team confirms router setup and placement during installation.",
+      km: "គម្រោងសម្រាប់គេហដ្ឋានអាចប្រើជាមួយរ៉ោតទ័រ Wi-Fi បាន។ ក្រុមការងារនឹងបញ្ជាក់ពីការរៀបចំ និងទីតាំងដាក់រ៉ោតទ័រនៅពេលដំឡើង។",
+    },
   },
   {
-    question: "What if I need more than a home plan?",
-    answer:
-      "Fast One offers dedicated internet, DPLC, IPLC, and IP Transit for businesses that need guaranteed bandwidth and private circuits.",
+    question: {
+      en: "What if I need more than a home plan?",
+      km: "ចុះបើខ្ញុំត្រូវការសេវាលើសពីគម្រោងសម្រាប់គេហដ្ឋាន?",
+    },
+    answer: {
+      en: "Fast One offers dedicated internet, DPLC, IPLC, and IP Transit for businesses that need guaranteed bandwidth and private circuits.",
+      km: "Fast One ផ្តល់សេវាអ៊ីនធឺណិតផ្តាច់មុខ DPLC, IPLC និង IP Transit សម្រាប់អាជីវកម្មដែលត្រូវការកម្រិតបញ្ជូនមានការធានា និងបណ្តាញឯកជន។",
+    },
   },
 ];
 
