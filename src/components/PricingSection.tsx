@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import {
-  Briefcase as BriefcaseIcon,
+  ArrowRight as ArrowRightIcon,
   Check as CheckIcon,
-  Crown as CrownIcon,
-  Rocket as RocketIcon,
+  Sparkles as SparklesIcon,
 } from "lucide-react";
 import LocalizedText from "@/components/LocalizedText";
 import { plans, salesUrl } from "@/lib/site-data";
@@ -16,15 +16,12 @@ const yearlyDiscount = 0.2;
 const pricingPlanMeta = [
   {
     audience: "For everyday homes:",
-    icon: RocketIcon,
   },
   {
     audience: "For busy households:",
-    icon: BriefcaseIcon,
   },
   {
     audience: "For power users:",
-    icon: CrownIcon,
   },
 ];
 
@@ -43,30 +40,37 @@ export default function PricingSection() {
   const isYearly = billingCycle === "yearly";
 
   return (
-    <section className="bg-white py-[92px] max-[640px]:py-[66px]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-[#F6FAFF] py-[104px] max-[640px]:py-[72px]">
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[460px] w-[900px] -translate-x-1/2 rounded-full bg-[#DDEEFF]/70 blur-[100px]" />
+      <div className="pointer-events-none absolute -right-32 top-24 -z-10 size-[360px] rounded-full border-[70px] border-[#0066FF]/[0.035]" />
+
+      <div className="mx-auto max-w-[1240px] px-6 lg:px-8">
         <div className="mx-auto max-w-[720px] text-center">
-          <h2 className="m-0 text-[2.4rem] font-black leading-[1.08] text-[#061B46] max-[640px]:text-[1.85rem]">
+          {/* <p className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-[#CDE2FA] bg-white/80 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.14em] text-[#0066FF] shadow-[0_8px_24px_rgba(6,27,70,0.05)] backdrop-blur-sm">
+            <span className="size-2 rounded-full bg-[#008DFF] shadow-[0_0_0_4px_rgba(0,141,255,0.12)]" />
+            <LocalizedText value="Home fiber plans" />
+          </p> */}
+          <h2 className="m-0 text-[clamp(2.15rem,4vw,3.35rem)] font-black leading-[1.04] tracking-[-0.04em] text-[#061B46]">
             <LocalizedText value="Choose your right" />{" "}
             <span className="text-[#0066FF]">
               <LocalizedText value="plan!" />
             </span>
           </h2>
-          <p className="mx-auto mb-0 mt-5 max-w-[640px] text-[1.2rem] leading-[1.45] text-[#666A73] max-[640px]:text-[1rem]">
+          <p className="mx-auto mb-0 mt-5 max-w-[620px] text-[1.02rem] leading-[1.7] text-[#526C8D] max-[640px]:text-[0.95rem]">
             <LocalizedText value="Select from best plans, ensuring a perfect match. Need more or less? Customize your subscription for a seamless fit!" />
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <div
-              className="inline-flex items-center rounded-[8px] bg-white p-1 shadow-[0_10px_28px_rgba(15,23,42,0.06)]"
+              className="inline-flex items-center rounded-[12px] border border-[#D6E6F5] bg-white p-1.5 shadow-[0_10px_28px_rgba(6,27,70,0.07)]"
               aria-label="Billing frequency"
             >
               <button
                 className={cx(
-                  "inline-flex min-h-8 items-center rounded-[8px] px-3 text-[0.86rem] font-black transition",
+                  "inline-flex min-h-9 items-center rounded-[8px] px-4 text-[0.82rem] font-black transition",
                   billingCycle === "monthly"
-                    ? "bg-[#F0F0F0] text-[#0066FF]"
-                    : "text-[#061B46]",
+                    ? "bg-[#061B46] text-white shadow-sm"
+                    : "text-[#526C8D] hover:text-[#0066FF]",
                 )}
                 type="button"
                 aria-pressed={billingCycle === "monthly"}
@@ -76,8 +80,10 @@ export default function PricingSection() {
               </button>
               <button
                 className={cx(
-                  "inline-flex min-h-8 items-center rounded-[8px] px-3 text-[0.86rem] font-black transition",
-                  isYearly ? "bg-[#F0F0F0] text-[#0066FF]" : "text-[#061B46]",
+                  "inline-flex min-h-9 items-center rounded-[8px] px-4 text-[0.82rem] font-black transition",
+                  isYearly
+                    ? "bg-[#061B46] text-white shadow-sm"
+                    : "text-[#526C8D] hover:text-[#0066FF]",
                 )}
                 type="button"
                 aria-pressed={isYearly}
@@ -86,17 +92,16 @@ export default function PricingSection() {
                 <LocalizedText value="Yearly" />
               </button>
             </div>
-            <span className="inline-flex min-h-6 items-center rounded-full border border-[#0066FF] px-3 text-[0.8rem] font-bold text-[#0066FF]">
+            <span className="inline-flex min-h-8 items-center rounded-full bg-[#E4F2FF] px-3.5 text-[0.76rem] font-black text-[#0066FF] ring-1 ring-inset ring-[#0066FF]/10">
               <LocalizedText value={isYearly ? "20% off" : "Monthly rate"} />
             </span>
           </div>
         </div>
 
-        <div className="mt-[78px] grid grid-cols-3 gap-6 px-12 max-[980px]:mt-12 max-[980px]:grid-cols-1">
+        <div className="mt-14 grid grid-cols-3 items-stretch gap-5 max-[980px]:mx-auto max-[980px]:max-w-[620px] max-[980px]:grid-cols-1">
           {plans.map((plan, index) => {
             const featured = index === 1;
             const meta = pricingPlanMeta[index];
-            const Icon = meta.icon;
             const monthlyAmount = getPlanAmount(plan.price);
             const displayAmount = isYearly
               ? monthlyAmount * (1 - yearlyDiscount)
@@ -105,77 +110,83 @@ export default function PricingSection() {
             return (
               <article
                 className={cx(
-                  "relative grid min-h-[458px] overflow-hidden rounded-xl border bg-white p-6 text-[#061B46] shadow-[0_16px_38px_rgba(15,23,42,0.04)] max-[640px]:min-h-0",
+                  "group relative grid min-h-[510px] overflow-hidden rounded-[20px] border bg-white p-7 text-[#061B46] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_54px_rgba(6,27,70,0.13)] max-[640px]:min-h-0 max-[640px]:p-6",
                   featured
-                    ? "border-2 border-[#061B46] shadow-[0_8px_18px_rgba(15,23,42,0.2)]"
-                    : "border-[#D8D8D8]",
+                    ? "border-[#0066FF] shadow-[0_22px_54px_rgba(0,102,255,0.16)]"
+                    : "border-[#D9E7F4] shadow-[0_14px_38px_rgba(6,27,70,0.06)]",
                 )}
                 key={plan.name}
               >
-                <span className="pointer-events-none absolute -right-7 -top-9 h-[135px] w-[135px] rounded-full bg-[#f2f2f2]" />
-                <div className="relative z-10 ">
-                  <span className="absolute -right-1 -top-2 text-[#061B46]">
-                    <Icon className="size-11" strokeWidth={1.4} />
+                <span className={cx("absolute inset-x-0 top-0 h-1", featured ? "bg-[linear-gradient(90deg,#0066FF,#00B8F5)]" : "bg-[#DDE9F5]")} />
+                <Image
+                  className="pointer-events-none absolute -right-25 -top-15 h-auto w-[300px] select-none opacity-[0.09] transition duration-300 group-hover:scale-110 group-hover:opacity-[0.14]"
+                  src="/img/fastone_mini_logo.png"
+                  alt=""
+                  width={190}
+                  height={144}
+                  aria-hidden="true"
+                  draggable={false}
+                />
+                {/* {featured && (
+                  <span className="pointer-events-none absolute right-5 top-5 z-20 inline-flex min-h-8 items-center gap-2 rounded-full border border-white/35 bg-[linear-gradient(135deg,#061B46_0%,#0066FF_70%,#00AEEF_100%)] px-3.5 text-[0.74rem] font-black tracking-[0.02em] text-white shadow-[0_10px_24px_rgba(0,102,255,0.28)]">
+                    <SparklesIcon
+                      className="size-3.5 fill-[#7EE7FF] text-[#7EE7FF]"
+                      strokeWidth={1.8}
+                    />
+                    <LocalizedText value="Recommended" />
                   </span>
-
-                  <h3 className="m-0 pr-16 text-[1.48rem] font-black leading-none text-[#0066FF]">
+                )} */}
+                
+                <div className="relative z-10 flex h-full flex-col">
+                  <h3 className="mb-0 mt-2 text-[1.7rem] font-black leading-none text-[#061B46]">
                     <LocalizedText value={plan.name} />
                   </h3>
 
-                  <div className="mt-6 flex items-end gap-1.5">
-                    <span className="pb-[1.55rem] text-[1.1rem] font-medium leading-none text-[#59616D]">
-                      $
-                    </span>
-                    <p className="m-0 text-[4.05rem] font-black leading-[0.82] tracking-normal text-[#061B46] max-[640px]:text-[3.45rem]">
-                      {formatPlanAmount(displayAmount)}
-                    </p>
-                    <span className="mb-1.5 inline-flex min-h-6 items-center rounded-[8px] bg-[#E9E9E9] px-2.5 text-[0.76rem] font-black leading-none text-[#0066FF]">
-                      <LocalizedText value={isYearly ? "20% off" : "Monthly"} />
-                    </span>
-                  </div>
-
-                  <p className="mb-0 mt-6 text-[1rem] leading-[1.5] text-[#59616D]">
-                    <LocalizedText
-                      value={
-                        isYearly
-                          ? "per month, billed yearly"
-                          : "per month, billed monthly"
-                      }
-                    />
+                  <p className="mb-0 mt-2 text-[0.84rem] font-bold text-[#6A819B]">
+                    <LocalizedText value={meta.audience} />
                   </p>
 
-                  <a
-                    className={cx(
-                      "mt-7 inline-flex min-h-8 w-full items-center justify-center rounded-[8px] px-4 text-[0.9rem] font-bold transition duration-150 hover:-translate-y-px",
-                      featured
-                        ? "bg-[#061B46] text-white hover:bg-black"
-                        : "bg-[#E7E7E7] text-[#061B46] hover:bg-[#DCDCDC]",
-                    )}
-                    href={salesUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <LocalizedText value="Purchase Now" />
-                  </a>
-
-                  <div className="mt-7">
-                    <p className="m-0 text-[1.05rem] font-black leading-tight text-[#061B46]">
-                      <LocalizedText value={meta.audience} />
+                  <div className="mt-7 flex items-end gap-1.5 border-b border-[#E3EDF6] pb-7">
+                    <span className="pb-[1.2rem] text-[1.2rem] font-black leading-none text-[#0066FF]">
+                      $
+                    </span>
+                    <p className="m-0 text-[3.75rem] font-black leading-[0.82] tracking-[-0.05em] text-[#061B46] max-[640px]:text-[3.35rem]">
+                      {formatPlanAmount(displayAmount)}
                     </p>
-
-                    <ul className="mt-6 grid gap-4 p-0">
+                    <span className="mb-0.5 text-[0.76rem] font-bold leading-[1.3] text-[#71869E]">
+                      <LocalizedText value={isYearly ? "per month, billed yearly" : "per month, billed monthly"} />
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col pt-6">
+                    <ul className="m-0 grid list-none gap-3.5 p-0">
                       {[`Up to ${plan.speed}`, ...plan.features].map(
                         (feature) => (
                           <li
-                            className="flex items-start gap-3 text-[0.98rem] font-bold leading-[1.35] text-[#061B46]"
+                            className="flex items-start gap-3 text-[0.9rem] font-bold leading-[1.45] text-[#36516F]"
                             key={feature}
                           >
-                            <CheckIcon className="mt-0.5 size-4 flex-none text-[#0066FF]" />
+                            <span className="mt-px flex size-5 flex-none items-center justify-center rounded-full bg-[#E8F4FF] text-[#0066FF]">
+                              <CheckIcon className="size-3.5" strokeWidth={3} />
+                            </span>
                             <LocalizedText value={feature} />
                           </li>
                         ),
                       )}
                     </ul>
+                    <a
+                      className={cx(
+                        "mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] px-4 pt-px text-[0.9rem] font-black transition duration-150 hover:-translate-y-px",
+                        featured
+                          ? "bg-[#0066FF] text-white shadow-[0_12px_26px_rgba(0,102,255,0.24)] hover:bg-[#008DFF]"
+                          : "border border-[#C8DCEC] bg-[#F5FAFF] text-[#061B46] hover:border-[#0066FF] hover:text-[#0066FF]",
+                      )}
+                      href={salesUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <LocalizedText value="Learn More" />
+                      <ArrowRightIcon className="size-4" />
+                    </a>
                   </div>
                 </div>
               </article>

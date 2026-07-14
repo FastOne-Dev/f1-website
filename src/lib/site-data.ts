@@ -16,7 +16,7 @@ export const plans = [
   {
     name: "Home 35",
     speed: "35 Mbps",
-    price: "$18",
+    price: "$15",
     note: "For everyday browsing, calls, and HD streaming.",
     features: [
       "35 Mbps Premium Bandwidth",

@@ -25,6 +25,7 @@ export const kmDictionary: Record<string, string> = {
   "Choose a home package, then connect with Fast One sales for availability and installation details.":
     "ជ្រើសរើសកញ្ចប់ផ្ទះ រួចទាក់ទងផ្នែកលក់ Fast One ដើម្បីពិនិត្យតំបន់សេវាកម្ម និងព័ត៌មានដំឡើង។",
   "Popular": "ពេញនិយម",
+  "Recommended": "បានណែនាំ",
   "Compare plans": "ប្រៀបធៀបកញ្ចប់",
   "Private, reliable networks for serious operations.":
     "បណ្តាញឯកជន និងជឿទុកចិត្តបានសម្រាប់ប្រតិបត្តិការសំខាន់ៗ។",
@@ -181,9 +182,9 @@ export const kmDictionary: Record<string, string> = {
   "Plan recommendation": "ការណែនាំកញ្ចប់",
   "Service questions": "សំណួរសេវាកម្ម",
 
-  "Home 35": "ផ្ទះ 35",
-  "Home 50": "ផ្ទះ 50",
-  "Home 100": "ផ្ទះ 100",
+  "Home 35": "Home 35",
+  "Home 50": "Home 50",
+  "Home 100": "Home 100",
   "For everyday browsing, calls, and HD streaming.":
     "សម្រាប់បើកគេហទំព័រ ហៅទូរស័ព្ទ និងមើលវីដេអូ HD ប្រចាំថ្ងៃ។",
   "For busy homes with gaming, video calls, and streaming.":
