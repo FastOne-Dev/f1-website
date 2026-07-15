@@ -722,8 +722,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Faq />
-
       <section className="bg-[#061B46] py-[68px] text-white max-[640px]:py-[54px]">
         <div
           className={`${wideInner} flex items-center justify-between gap-8 max-[780px]:grid`}
@@ -756,6 +754,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Faq />
+
     </main>
   );
 }
