@@ -134,6 +134,44 @@ const serviceHrefs: Record<string, string> = {
   "IP Transit": "/business/ip-transit",
 };
 
+const partnerLogos = [
+  {
+    src: "/img/partners/partner-1.png",
+    alt: "CIS",
+    width: 200,
+    height: 200,
+    className: "max-h-[58px] max-w-[112px]",
+  },
+  {
+    src: "/img/partners/partner-2.png",
+    alt: "National Counter-Terrorism Committee",
+    width: 348,
+    height: 348,
+    className: "max-h-[66px] max-w-[82px]",
+  },
+  {
+    src: "/img/partners/partner-3.jpg",
+    alt: "KLGA",
+    width: 279,
+    height: 245,
+    className: "max-h-[62px] max-w-[88px]",
+  },
+  {
+    src: "/img/partners/partner-4.jpg",
+    alt: "Ocean Delight",
+    width: 276,
+    height: 69,
+    className: "max-h-[42px] max-w-[150px]",
+  },
+  {
+    src: "/img/partners/partner-5.jpg",
+    alt: "Bee Union",
+    width: 304,
+    height: 81,
+    className: "max-h-[42px] max-w-[150px]",
+  },
+];
+
 function SplitTitle() {
   return (
     <>
@@ -285,7 +323,7 @@ export default function Home() {
 
       <PricingSection />
 
-      <section className="bg-[#F5FAFF] pb-[92px] max-[640px]:pb-[66px]">
+      {/* <section className="bg-[#F5FAFF] pb-[92px] max-[640px]:pb-[66px]">
         <div className={wideInner}>
           <div className="relative isolate grid min-h-[500px] grid-cols-[1.05fr_0.95fr] items-center overflow-hidden  bg-[linear-gradient(115deg,#061B46_0%,#082E68_58%,#075A8F_100%)] text-white shadow-[0_24px_64px_rgba(6,27,70,0.2)] max-[900px]:grid-cols-1">
             <div className="absolute inset-0 -z-20 opacity-20 [background-image:linear-gradient(rgba(125,211,252,0.22)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.22)_1px,transparent_1px)] [background-size:42px_42px] [mask-image:linear-gradient(to_right,black,transparent_72%)]" />
@@ -379,7 +417,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-[#F5FAFF] py-[92px] max-[640px]:py-[66px]">
         <div className={wideInner}>
@@ -756,6 +794,47 @@ export default function Home() {
       </section>
 
       <Faq />
+
+      <section
+        className="relative isolate overflow-hidden bg-white py-[100px] max-[640px]:py-[54px]"
+        aria-labelledby="partners-title"
+      >
+        <div className={wideInner}>
+          <div>
+            <div className="mx-auto max-w-[760px] text-center">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.14em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
+                <LocalizedText value="Our partners" />
+              </p>
+              <h2
+                className="mb-0 mt-4 text-[clamp(1.85rem,3vw,2.65rem)] font-black leading-[1.12] tracking-[-0.035em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.4] [[lang=km]_&]:tracking-normal"
+                id="partners-title"
+              >
+                <LocalizedText value="We work with the best partners." />
+              </h2>
+            </div>
+
+            <ul className="m-0 mt-10 grid list-none grid-cols-5 gap-4 p-0 max-[1080px]:grid-cols-3 max-[700px]:mt-8 max-[700px]:grid-cols-2 max-[420px]:grid-cols-1">
+              {partnerLogos.map((partner) => (
+                <li
+                  className="group flex min-h-[96px] items-center justify-center rounded-[11px] border border-[#DDE5EC] bg-white px-5 py-4 shadow-[0_8px_22px_rgba(6,27,70,0.055)] transition duration-200 hover:-translate-y-0.5 hover:border-[#BFD9EF] hover:shadow-[0_14px_30px_rgba(0,102,255,0.1)] max-[640px]:min-h-[90px] max-[640px]:px-4"
+                  key={partner.src}
+                >
+                  <Image
+                    className={cx(
+                      "h-auto w-auto object-contain transition-transform duration-200 group-hover:scale-[1.025]",
+                      partner.className,
+                    )}
+                    src={partner.src}
+                    alt={partner.alt}
+                    width={partner.width}
+                    height={partner.height}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
     </main>
   );
