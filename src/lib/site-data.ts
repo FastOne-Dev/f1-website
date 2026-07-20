@@ -3,6 +3,8 @@ export const salesUrl = "https://t.me/fastonecambodiasale";
 export const address =
   "#29, Mao Tse Toung Blvd, Sangkat Toul Tompoung II, Khan Chamkarmorn, Phnom Penh";
 
+export const officeMapUrl = "https://maps.app.goo.gl/H4gJkNtFVhPhi8db8";
+
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Plans", href: "/plans" },

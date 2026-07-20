@@ -68,7 +68,7 @@ export const aboutDetailPages: Record<
     },
     intro: {
       eyebrow: "Who we are",
-      title: "Focused on the communities where connectivity matters every day.",
+      title: "Connecting communities, every day.",
       copy:
         "FAST ONE (CAM), Co., Ltd. provides affordable, reliable internet service for homes, SMEs, enterprises, and organizations across its service areas.",
     },
