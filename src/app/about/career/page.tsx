@@ -42,7 +42,7 @@ export default function CareerPage() {
               <h1 className="mb-0 mt-5 text-[clamp(2.6rem,5vw,4.15rem)] font-black leading-[1.03] tracking-[-0.04em] text-[#061B46] [text-wrap:balance] max-[640px]:text-[2.35rem] [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
                 <span className="block">
                   <LocalizedText
-                    value={{ en: "Join our Team,", km: "ចូលរួមជាមួយក្រុមការងាររបស់យើង" }}
+                    value={{ en: "Join Our Team,", km: "ចូលរួមជាមួយក្រុមការងាររបស់យើង" }}
                   />
                 </span>
                 <span className="block text-[#0066FF]">
