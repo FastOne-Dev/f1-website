@@ -338,7 +338,7 @@ export default function Home() {
                 <LocalizedText
                   value={{
                     en: "Reliable internet. Practical prices. Local support.",
-                    km: "អ៊ីនធឺណិតដែលអាចទុកចិត្តបាន។ តម្លៃសមរម្យ។ ជំនួយក្នុងស្រុក។",
+                    km: "អ៊ីនធឺណិតដែលអាចទុកចិត្តបាន តម្លៃសមរម្យ ជំនួយក្នុងស្រុក",
                   }}
                 />
               </h2>
@@ -346,7 +346,7 @@ export default function Home() {
                 <LocalizedText
                   value={{
                     en: "Fast One keeps homes and businesses connected with dependable fiber service and a team that understands Cambodia.",
-                    km: "Fast One រក្សាការតភ្ជាប់សម្រាប់គេហដ្ឋាន និងអាជីវកម្ម ជាមួយសេវាហ្វាយបឺរដែលអាចទុកចិត្តបាន និងក្រុមការងារដែលយល់ពីកម្ពុជា។",
+                    km: "Fast One រក្សាការតភ្ជាប់សម្រាប់គេហដ្ឋាន និងអាជីវកម្ម ជាមួយសេវាហ្វាយបឺរដែលអាចទុកចិត្តបាន និងក្រុមការងារដែលយល់ពីកម្ពុជា",
                   }}
                 />
               </p>
