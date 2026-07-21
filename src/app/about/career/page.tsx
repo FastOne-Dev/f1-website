@@ -47,7 +47,7 @@ export default function CareerPage() {
                 </span>
                 <span className="block text-[#0066FF]">
                   <LocalizedText
-                    value={{ en: "connect Cambodia.", km: "ដើម្បីអភិវឌ្ឍន៍កម្ពុជា" }}
+                    value={{ en: "Connect Cambodia.", km: "ដើម្បីអភិវឌ្ឍន៍កម្ពុជា" }}
                   />
                 </span>
               </h1>
