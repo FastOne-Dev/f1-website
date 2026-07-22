@@ -9,6 +9,7 @@ import {
   Target,
 } from "lucide-react";
 import LocalizedText from "@/components/LocalizedText";
+import MotionReveal from "@/components/MotionReveal";
 import { aboutDetailPages } from "@/lib/nav-page-content";
 import { qualities } from "@/lib/site-data";
 import { sectionInner } from "@/lib/ui-classes";
@@ -51,7 +52,7 @@ export default function MissionVisionPage() {
 
         <div className={sectionInner}>
           <div className="grid grid-cols-[minmax(0,0.92fr)_minmax(460px,1.08fr)] items-center gap-[clamp(42px,6vw,76px)] max-[980px]:grid-cols-1 max-[980px]:gap-11">
-            <div>
+            <MotionReveal direction="left">
               <p className="m-0 flex items-center gap-3 text-[0.8rem] font-black uppercase tracking-[0.14em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
                 <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
                 <LocalizedText
@@ -95,55 +96,48 @@ export default function MissionVisionPage() {
                   <Eye className="size-3.5 text-[#0066FF]" /> Future-focused
                 </span>
               </div>
-            </div>
+            </MotionReveal>
 
-            <div className="relative min-w-0">
-              <div
-                className="pointer-events-none absolute -inset-5 -z-10 rounded-[30px] bg-[linear-gradient(140deg,#DCEEFF,#F5FAFF)]"
-                aria-hidden="true"
-              />
-              <div className="relative rounded-[26px] p-4 shadow-[0_26px_70px_rgba(6,27,70,0.16)] ring-1 ring-[#0C254E]/[0.06] max-[640px]:p-3">
-                <div className="relative h-[480px] overflow-hidden rounded-[18px] max-[980px]:h-[440px] max-[640px]:h-[330px]">
-                  <div className="absolute left-0 top-[13%] z-10 flex items-center gap-3 rounded-2xl border border-[#D5E8F8] bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md">
-                    <span className="flex size-9 items-center justify-center rounded-xl bg-[#087CFA] text-white">
-                      <Target className="size-4" />
+            <MotionReveal className="relative min-w-0" delay={0.12} direction="right">
+              <div className="relative h-[560px] max-[980px]:h-[500px] max-[640px]:h-[380px]">
+                <div className="absolute left-[-3%] top-[5%] z-10 w-[220px] animate-[chip-float_5.5s_ease-in-out_infinite] overflow-hidden rounded-full border border-[#8FCBFF] bg-[linear-gradient(135deg,#E3F2FF,#BFE0FF)] px-4 py-3 shadow-[0_16px_38px_rgba(0,141,255,0.3)] ring-1 ring-white/60 backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-[linear-gradient(180deg,rgba(255,255,255,0.6),transparent)] motion-reduce:animate-none max-[640px]:w-[190px] max-[640px]:px-3">
+                  <div className="relative flex items-center gap-3">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#0066FF] text-white shadow-[0_4px_12px_rgba(0,102,255,0.5)]">
+                      <Target className="size-[17px]" />
                     </span>
                     <span>
-                      <strong className="block text-[0.75rem] font-black uppercase tracking-[0.12em] text-[#061B46]">
-                        Mission
-                      </strong>
-                      <small className="text-[0.72rem] text-[#607793]">
-                        Access for everyone
-                      </small>
+                      <span className="block text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#0053D6]">Mission</span>
+                      <span className="mt-0.5 block text-[0.75rem] font-bold leading-[1.3] text-[#285C91]">Access for everyone</span>
                     </span>
-                  </div>
-                  <div className="absolute bottom-[9%] right-[-2%] z-10 flex items-center gap-3 rounded-2xl border border-white/15 bg-white px-4 py-3 text-[#061B46] shadow-2xl">
-                    <span className="flex size-9 items-center justify-center rounded-xl bg-[#E7F5FF] text-[#087CFA]">
-                      <Eye className="size-4" />
-                    </span>
-                    <span>
-                      <strong className="block text-[0.75rem] font-black uppercase tracking-[0.12em]">
-                        Vision
-                      </strong>
-                      <small className="text-[0.72rem] text-[#607793]">
-                        A connected Cambodia
-                      </small>
-                    </span>
-                  </div>
-                  <div className="relative h-full p-[7%]">
-                    <Image
-                      className="object-contain drop-shadow-[0_30px_35px_rgba(0,0,0,0.25)]"
-                      src="/img/mission-vision-test.png"
-                      alt="A Cambodian network specialist helping a student and local business owner get connected"
-                      fill
-                      sizes="(max-width: 980px) 100vw, 50vw"
-                      quality={82}
-                      preload
-                    />
                   </div>
                 </div>
+                <div
+                  className="absolute bottom-[9%] right-[-10%] z-10 w-[230px] animate-[chip-float_5.5s_ease-in-out_infinite] overflow-hidden rounded-full border border-[#8FCBFF] bg-[linear-gradient(135deg,#E3F2FF,#BFE0FF)] px-4 py-3 shadow-[0_16px_38px_rgba(0,141,255,0.3)] ring-1 ring-white/60 backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-[linear-gradient(180deg,rgba(255,255,255,0.6),transparent)] motion-reduce:animate-none max-[640px]:right-0 max-[640px]:w-[200px] max-[640px]:px-3"
+                  style={{ animationDelay: "-2.75s" }}
+                >
+                  <div className="relative flex items-center gap-3">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#0066FF] text-white shadow-[0_4px_12px_rgba(0,102,255,0.5)]">
+                      <Eye className="size-[17px]" />
+                    </span>
+                    <span>
+                      <span className="block text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#0053D6]">Vision</span>
+                      <span className="mt-0.5 block text-[0.75rem] font-bold leading-[1.3] text-[#285C91]">A connected Cambodia</span>
+                    </span>
+                  </div>
+                </div>
+                <div className="relative h-full w-full">
+                  <Image
+                    className="scale-[1.18] -translate-y-10 object-contain object-center drop-shadow-[0_30px_35px_rgba(0,0,0,0.25)] max-[640px]:scale-[1.1]"
+                    src="/img/mission-vision-test.png"
+                    alt="A Cambodian network specialist helping a student and local business owner get connected"
+                    fill
+                    sizes="(max-width: 980px) 100vw, 50vw"
+                    quality={82}
+                    preload
+                  />
+                </div>
               </div>
-            </div>
+            </MotionReveal>
           </div>
         </div>
       </section>
@@ -154,7 +148,7 @@ export default function MissionVisionPage() {
         className="relative scroll-mt-20 overflow-hidden bg-[#F5FAFF] py-20 max-[760px]:py-14"
       >
         <div className={container}>
-          <div className="mx-auto max-w-[720px] text-center">
+          <MotionReveal className="mx-auto max-w-[720px] text-center">
             <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
               Mission &amp; Vision
             </p>
@@ -167,9 +161,9 @@ export default function MissionVisionPage() {
                 }}
               />
             </h2>
-          </div>
+          </MotionReveal>
 
-          <div className="relative mx-auto mt-10 min-h-[480px] max-w-[960px] max-[820px]:flex max-[820px]:min-h-0 max-[820px]:flex-col max-[820px]:gap-5">
+          <MotionReveal className="relative mx-auto mt-10 min-h-[480px] max-w-[960px] max-[820px]:flex max-[820px]:min-h-0 max-[820px]:flex-col max-[820px]:gap-5" delay={0.1}>
             <div
               className="absolute left-1/2 top-1/2 size-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C9E0F7] max-[820px]:hidden"
               aria-hidden="true"
@@ -230,7 +224,7 @@ export default function MissionVisionPage() {
                 <LocalizedText value={vision.intro.copy} />
               </p>
             </article>
-          </div>
+          </MotionReveal>
         </div>
       </section>
 
@@ -240,7 +234,7 @@ export default function MissionVisionPage() {
         className="scroll-mt-20 overflow-hidden bg-white py-[100px] max-[640px]:py-[68px]"
       >
         <div className={container}>
-          <div className="flex items-end justify-between gap-10 max-[760px]:flex-col max-[760px]:items-start">
+          <MotionReveal className="flex items-end justify-between gap-10 max-[760px]:flex-col max-[760px]:items-start">
             <div>
               <div className="flex items-center gap-4 text-[0.76rem] font-black uppercase tracking-[0.16em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
                 <span>03</span>
@@ -268,9 +262,9 @@ export default function MissionVisionPage() {
                 }}
               />
             </p>
-          </div>
+          </MotionReveal>
 
-          <div className="relative mt-20">
+          <MotionReveal className="relative mt-20" delay={0.08}>
             <span
               className="absolute left-[8%] right-[8%] top-8 h-px bg-gradient-to-r from-transparent via-[#9EC9F6] to-transparent max-[760px]:bottom-8 max-[760px]:left-8 max-[760px]:right-auto max-[760px]:top-8 max-[760px]:h-auto max-[760px]:w-px"
               aria-hidden="true"
@@ -302,9 +296,9 @@ export default function MissionVisionPage() {
                 </article>
               ))}
             </div>
-          </div>
+          </MotionReveal>
 
-          <div className="relative mt-20 overflow-hidden rounded-[30px] bg-[#F0F7FF] p-[clamp(1.5rem,4vw,3.5rem)]">
+          <MotionReveal className="relative mt-20 overflow-hidden rounded-[30px] bg-[#F0F7FF] p-[clamp(1.5rem,4vw,3.5rem)]" delay={0.1}>
             <div
               className="absolute -right-24 -top-32 size-[420px] rounded-full border-[70px] border-[#0066FF]/[0.04]"
               aria-hidden="true"
@@ -356,7 +350,7 @@ export default function MissionVisionPage() {
                 </article>
               ))}
             </div>
-          </div>
+          </MotionReveal>
         </div>
       </section>
     </main>
