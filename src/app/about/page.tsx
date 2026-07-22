@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight as ArrowIcon } from "lucide-react";
 import LocalizedText from "@/components/LocalizedText";
 import PageHero from "@/components/PageHero";
@@ -65,25 +66,21 @@ export default function AboutPage() {
         <div className={`${sectionInner} grid grid-cols-2 gap-[18px] max-[980px]:grid-cols-1`}>
           {[
             {
-              id: "mission",
-              eyebrow: "Mission",
-              title: "Make high quality internet accessible.",
-              copy: "To provide affordable, reliable, and high-quality internet services that connect communities, empower businesses, and help individuals fully participate in the digital world.",
-            },
-            {
-              id: "vision",
-              eyebrow: "Vision",
-              title: "Bridge Cambodia's digital divide.",
-              copy: "To be one of Cambodia's most trusted and innovative internet service providers, recognized for quality, reliability, and customer satisfaction.",
+              id: "mission-vision",
+              eyebrow: "Mission & Vision",
+              title: "Connect today. Build Cambodia's digital future.",
+              copy: "Our mission makes reliable internet more accessible, while our vision guides us toward a better-connected Cambodia built on trust, quality, and customer care.",
+              href: "/about/mission-vision",
             },
             {
               id: "career",
               eyebrow: "Career",
               title: "Build Cambodia's connected future with us.",
               copy: "Fast One welcomes people who care about reliable networks, practical service, and helping homes and businesses stay connected.",
+              href: "/about/career",
             },
           ].map((item) => (
-            <article className="min-h-[330px] rounded-[8px] border border-[#38BDF8] bg-[#F8FAFC] p-8" id={item.id} key={item.eyebrow}>
+            <Link className="group min-h-[330px] rounded-[8px] border border-[#38BDF8] bg-[#F8FAFC] p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(8,17,32,.08)]" href={item.href} id={item.id} key={item.eyebrow}>
               <p className={eyebrow}>
                 <LocalizedText value={item.eyebrow} />
               </p>
@@ -93,7 +90,11 @@ export default function AboutPage() {
               <p className="mt-[18px] leading-[1.65] text-[#0F172A]/80">
                 <LocalizedText value={item.copy} />
               </p>
-            </article>
+              <span className="mt-7 inline-flex items-center gap-2 font-black text-[#0067AC]">
+                <LocalizedText value="Learn more" />
+                <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
