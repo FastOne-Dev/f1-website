@@ -234,6 +234,33 @@
   }
 }
 
+@keyframes iplc-route-flow {
+  to {
+    stroke-dashoffset: -104;
+  }
+}
+
+@keyframes iplc-node-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(25 129 193 / 0.12);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgb(25 129 193 / 0);
+  }
+}
+
+.iplc-route {
+  stroke-linecap: round;
+  stroke-dasharray: 9 14;
+  filter: drop-shadow(0 0 5px rgb(41 142 205 / 0.52));
+  animation: iplc-route-flow 4.4s linear infinite;
+}
+
+.iplc-node {
+  animation: iplc-node-pulse 3.2s ease-in-out infinite;
+}
+
 .dplc-route {
   stroke-linecap: round;
   stroke-dasharray: 9 13;
@@ -383,7 +410,9 @@
   .ip-transit-ring,
   .ip-transit-node,
   .dplc-route,
-  .dplc-node {
+  .dplc-node,
+  .iplc-route,
+  .iplc-node {
     animation: none;
   }
 }
