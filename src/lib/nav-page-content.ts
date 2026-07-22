@@ -45,6 +45,11 @@ const contactSales = {
   external: true,
 };
 
+const careerInquiry = {
+  label: "Ask about opportunities",
+  href: "mailto:fastone_info@fastone.com.kh",
+};
+
 export const aboutDetailPages: Record<
   "companyProfile" | "mission" | "vision" | "career",
   DetailPageContent
@@ -214,28 +219,28 @@ export const aboutDetailPages: Record<
       description:
         "Career information for people interested in building Cambodia's connected future with Fast One.",
     },
-    eyebrow: "Career",
-    title: "Build Cambodia's connected future with Fast One.",
+    eyebrow: "Careers at Fast One",
+    title: "Build what keeps Cambodia connected.",
     copy:
       "Fast One welcomes practical, service-minded people who care about networks, customer support, and helping homes and organizations stay connected.",
     imageSrc: "/img/support.png",
     imageAlt: "Support team illustration",
-    action: contactSales,
+    action: careerInquiry,
     secondaryAction: {
       label: "Company profile",
       href: "/about/company-profile",
     },
     intro: {
-      eyebrow: "Join the team",
-      title: "Good internet service depends on people who solve real problems.",
+      eyebrow: "Work with purpose",
+      title: "Good internet starts with people who solve real problems.",
       copy:
         "From sales conversations to installation support and network operations, Fast One's work centers on helping customers get connected clearly and reliably.",
     },
     highlights: [
-      "Customer-focused service work",
-      "Technical and network-minded roles",
-      "Local Cambodia market knowledge",
-      "Practical problem-solving culture",
+      "Put customers first",
+      "Think in networks",
+      "Know Cambodia",
+      "Solve what matters",
     ],
     cards: [
       {
@@ -253,12 +258,12 @@ export const aboutDetailPages: Record<
     ],
     closing: {
       eyebrow: "Career conversations",
-      title: "Interested in Fast One? Start with a direct conversation.",
+      title: "Interested in Fast One? Start with a conversation.",
       copy:
-        "Use the contact channel to ask about current opportunities or share your background with the Fast One team.",
+        "Share your background and the kind of work that interests you with the Fast One team.",
       imageSrc: "/img/img_for_contact_us.png",
       imageAlt: "Fast One contact illustration",
-      action: contactSales,
+      action: careerInquiry,
     },
   },
 };
