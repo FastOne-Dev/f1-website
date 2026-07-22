@@ -11,6 +11,7 @@ import {
 import LocalizedText from "@/components/LocalizedText";
 import { aboutDetailPages } from "@/lib/nav-page-content";
 import { qualities } from "@/lib/site-data";
+import { sectionInner } from "@/lib/ui-classes";
 
 const mission = aboutDetailPages.mission;
 const vision = aboutDetailPages.vision;
@@ -34,30 +35,31 @@ export default function MissionVisionPage() {
   return (
     <main className="bg-white text-[#061B46]">
       {/* 01 — Introduction */}
-      <section className="relative isolate overflow-hidden bg-white py-[clamp(4.5rem,8vw,7.5rem)] text-[#061B46]">
+      <section className="relative isolate overflow-hidden bg-[#F5FAFF] pb-[88px] pt-20 max-[820px]:pb-14 max-[820px]:pt-11">
         <div
-          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_78%_24%,rgba(0,150,255,0.12),transparent_34%),linear-gradient(125deg,#ffffff_0%,#ffffff_58%,#f1f8ff_100%)]"
+          className="pointer-events-none absolute left-1/2 top-[-260px] -z-10 h-[560px] w-[1020px] -translate-x-1/2 rounded-full bg-[#D9ECFF]/80 blur-[120px]"
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 -z-10 opacity-[0.3] [background-image:linear-gradient(rgba(0,102,255,.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,102,255,.1)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_right,transparent,black_55%)]"
+          className="pointer-events-none absolute -right-40 top-10 -z-10 size-[430px] rounded-full border-[86px] border-[#0066FF]/[0.035]"
           aria-hidden="true"
         />
-        <div className={container}>
-          <div className="grid min-h-[570px] grid-cols-[minmax(0,1.05fr)_minmax(380px,0.95fr)] items-center gap-[clamp(3rem,7vw,7.5rem)] max-[900px]:min-h-0 max-[900px]:grid-cols-1">
-            <div className="relative z-10 max-w-[650px]">
-              <div className="flex items-center gap-3 text-[0.75rem] font-black uppercase tracking-[0.18em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
-                <span className="flex size-9 items-center justify-center rounded-full border border-[#0066FF]/15 bg-[#0066FF]/[0.07] text-[0.67rem] text-[#0066FF]">
-                  01
-                </span>
-                <span>
-                  <LocalizedText
-                    value={{ en: "Our purpose", km: "គោលបំណងរបស់យើង" }}
-                  />
-                </span>
-              </div>
+        <div
+          className="pointer-events-none absolute -left-20 bottom-[-210px] -z-10 size-[390px] rounded-full bg-[#38BDF8]/10 blur-[90px]"
+          aria-hidden="true"
+        />
 
-              <h1 className="mb-0 mt-7 text-[clamp(3.15rem,5.5vw,5.15rem)] font-black leading-[0.98] tracking-[-0.055em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.4] [[lang=km]_&]:tracking-normal max-[640px]:text-[2.65rem]">
+        <div className={sectionInner}>
+          <div className="grid grid-cols-[minmax(0,0.92fr)_minmax(460px,1.08fr)] items-center gap-[clamp(42px,6vw,76px)] max-[980px]:grid-cols-1 max-[980px]:gap-11">
+            <div>
+              <p className="m-0 flex items-center gap-3 text-[0.8rem] font-black uppercase tracking-[0.14em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
+                <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
+                <LocalizedText
+                  value={{ en: "Our purpose", km: "គោលបំណងរបស់យើង" }}
+                />
+              </p>
+
+              <h1 className="mb-0 mt-5 text-[clamp(2.65rem,5vw,4.25rem)] font-black leading-[1.02] tracking-[-0.045em] text-[#061B46] [text-wrap:balance] max-[640px]:text-[2.35rem] [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
                 <LocalizedText
                   value={{
                     en: "Connection should move everyone forward.",
@@ -66,61 +68,80 @@ export default function MissionVisionPage() {
                 />
               </h1>
 
-              <p className="mb-0 mt-7 max-w-[570px] text-[1.08rem] leading-[1.72] text-[#526C8D] [[lang=km]_&]:leading-[1.9] max-[640px]:text-[0.98rem] max-[640px]:leading-[1.75]">
+              <p className="mb-0 mt-6 max-w-[540px] text-[1.02rem] leading-[1.75] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
                 <LocalizedText value={mission.copy} />
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid">
                 <a
-                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#087CFA] px-6 text-[0.88rem] font-black text-white shadow-[0_12px_28px_rgba(0,102,255,0.28)] transition hover:-translate-y-0.5 hover:bg-[#168BFF]"
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] bg-[#0066FF] px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,102,255,0.28)] transition duration-150 hover:-translate-y-0.5 hover:bg-[#008DFF]"
                   href="#mission-vision"
                 >
                   Explore our direction
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="size-[18px] transition-transform group-hover:translate-x-1" />
                 </a>
-                <span className="inline-flex items-center px-3 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[#7189A7]">
-                  Cambodia · Connected
+                <a
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] border border-[#BED8EB] bg-white px-6 text-[0.94rem] font-black text-[#061B46] transition duration-150 hover:-translate-y-0.5 hover:border-[#0066FF] hover:text-[#0066FF]"
+                  href="#our-values"
+                >
+                  Our values
+                  <HeartHandshake className="size-[18px] text-[#0066FF]" />
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-2.5">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
+                  <Target className="size-3.5 text-[#0066FF]" /> Mission-led
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
+                  <Eye className="size-3.5 text-[#0066FF]" /> Future-focused
                 </span>
               </div>
             </div>
 
-            <div className="relative mx-auto h-[560px] w-full max-w-[500px] max-[900px]:h-[480px] max-[900px]:max-w-[620px] max-[560px]:h-[370px]">
-              <div className="absolute inset-[6%_0_2%_8%] rounded-[2rem] border border-[#CFE4F8] bg-white/70 shadow-[0_28px_90px_rgba(8,57,111,0.12)] backdrop-blur-sm" />
-              <div className="absolute left-0 top-[13%] z-10 flex items-center gap-3 rounded-2xl border border-[#D5E8F8] bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-[#087CFA] text-white">
-                  <Target className="size-4" />
-                </span>
-                <span>
-                  <strong className="block text-[0.75rem] font-black uppercase tracking-[0.12em] text-[#061B46]">
-                    Mission
-                  </strong>
-                  <small className="text-[0.72rem] text-[#607793]">
-                    Access for everyone
-                  </small>
-                </span>
-              </div>
-              <div className="absolute bottom-[9%] right-[-2%] z-10 flex items-center gap-3 rounded-2xl border border-white/15 bg-white px-4 py-3 text-[#061B46] shadow-2xl">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-[#E7F5FF] text-[#087CFA]">
-                  <Eye className="size-4" />
-                </span>
-                <span>
-                  <strong className="block text-[0.75rem] font-black uppercase tracking-[0.12em]">
-                    Vision
-                  </strong>
-                  <small className="text-[0.72rem] text-[#607793]">
-                    A connected Cambodia
-                  </small>
-                </span>
-              </div>
-              <div className="relative h-full p-[8%]">
-                <Image
-                  className="object-contain drop-shadow-[0_30px_35px_rgba(0,0,0,0.25)]"
-                  src="/img/mission-vision-test.png"
-                  alt="A Cambodian network specialist helping a student and local business owner get connected"
-                  fill
-                  sizes="(max-width: 560px) calc(100vw - 48px), (max-width: 900px) 620px, 500px"
-                  quality={82}
-                  preload
-                />
+            <div className="relative min-w-0">
+              <div
+                className="pointer-events-none absolute -inset-5 -z-10 rounded-[30px] bg-[linear-gradient(140deg,#DCEEFF,#F5FAFF)]"
+                aria-hidden="true"
+              />
+              <div className="relative rounded-[26px] p-4 shadow-[0_26px_70px_rgba(6,27,70,0.16)] ring-1 ring-[#0C254E]/[0.06] max-[640px]:p-3">
+                <div className="relative h-[480px] overflow-hidden rounded-[18px] max-[980px]:h-[440px] max-[640px]:h-[330px]">
+                  <div className="absolute left-0 top-[13%] z-10 flex items-center gap-3 rounded-2xl border border-[#D5E8F8] bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md">
+                    <span className="flex size-9 items-center justify-center rounded-xl bg-[#087CFA] text-white">
+                      <Target className="size-4" />
+                    </span>
+                    <span>
+                      <strong className="block text-[0.75rem] font-black uppercase tracking-[0.12em] text-[#061B46]">
+                        Mission
+                      </strong>
+                      <small className="text-[0.72rem] text-[#607793]">
+                        Access for everyone
+                      </small>
+                    </span>
+                  </div>
+                  <div className="absolute bottom-[9%] right-[-2%] z-10 flex items-center gap-3 rounded-2xl border border-white/15 bg-white px-4 py-3 text-[#061B46] shadow-2xl">
+                    <span className="flex size-9 items-center justify-center rounded-xl bg-[#E7F5FF] text-[#087CFA]">
+                      <Eye className="size-4" />
+                    </span>
+                    <span>
+                      <strong className="block text-[0.75rem] font-black uppercase tracking-[0.12em]">
+                        Vision
+                      </strong>
+                      <small className="text-[0.72rem] text-[#607793]">
+                        A connected Cambodia
+                      </small>
+                    </span>
+                  </div>
+                  <div className="relative h-full p-[7%]">
+                    <Image
+                      className="object-contain drop-shadow-[0_30px_35px_rgba(0,0,0,0.25)]"
+                      src="/img/mission-vision-test.png"
+                      alt="A Cambodian network specialist helping a student and local business owner get connected"
+                      fill
+                      sizes="(max-width: 980px) 100vw, 50vw"
+                      quality={82}
+                      preload
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -214,7 +235,10 @@ export default function MissionVisionPage() {
       </section>
 
       {/* 03 — Values and progress */}
-      <section className="overflow-hidden bg-white py-[100px] max-[640px]:py-[68px]">
+      <section
+        id="our-values"
+        className="scroll-mt-20 overflow-hidden bg-white py-[100px] max-[640px]:py-[68px]"
+      >
         <div className={container}>
           <div className="flex items-end justify-between gap-10 max-[760px]:flex-col max-[760px]:items-start">
             <div>
