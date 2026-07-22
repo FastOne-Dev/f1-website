@@ -40,11 +40,11 @@ const copy = {
   },
   heroTitleAccent: {
     en: "network moving.",
-    km: "ឱ្យដំណើរការជានិច្ច។",
+    km: "ឱ្យដំណើរការជានិច្ច",
   },
   heroCopy: {
     en: "Reliable upstream connectivity for operators and ambitious businesses—planned around your traffic, capacity, and growth.",
-    km: "ការតភ្ជាប់បណ្តាញអន្តរជាតិដែលអាចទុកចិត្តបាន សម្រាប់ប្រតិបត្តិករ និងអាជីវកម្មដែលកំពុងរីកចម្រើន ដោយរៀបចំទៅតាមចរាចរណ៍ សមត្ថភាព និងផែនការរបស់អ្នក។",
+    km: "ការតភ្ជាប់បណ្តាញអន្តរជាតិដែលអាចទុកចិត្តបាន សម្រាប់ប្រតិបត្តិករ និងអាជីវកម្មដែលកំពុងរីកចម្រើន ដោយរៀបចំទៅតាមចរាចរណ៍ សមត្ថភាព និងផែនការរបស់អ្នក",
   },
   talkToSpecialist: {
     en: "Talk to a network specialist",
@@ -68,20 +68,20 @@ const copy = {
   builtForEyebrow: { en: "Built for critical traffic", km: "សម្រាប់ចរាចរណ៍ទិន្នន័យសំខាន់ៗ" },
   builtForTitle: {
     en: "More control between your network and the internet.",
-    km: "គ្រប់គ្រងការតភ្ជាប់រវាងបណ្តាញរបស់អ្នក និងអ៊ីនធឺណិតបានកាន់តែប្រសើរ។",
+    km: "គ្រប់គ្រងការតភ្ជាប់រវាងបណ្តាញរបស់អ្នក និងអ៊ីនធឺណិតបានកាន់តែប្រសើរ",
   },
   builtForCopy: {
     en: "Move beyond shared connectivity with an upstream service designed through a direct technical conversation—not a one-size-fits-all package.",
-    km: "លើសពីការតភ្ជាប់រួម ជាមួយសេវាបណ្តាញអន្តរជាតិដែលត្រូវបានរៀបចំតាមរយៈការពិភាក្សាបច្ចេកទេសផ្ទាល់ មិនមែនជាកញ្ចប់តែមួយសម្រាប់គ្រប់គ្នាទេ។",
+    km: "លើសពីការតភ្ជាប់រួម ជាមួយសេវាបណ្តាញអន្តរជាតិដែលត្រូវបានរៀបចំតាមរយៈការពិភាក្សាបច្ចេកទេសផ្ទាល់ មិនមែនជាកញ្ចប់តែមួយសម្រាប់គ្រប់គ្នាទេ",
   },
   architectureEyebrow: { en: "How it connects", km: "របៀបនៃការតភ្ជាប់" },
   architectureTitle: {
     en: "One clear path from your infrastructure to the wider internet.",
-    km: "ផ្លូវតភ្ជាប់ច្បាស់លាស់មួយ ពីហេដ្ឋារចនាសម្ព័ន្ធរបស់អ្នកទៅកាន់អ៊ីនធឺណិតសកល។",
+    km: "ផ្លូវតភ្ជាប់ច្បាស់លាស់មួយ ពីហេដ្ឋារចនាសម្ព័ន្ធរបស់អ្នកទៅកាន់អ៊ីនធឺណិតសកល",
   },
   architectureCopy: {
     en: "Fast One connects your network to upstream internet capacity, with the service scope shaped around your locations, traffic profile, and operating priorities.",
-    km: "Fast One តភ្ជាប់បណ្តាញរបស់អ្នកទៅកាន់សមត្ថភាពអ៊ីនធឺណិតអន្តរជាតិ ដោយកំណត់សេវាតាមទីតាំង ទម្រង់ចរាចរណ៍ទិន្នន័យ និងអាទិភាពប្រតិបត្តិការរបស់អ្នក។",
+    km: "Fast One តភ្ជាប់បណ្តាញរបស់អ្នកទៅកាន់សមត្ថភាពអ៊ីនធឺណិតអន្តរជាតិ ដោយកំណត់សេវាតាមទីតាំង ទម្រង់ចរាចរណ៍ទិន្នន័យ និងអាទិភាពប្រតិបត្តិការរបស់អ្នក",
   },
   yourInfrastructure: { en: "Your infrastructure", km: "ហេដ្ឋារចនាសម្ព័ន្ធរបស់អ្នក" },
   fastOneNetwork: { en: "Fast One network", km: "បណ្តាញ Fast One" },
@@ -92,34 +92,34 @@ const copy = {
   capabilitiesEyebrow: { en: "Core capabilities", km: "សមត្ថភាពសេវាស្នូល" },
   capabilitiesTitle: {
     en: "The network foundation behind consistent digital operations.",
-    km: "មូលដ្ឋានបណ្តាញសម្រាប់ប្រតិបត្តិការឌីជីថលដែលមានស្ថិរភាព។",
+    km: "មូលដ្ឋានបណ្តាញសម្រាប់ប្រតិបត្តិការឌីជីថលដែលមានស្ថិរភាព",
   },
   capabilitiesCopy: {
     en: "A practical IP Transit service should match the way your network operates today and leave room for what comes next.",
-    km: "សេវា IP Transit ដែលមានប្រសិទ្ធភាព គួរតែសមស្របនឹងរបៀបដំណើរការបណ្តាញរបស់អ្នកសព្វថ្ងៃ និងអាចពង្រីកសម្រាប់អនាគត។",
+    km: "សេវា IP Transit ដែលមានប្រសិទ្ធភាព គួរតែសមស្របនឹងរបៀបដំណើរការបណ្តាញរបស់អ្នកសព្វថ្ងៃ និងអាចពង្រីកសម្រាប់អនាគត",
   },
   rightFitEyebrow: { en: "Who it is for", km: "សម្រាប់អង្គភាពណាខ្លះ" },
   rightFitTitle: {
     en: "For teams whose internet connection is infrastructure—not a utility.",
-    km: "សម្រាប់ក្រុមដែលចាត់ទុកការតភ្ជាប់អ៊ីនធឺណិតជាហេដ្ឋារចនាសម្ព័ន្ធសំខាន់ មិនមែនគ្រាន់តែជាសេវាទូទៅ។",
+    km: "សម្រាប់ក្រុមដែលចាត់ទុកការតភ្ជាប់អ៊ីនធឺណិតជាហេដ្ឋារចនាសម្ព័ន្ធសំខាន់ មិនមែនគ្រាន់តែជាសេវាទូទៅ",
   },
   rightFitCopy: {
     en: "IP Transit is a strong fit when traffic volume, customer experience, or business continuity depends on a more deliberate upstream connection.",
-    km: "IP Transit សមស្របនៅពេលបរិមាណចរាចរណ៍ បទពិសោធន៍អតិថិជន ឬនិរន្តរភាពអាជីវកម្ម ពឹងផ្អែកលើការតភ្ជាប់អន្តរជាតិដែលបានរៀបចំយ៉ាងច្បាស់លាស់។",
+    km: "IP Transit សមស្របនៅពេលបរិមាណចរាចរណ៍ បទពិសោធន៍អតិថិជន ឬនិរន្តរភាពអាជីវកម្ម ពឹងផ្អែកលើការតភ្ជាប់អន្តរជាតិដែលបានរៀបចំយ៉ាងច្បាស់លាស់",
   },
   processEyebrow: { en: "A practical service path", km: "ដំណើរការសេវាដែលច្បាស់លាស់" },
   processTitle: {
     en: "From requirement to a network-ready plan.",
-    km: "ពីតម្រូវការ ទៅកាន់ផែនការបណ្តាញដែលត្រៀមរួចរាល់។",
+    km: "ពីតម្រូវការ ទៅកាន់ផែនការបណ្តាញដែលត្រៀមរួចរាល់",
   },
   ctaEyebrow: { en: "Start the technical conversation", km: "ចាប់ផ្តើមការពិភាក្សាបច្ចេកទេស" },
   ctaTitle: {
     en: "Tell us what your network needs to carry.",
-    km: "ប្រាប់យើងពីតម្រូវការចរាចរណ៍របស់បណ្តាញអ្នក។",
+    km: "ប្រាប់យើងពីតម្រូវការចរាចរណ៍របស់បណ្តាញអ្នក",
   },
   ctaCopy: {
     en: "Share your locations, expected capacity, and operating priorities. Fast One will help shape the next technical step.",
-    km: "ផ្ញើទីតាំង សមត្ថភាពដែលរំពឹងទុក និងអាទិភាពប្រតិបត្តិការរបស់អ្នក។ Fast One នឹងជួយរៀបចំជំហានបច្ចេកទេសបន្ទាប់។",
+    km: "ផ្ញើទីតាំង សមត្ថភាពដែលរំពឹងទុក និងអាទិភាពប្រតិបត្តិការរបស់អ្នក Fast One នឹងជួយរៀបចំជំហានបច្ចេកទេសបន្ទាប់",
   },
   contactSales: { en: "Contact Fast One sales", km: "ទាក់ទងផ្នែកលក់ Fast One" },
   businessOverview: { en: "View all business services", km: "មើលសេវាអាជីវកម្មទាំងអស់" },
@@ -131,7 +131,7 @@ const serviceValues = [
     title: { en: "Purpose-built routing", km: "ការរៀបចំផ្លូវបណ្តាញតាមតម្រូវការ" },
     text: {
       en: "Start with your network requirement and traffic profile so the service conversation stays technically relevant.",
-      km: "ចាប់ផ្តើមពីតម្រូវការបណ្តាញ និងទម្រង់ចរាចរណ៍របស់អ្នក ដើម្បីឱ្យការរៀបចំសេវាមានភាពសមស្របផ្នែកបច្ចេកទេស។",
+      km: "ចាប់ផ្តើមពីតម្រូវការបណ្តាញ និងទម្រង់ចរាចរណ៍របស់អ្នក ដើម្បីឱ្យការរៀបចំសេវាមានភាពសមស្របផ្នែកបច្ចេកទេស",
     },
   },
   {
@@ -139,7 +139,7 @@ const serviceValues = [
     title: { en: "Capacity that can grow", km: "សមត្ថភាពដែលអាចពង្រីកបាន" },
     text: {
       en: "Plan bandwidth around current demand while keeping future traffic and service growth in view.",
-      km: "រៀបចំកម្រិតបញ្ជូនតាមតម្រូវការបច្ចុប្បន្ន និងគិតគូរពីកំណើនចរាចរណ៍នាពេលអនាគត។",
+      km: "រៀបចំកម្រិតបញ្ជូនតាមតម្រូវការបច្ចុប្បន្ន និងគិតគូរពីកំណើនចរាចរណ៍នាពេលអនាគត",
     },
   },
   {
@@ -147,7 +147,7 @@ const serviceValues = [
     title: { en: "Operational confidence", km: "ទំនុកចិត្តក្នុងប្រតិបត្តិការ" },
     text: {
       en: "Define availability, handoff, and support expectations before activation so teams can plan with clarity.",
-      km: "កំណត់លទ្ធភាព ទម្រង់តភ្ជាប់ និងការគាំទ្រមុនពេលដំណើរការ ដើម្បីឱ្យក្រុមរបស់អ្នកអាចរៀបចំបានច្បាស់លាស់។",
+      km: "កំណត់លទ្ធភាព ទម្រង់តភ្ជាប់ និងការគាំទ្រមុនពេលដំណើរការ ដើម្បីឱ្យក្រុមរបស់អ្នកអាចរៀបចំបានច្បាស់លាស់",
     },
   },
 ] satisfies Array<{
@@ -163,7 +163,7 @@ const capabilities = [
     title: { en: "Upstream connectivity", km: "ការតភ្ជាប់បណ្តាញអន្តរជាតិ" },
     text: {
       en: "A carrier-grade service path for moving traffic between your network and global internet destinations.",
-      km: "ផ្លូវសេវាកម្រិតប្រតិបត្តិករ សម្រាប់បញ្ជូនចរាចរណ៍រវាងបណ្តាញរបស់អ្នក និងគោលដៅអ៊ីនធឺណិតសកល។",
+      km: "ផ្លូវសេវាកម្រិតប្រតិបត្តិករ សម្រាប់បញ្ជូនចរាចរណ៍រវាងបណ្តាញរបស់អ្នក និងគោលដៅអ៊ីនធឺណិតសកល",
     },
   },
   {
@@ -172,7 +172,7 @@ const capabilities = [
     title: { en: "Traffic-led planning", km: "ការរៀបចំតាមចរាចរណ៍ទិន្នន័យ" },
     text: {
       en: "Capacity discussions informed by usage patterns, growth expectations, and business-critical applications.",
-      km: "ការពិភាក្សាសមត្ថភាពដោយផ្អែកលើរបៀបប្រើប្រាស់ កំណើនរំពឹងទុក និងកម្មវិធីសំខាន់ៗរបស់អាជីវកម្ម។",
+      km: "ការពិភាក្សាសមត្ថភាពដោយផ្អែកលើរបៀបប្រើប្រាស់ កំណើនរំពឹងទុក និងកម្មវិធីសំខាន់ៗរបស់អាជីវកម្ម",
     },
   },
   {
@@ -181,7 +181,7 @@ const capabilities = [
     title: { en: "Clear service handoff", km: "ទម្រង់តភ្ជាប់សេវាច្បាស់លាស់" },
     text: {
       en: "Technical coordination around your site, network edge, and the service handoff needed for activation.",
-      km: "ការសម្របសម្រួលបច្ចេកទេសជុំវិញទីតាំង បណ្តាញចុងរបស់អ្នក និងការតភ្ជាប់សេវាដែលត្រូវការសម្រាប់ដំណើរការ។",
+      km: "ការសម្របសម្រួលបច្ចេកទេសជុំវិញទីតាំង បណ្តាញចុងរបស់អ្នក និងការតភ្ជាប់សេវាដែលត្រូវការសម្រាប់ដំណើរការ",
     },
   },
   {
@@ -190,7 +190,7 @@ const capabilities = [
     title: { en: "Local coordination", km: "ការសម្របសម្រួលក្នុងស្រុក" },
     text: {
       en: "Work with a Cambodia-based team through feasibility, service planning, and operational follow-up.",
-      km: "ធ្វើការជាមួយក្រុមការងារនៅកម្ពុជា ចាប់ពីការវាយតម្លៃលទ្ធភាព ការរៀបចំសេវា រហូតដល់ការតាមដានប្រតិបត្តិការ។",
+      km: "ធ្វើការជាមួយក្រុមការងារនៅកម្ពុជា ចាប់ពីការវាយតម្លៃលទ្ធភាព ការរៀបចំសេវា រហូតដល់ការតាមដានប្រតិបត្តិការ",
     },
   },
 ] satisfies Array<{
@@ -206,7 +206,7 @@ const useCases = [
     title: { en: "ISPs & network operators", km: "ISP និងប្រតិបត្តិករបណ្តាញ" },
     text: {
       en: "Add upstream capacity that supports customer traffic and network growth.",
-      km: "បន្ថែមសមត្ថភាពអន្តរជាតិដើម្បីគាំទ្រចរាចរណ៍អតិថិជន និងការរីកចម្រើនបណ្តាញ។",
+      km: "បន្ថែមសមត្ថភាពអន្តរជាតិដើម្បីគាំទ្រចរាចរណ៍អតិថិជន និងការរីកចម្រើនបណ្តាញ",
     },
   },
   {
@@ -214,7 +214,7 @@ const useCases = [
     title: { en: "Digital platforms", km: "វេទិកាឌីជីថល" },
     text: {
       en: "Support data-heavy services, cloud workflows, and customer-facing applications.",
-      km: "គាំទ្រសេវាដែលប្រើទិន្នន័យច្រើន ដំណើរការលើ cloud និងកម្មវិធីសម្រាប់អតិថិជន។",
+      km: "គាំទ្រសេវាដែលប្រើទិន្នន័យច្រើន ដំណើរការលើ cloud និងកម្មវិធីសម្រាប់អតិថិជន",
     },
   },
   {
@@ -222,7 +222,7 @@ const useCases = [
     title: { en: "Enterprise networks", km: "បណ្តាញសហគ្រាស" },
     text: {
       en: "Build a stronger upstream foundation for critical sites and business systems.",
-      km: "បង្កើតមូលដ្ឋានការតភ្ជាប់អន្តរជាតិដ៏រឹងមាំសម្រាប់ទីតាំង និងប្រព័ន្ធអាជីវកម្មសំខាន់ៗ។",
+      km: "បង្កើតមូលដ្ឋានការតភ្ជាប់អន្តរជាតិដ៏រឹងមាំសម្រាប់ទីតាំង និងប្រព័ន្ធអាជីវកម្មសំខាន់ៗ",
     },
   },
 ] satisfies Array<{
@@ -237,7 +237,7 @@ const processSteps = [
     title: { en: "Share the requirement", km: "ផ្ញើតម្រូវការរបស់អ្នក" },
     text: {
       en: "Tell us the locations, expected capacity, traffic profile, and target timeline.",
-      km: "ប្រាប់យើងពីទីតាំង សមត្ថភាពរំពឹងទុក ទម្រង់ចរាចរណ៍ និងពេលវេលាដែលចង់បាន។",
+      km: "ប្រាប់យើងពីទីតាំង សមត្ថភាពរំពឹងទុក ទម្រង់ចរាចរណ៍ និងពេលវេលាដែលចង់បាន",
     },
   },
   {
@@ -245,7 +245,7 @@ const processSteps = [
     title: { en: "Shape the service", km: "រៀបចំទម្រង់សេវា" },
     text: {
       en: "Fast One reviews feasibility and aligns the proposed service with your network needs.",
-      km: "Fast One ពិនិត្យលទ្ធភាព និងរៀបចំសេវាដែលបានស្នើឱ្យស្របនឹងតម្រូវការបណ្តាញរបស់អ្នក។",
+      km: "Fast One ពិនិត្យលទ្ធភាព និងរៀបចំសេវាដែលបានស្នើឱ្យស្របនឹងតម្រូវការបណ្តាញរបស់អ្នក",
     },
   },
   {
@@ -253,7 +253,7 @@ const processSteps = [
     title: { en: "Coordinate activation", km: "សម្របសម្រួលការដំណើរការ" },
     text: {
       en: "Confirm the handoff, implementation details, and support path before going live.",
-      km: "បញ្ជាក់ទម្រង់តភ្ជាប់ ព័ត៌មានលម្អិតនៃការអនុវត្ត និងផ្លូវគាំទ្រមុនពេលដំណើរការផ្លូវការ។",
+      km: "បញ្ជាក់ទម្រង់តភ្ជាប់ ព័ត៌មានលម្អិតនៃការអនុវត្ត និងផ្លូវគាំទ្រមុនពេលដំណើរការផ្លូវការ",
     },
   },
 ] satisfies Array<{
@@ -452,17 +452,17 @@ export default function IpTransitPage() {
               {
                 icon: Activity,
                 title: { en: "Predictable service conversations", km: "ការពិភាក្សាសេវាដែលច្បាស់លាស់" },
-                text: { en: "Align capacity, technical scope, and expectations before activation.", km: "កំណត់សមត្ថភាព វិសាលភាពបច្ចេកទេស និងការរំពឹងទុកមុនពេលដំណើរការ។" },
+                text: { en: "Align capacity, technical scope, and expectations before activation.", km: "កំណត់សមត្ថភាព វិសាលភាពបច្ចេកទេស និងការរំពឹងទុកមុនពេលដំណើរការ" },
               },
               {
                 icon: Gauge,
                 title: { en: "Room for traffic growth", km: "សមត្ថភាពសម្រាប់កំណើនចរាចរណ៍" },
-                text: { en: "Plan for today's demand without losing sight of tomorrow's network.", km: "រៀបចំសម្រាប់តម្រូវការថ្ងៃនេះ ដោយមិនរំលងផែនការបណ្តាញថ្ងៃអនាគត។" },
+                text: { en: "Plan for today's demand without losing sight of tomorrow's network.", km: "រៀបចំសម្រាប់តម្រូវការថ្ងៃនេះ ដោយមិនរំលងផែនការបណ្តាញថ្ងៃអនាគត" },
               },
               {
                 icon: Headphones,
                 title: { en: "A local technical path", km: "ផ្លូវគាំទ្របច្ចេកទេសក្នុងស្រុក" },
-                text: { en: "Keep service planning and operational follow-up close to your team.", km: "រក្សាការរៀបចំសេវា និងការតាមដានប្រតិបត្តិការឱ្យនៅជិតក្រុមរបស់អ្នក។" },
+                text: { en: "Keep service planning and operational follow-up close to your team.", km: "រក្សាការរៀបចំសេវា និងការតាមដានប្រតិបត្តិការឱ្យនៅជិតក្រុមរបស់អ្នក" },
               },
             ].map((item) => {
               const Icon = item.icon;
