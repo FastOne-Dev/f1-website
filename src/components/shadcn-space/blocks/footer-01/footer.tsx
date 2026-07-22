@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { useLanguage } from "@/lib/language";
+import { socialUrls } from "@/lib/site-data";
 import {
   FaFacebook,
   FaInstagram,
@@ -120,6 +121,8 @@ const Footer = () => {
   const { language } = useLanguage();
   const t = footerCopy[language];
   const bodyTextClass = "text-[0.98rem] leading-[1.6]";
+  const socialLinkClass =
+    "inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none";
 
   return (
     <footer className="bg-gradient-to-r from-[#0067AC] to-[#01c7ea] py-6 text-white">
@@ -146,37 +149,47 @@ const Footer = () => {
                 {/* social links */}
                 <div className="flex items-center gap-2">
                   <a
-                    href="https://www.facebook.com/Fastonecambodia"
+                    href={socialUrls.facebook}
                     aria-label="Facebook"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white"
+                    className={socialLinkClass}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     <FaFacebook className="h-4.5 w-4.5" />
                   </a>
                   <a
-                    href="https://www.instagram.com/fastonecambodia?igsh=cHE4Z215NHBpaGJ2"
+                    href={socialUrls.instagram}
                     aria-label="Instagram"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white"
+                    className={socialLinkClass}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     <FaInstagram className="h-4.5 w-4.5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/fastonecambodia/posts/?feedView=all"
+                    href={socialUrls.linkedin}
                     aria-label="LinkedIn"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white"
+                    className={socialLinkClass}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     <FaLinkedinIn className="h-4.5 w-4.5" />
                   </a>
                   <a
-                    href="https://t.me/fastonecambodia"
+                    href={socialUrls.telegram}
                     aria-label="Telegram"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white"
+                    className={socialLinkClass}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     <FaTelegram className="h-4.5 w-4.5" />
                   </a>
                   <a
-                    href="https://www.tiktok.com/@fastonecambodia?_t=8lQgxDKLA94&_r=1"
+                    href={socialUrls.tiktok}
                     aria-label="TikTok"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white"
+                    className={socialLinkClass}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     <FaTiktok className="h-4.5 w-4.5" />
                   </a>
@@ -229,7 +242,7 @@ const Footer = () => {
                       {t.email}:
                     </span>
                     <a
-                      href="mailto:contact@example.com"
+                      href="mailto:fastone_info@fastone.com.kh"
                       className="min-w-0 break-all font-normal hover:text-white"
                     >
                       fastone_info@fastone.com.kh

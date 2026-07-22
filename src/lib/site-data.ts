@@ -1,5 +1,13 @@
 export const salesUrl = "https://t.me/fastonecambodiasale";
 
+export const socialUrls = {
+  facebook: "https://www.facebook.com/Fastonecambodia",
+  instagram: "https://www.instagram.com/fastonecambodia",
+  linkedin: "https://www.linkedin.com/company/fastonecambodia/",
+  telegram: "https://t.me/fastonecambodia",
+  tiktok: "https://www.tiktok.com/@fastonecambodia",
+} as const;
+
 export const hrTelegramHandle = "@M_Sunly";
 
 export const hrTelegramUrl = "https://t.me/M_Sunly";

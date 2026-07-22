@@ -285,6 +285,111 @@
   animation: hotline-handset-float 3s ease-in-out infinite;
 }
 
+@keyframes social-route-flow {
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+
+@keyframes social-route-pulse {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  12%,
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -230;
+  }
+}
+
+@keyframes social-signal-wave {
+  0% {
+    opacity: 0.72;
+    transform: scale(0.72);
+  }
+  72%,
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+@keyframes social-node-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes social-core-breathe {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes social-signal-blink {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow: 0 0 0 0 rgb(22 184 203 / 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 7px rgb(22 184 203 / 0);
+  }
+}
+
+.social-route {
+  stroke-linecap: round;
+  stroke-dasharray: 8 12;
+  filter: drop-shadow(0 0 4px rgb(13 157 198 / 0.32));
+  animation: social-route-flow 4.8s linear infinite;
+}
+
+.social-route-pulse {
+  opacity: 0;
+  stroke-linecap: round;
+  stroke-dasharray: 1 230;
+  filter: drop-shadow(0 0 6px rgb(100 234 246 / 0.95));
+  animation: social-route-pulse 3.4s linear infinite;
+}
+
+.social-node {
+  animation: social-node-float 4s ease-in-out infinite;
+}
+
+.social-core {
+  transform-origin: center;
+  animation: social-core-breathe 3.4s ease-in-out infinite;
+}
+
+.social-signal-wave {
+  opacity: 0;
+  transform-origin: center;
+  animation: social-signal-wave 3.6s ease-out infinite;
+}
+
+.social-signal-wave--delay {
+  animation-delay: -1.8s;
+}
+
+.social-signal-dot {
+  animation: social-signal-blink 2.4s ease-in-out infinite;
+}
+
 .iplc-route {
   stroke-linecap: round;
   stroke-dasharray: 9 14;
@@ -449,7 +554,13 @@
   .iplc-route,
   .iplc-node,
   .hotline-signal-ring,
-  .hotline-handset {
+  .hotline-handset,
+  .social-route,
+  .social-route-pulse,
+  .social-node,
+  .social-core,
+  .social-signal-wave,
+  .social-signal-dot {
     animation: none;
   }
 }

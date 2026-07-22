@@ -1,4 +1,4 @@
-import { address, salesUrl } from "@/lib/site-data";
+import { salesUrl } from "@/lib/site-data";
 import type { LocalizedString } from "@/components/LocalizedText";
 
 export type DetailPageAction = {
@@ -6,7 +6,6 @@ export type DetailPageAction = {
   href: string;
   external?: boolean;
 };
-
 export type DetailPageContent = {
   metadata: {
     title: string;
@@ -44,7 +43,6 @@ const contactSales = {
   href: salesUrl,
   external: true,
 };
-
 const careerInquiry = {
   label: "Ask about opportunities",
   href: "mailto:fastone_info@fastone.com.kh",
@@ -428,117 +426,6 @@ export const businessDetailPages: Record<
         "Fast One sales can help start the feasibility conversation for international private connectivity.",
       imageSrc: "/img/global-network.png",
       imageAlt: "Global network illustration",
-      action: contactSales,
-    },
-  },
-};
-
-export const supportDetailPages: Record<
-  "hotline" | "socialMedia",
-  DetailPageContent
-> = {
-  hotline: {
-    metadata: {
-      title: "Hotline | Fast One Cambodia",
-      description:
-        "Contact Fast One Cambodia support and sales for service questions, coverage checks, and installation help.",
-    },
-    eyebrow: "Hotline",
-    title: "Reach Fast One support for service and sales questions.",
-    copy:
-      "Use the Fast One contact channel to ask about home plans, business circuits, coverage, installation timing, or service support.",
-    imageSrc: "/img/support.png",
-    imageAlt: "Support illustration",
-    action: contactSales,
-    secondaryAction: {
-      label: "Support overview",
-      href: "/support",
-    },
-    intro: {
-      eyebrow: "Before you contact",
-      title: "The fastest answers start with the right details.",
-      copy:
-        "Share your location, building type, preferred service, and whether the connection is for home or business use. Fast One can then guide the next step more quickly.",
-    },
-    highlights: [
-      "Home internet plan questions",
-      "Business circuit inquiries",
-      "Coverage and installation checks",
-      "Service support and next steps",
-    ],
-    cards: [
-      {
-        title: "New connection",
-        text: "Ask about coverage, cable requirements, installation timing, and the best plan for your location.",
-      },
-      {
-        title: "Business request",
-        text: "Start a conversation about dedicated internet, DPLC, IPLC, or IP Transit requirements.",
-      },
-      {
-        title: "Existing service",
-        text: "Share the service concern clearly so the team can route the request to the right support conversation.",
-      },
-    ],
-    closing: {
-      eyebrow: "Contact detail",
-      title: "Fast One Cambodia",
-      copy: `Address: ${address}`,
-      imageSrc: "/img/img_for_contact_us.png",
-      imageAlt: "Fast One contact illustration",
-      action: contactSales,
-    },
-  },
-  socialMedia: {
-    metadata: {
-      title: "Social Media | Fast One Cambodia",
-      description:
-        "Follow and message Fast One Cambodia through social contact channels for sales and service conversations.",
-    },
-    eyebrow: "Social media",
-    title: "Message Fast One for quick sales and support conversations.",
-    copy:
-      "Fast One uses direct messaging to help customers share locations, ask plan questions, and begin service inquiries without friction.",
-    imageSrc: "/img/img_for_contact_us.png",
-    imageAlt: "Fast One contact illustration",
-    action: contactSales,
-    secondaryAction: {
-      label: "Hotline page",
-      href: "/support/hotline",
-    },
-    intro: {
-      eyebrow: "Direct message",
-      title: "A simple way to share location and service details.",
-      copy:
-        "For availability checks and sales guidance, send the team your location, service type, and any special installation or business requirements.",
-    },
-    highlights: [
-      "Telegram sales: fastonecambodiasale",
-      "Share map locations for coverage checks",
-      "Ask for home plan recommendations",
-      "Start business service discussions",
-    ],
-    cards: [
-      {
-        title: "Coverage checks",
-        text: "Send a location so Fast One can confirm whether service is available and what setup may require.",
-      },
-      {
-        title: "Plan guidance",
-        text: "Describe the number of users, common activities, and budget so sales can suggest a suitable package.",
-      },
-      {
-        title: "Business details",
-        text: "For dedicated services, share sites, expected bandwidth, and the type of applications the circuit will support.",
-      },
-    ],
-    closing: {
-      eyebrow: "Start a message",
-      title: "Tell Fast One what you need and where you need it.",
-      copy:
-        "A clear first message helps the team confirm coverage, recommend service, and prepare the right follow-up.",
-      imageSrc: "/img/support.png",
-      imageAlt: "Support illustration",
       action: contactSales,
     },
   },

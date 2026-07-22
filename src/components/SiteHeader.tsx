@@ -675,7 +675,7 @@ export default function SiteHeader() {
               );
             })}
           </div>
-          <a
+          {/* <a
             className={cx(
               "inline-flex min-h-[42px] items-center justify-center gap-2 rounded-[8px] bg-[#0cb7d5] px-5 text-[0.94rem] font-semibold text-[#F8FAFC] transition duration-150 hover:-translate-y-px max-[640px]:hidden",
               language === "km" ? "tracking-normal" : "tracking-[0.01em]",
@@ -683,7 +683,7 @@ export default function SiteHeader() {
             href="/support/hotline"
           >
             {t.hotline}
-          </a>
+          </a> */}
           <button
             className="hidden h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full border border-[#38BDF8] bg-[#F8FAFC] text-[#081120] max-[980px]:inline-flex"
             type="button"
