@@ -190,6 +190,59 @@
   }
 }
 
+@keyframes ip-transit-route-flow {
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+
+@keyframes ip-transit-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes ip-transit-node-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(88 230 242 / 0.08);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgb(88 230 242 / 0);
+  }
+}
+
+.ip-transit-route {
+  stroke-linecap: round;
+  stroke-dasharray: 8 12;
+  filter: drop-shadow(0 0 5px rgb(88 230 242 / 0.72));
+  animation: ip-transit-route-flow 3.8s linear infinite;
+}
+
+.ip-transit-route--delay {
+  animation-delay: -1.9s;
+}
+
+.ip-transit-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ip-transit-ring-pulse 3.4s ease-in-out infinite;
+}
+
+.ip-transit-ring--delay {
+  animation-delay: -1.7s;
+}
+
+.ip-transit-node {
+  animation: ip-transit-node-glow 2.8s ease-in-out infinite;
+}
+
 .company-signal-map {
   mix-blend-mode: screen;
   opacity: 0.98;
@@ -292,6 +345,12 @@
 
   .company-photo-signal-frame::after {
     display: none;
+  }
+
+  .ip-transit-route,
+  .ip-transit-ring,
+  .ip-transit-node {
+    animation: none;
   }
 }
 
