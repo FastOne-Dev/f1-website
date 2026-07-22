@@ -250,6 +250,41 @@
   }
 }
 
+@keyframes hotline-signal-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes hotline-handset-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+.hotline-signal-ring {
+  transform-origin: center;
+  animation: hotline-signal-pulse 3.4s ease-in-out infinite;
+}
+
+.hotline-signal-ring--delay {
+  animation-delay: -1.7s;
+}
+
+.hotline-handset {
+  animation: hotline-handset-float 3s ease-in-out infinite;
+}
+
 .iplc-route {
   stroke-linecap: round;
   stroke-dasharray: 9 14;
@@ -412,7 +447,9 @@
   .dplc-route,
   .dplc-node,
   .iplc-route,
-  .iplc-node {
+  .iplc-node,
+  .hotline-signal-ring,
+  .hotline-handset {
     animation: none;
   }
 }
