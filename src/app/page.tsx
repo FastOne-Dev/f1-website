@@ -187,7 +187,7 @@ function SplitTitle() {
 export default function Home() {
   return (
     <main className="overflow-hidden text-brand-ink">
-      <section className="relative isolate mx-auto w-full max-w-[1440px] overflow-visible  max-[980px]:w-[calc(100%_-_40px)] max-[640px]:w-[calc(100%_-_28px)]">
+      <section className="relative isolate mx-auto w-full max-w-[1440px] overflow-visible bg-white max-[980px]:w-[calc(100%_-_40px)] max-[640px]:w-[calc(100%_-_28px)]">
         <div className="relative min-h-[700px] max-[980px]:min-h-[680px] max-[640px]:min-h-[650px]">
           <div className="absolute inset-0 -z-30  ">
             <div className="absolute inset-y-0 left-[30%] right-[calc(50%_-_50vw)] max-[980px]:left-0 max-[980px]:right-0">
@@ -202,7 +202,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute inset-y-0 left-0 right-[calc(50%_-_50vw)] -z-20 bg-[linear-gradient(90deg,#F5FAFF_0%,rgba(245,250,255,0.84)_30%,rgba(245,250,255,0.1)_55%,rgba(245,250,255,0)_100%)] max-[980px]:right-0 max-[980px]:bg-[linear-gradient(180deg,#F5FAFF_0%,rgba(245,250,255,0.92)_38%,rgba(245,250,255,0.22)_100%)]" />
+          <div className="absolute inset-y-0 left-0 right-[calc(50%_-_50vw)] -z-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.82)_26%,rgba(255,255,255,0.12)_42%,rgba(255,255,255,0)_56%)] max-[980px]:right-0 max-[980px]:bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.72)_34%,rgba(255,255,255,0.06)_62%,rgba(255,255,255,0)_100%)]" />
           <div className="absolute bottom-0 left-0 right-[calc(50%_-_50vw)] -z-10 h-[36%] bg-[linear-gradient(0deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)] max-[980px]:right-0" />
           <div className="pointer-events-none absolute inset-0 z-10 max-[980px]:hidden">
             {heroChips.map((chip) => {
