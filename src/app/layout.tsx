@@ -45,7 +45,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#F8FAFC] font-sans text-[#081120] tracking-normal">
+      <body className="bg-white font-sans text-brand-ink tracking-normal">
         <LanguageProvider>
           <SiteHeader />
           {children}

@@ -18,7 +18,12 @@ import {
 import Faq from "@/components/shadcn-space/blocks/faq-01/faq";
 import LocalizedText from "@/components/LocalizedText";
 import { plans, salesUrl } from "@/lib/site-data";
-import { cx, sectionInner } from "@/lib/ui-classes";
+import {
+  cx,
+  heroEnterCopy,
+  heroEnterVisual,
+  sectionInner,
+} from "@/lib/ui-classes";
 
 export const metadata: Metadata = {
   title: "Home Internet Plans | Fast One Cambodia",
@@ -30,20 +35,20 @@ const planMeta = [
   {
     icon: MonitorPlay,
     label: { en: "Everyday", km: "ប្រើប្រាស់ប្រចាំថ្ងៃ" },
-    accent: "bg-[#67C9F3]",
-    iconStyle: "bg-[#E8F8FF] text-[#087FB6]",
+    accent: "bg-brand-highlight",
+    iconStyle: "bg-brand-soft text-brand-accent",
   },
   {
     icon: Gamepad2,
     label: { en: "Busy homes", km: "គេហដ្ឋានប្រើប្រាស់ច្រើន" },
-    accent: "bg-[#0066FF]",
-    iconStyle: "bg-[#EAF3FF] text-[#0066FF]",
+    accent: "bg-brand-primary",
+    iconStyle: "bg-brand-soft text-brand-accent",
   },
   {
     icon: Gauge,
     label: { en: "High demand", km: "តម្រូវការខ្ពស់" },
-    accent: "bg-[#061B46]",
-    iconStyle: "bg-[#E9EEF6] text-[#061B46]",
+    accent: "bg-brand-dark",
+    iconStyle: "bg-brand-surface-alt text-brand-dark",
   },
 ] as const;
 
@@ -89,45 +94,45 @@ function getPlanSalesUrl(planName: string) {
 
 export default function PlansPage() {
   return (
-    <main className="overflow-x-clip bg-white text-[#061B46]">
-      <section className="relative isolate overflow-hidden bg-[#F5FAFF] pb-[88px] pt-20 max-[820px]:pb-14 max-[820px]:pt-11">
+    <main className="overflow-x-clip bg-white text-brand-ink">
+      <section className="relative isolate overflow-hidden bg-brand-surface-hero pb-[88px] pt-20 max-[820px]:pb-14 max-[820px]:pt-11">
         <div
-          className="pointer-events-none absolute left-1/2 top-[-260px] -z-10 h-[560px] w-[1020px] -translate-x-1/2 rounded-full bg-[#D9ECFF]/80 blur-[120px]"
+          className="pointer-events-none absolute left-1/2 top-[-260px] -z-10 h-[560px] w-[1020px] -translate-x-1/2 rounded-full bg-brand-soft/80 blur-[120px]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -right-40 top-10 -z-10 size-[430px] rounded-full border-[86px] border-[#0066FF]/[0.035]"
+          className="pointer-events-none absolute -right-40 top-10 -z-10 size-[430px] rounded-full border-[86px] border-brand-highlight/[0.035]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -left-20 bottom-[-210px] -z-10 size-[390px] rounded-full bg-[#38BDF8]/10 blur-[90px]"
+          className="pointer-events-none absolute -left-20 bottom-[-210px] -z-10 size-[390px] rounded-full bg-brand-highlight/10 blur-[90px]"
           aria-hidden="true"
         />
 
         <div className={sectionInner}>
           <div className="grid grid-cols-[minmax(0,0.92fr)_minmax(460px,1.08fr)] items-center gap-[clamp(42px,6vw,76px)] max-[980px]:grid-cols-1 max-[980px]:gap-11">
-            <div>
-              <p className="m-0 flex items-center gap-3 text-[0.8rem] font-black uppercase tracking-[0.14em] text-[#0066FF]">
-                <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
+            <div className={heroEnterCopy}>
+              <p className="m-0 flex items-center gap-3 text-[0.8rem] font-black uppercase tracking-[0.14em] text-brand-accent">
+                <span className="h-px w-9 bg-brand-highlight" aria-hidden="true" />
                 <LocalizedText
                   value={{ en: "Home fiber plans", km: "កញ្ចប់ហ្វាយបឺរសម្រាប់គេហដ្ឋាន" }}
                 />
               </p>
 
-              <h1 className="mb-0 mt-5 text-[clamp(2.65rem,5vw,4.25rem)] font-black leading-[1.02] tracking-[-0.045em] text-[#061B46] [text-wrap:balance] max-[640px]:text-[2.35rem] [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
+              <h1 className="mb-0 mt-5 text-[clamp(2.65rem,5vw,4.25rem)] font-black leading-[1.02] tracking-[-0.045em] text-brand-ink [text-wrap:balance] max-[640px]:text-[2.35rem] [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
                 <span className="block">
                   <LocalizedText
                     value={{ en: "Home internet,", km: "អ៊ីនធឺណិតសម្រាប់ផ្ទះ" }}
                   />
                 </span>
-                <span className="block text-[#0066FF]">
+                <span className="block text-brand-highlight">
                   <LocalizedText
                     value={{ en: "made simple.", km: "សាមញ្ញ និងច្បាស់លាស់" }}
                   />
                 </span>
               </h1>
 
-              <p className="mb-0 mt-6 max-w-[550px] text-[1.02rem] leading-[1.75] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+              <p className="mb-0 mt-6 max-w-[550px] text-[1.02rem] leading-[1.75] text-brand-copy [[lang=km]_&]:leading-[1.9]">
                 <LocalizedText
                   value={{
                     en: "Choose from three clear home plans. We’ll check your location, help you find the right speed, and guide your installation.",
@@ -138,43 +143,43 @@ export default function PlansPage() {
 
               <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid">
                 <a
-                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] bg-[#0066FF] px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,102,255,0.28)] transition duration-150 hover:-translate-y-0.5 hover:bg-[#008DFF]"
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] bg-brand-primary px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                   href="#plans"
                 >
                   <LocalizedText value={{ en: "Compare plans", km: "ប្រៀបធៀបកញ្ចប់" }} />
                   <ArrowRight className="size-[18px] transition-transform group-hover:translate-x-1" />
                 </a>
                 <Link
-                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] border border-[#BED8EB] bg-white px-6 text-[0.94rem] font-black text-[#061B46] transition duration-150 hover:-translate-y-0.5 hover:border-[#0066FF] hover:text-[#0066FF]"
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] border border-brand-border bg-white px-6 text-[0.94rem] font-black text-brand-link transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:text-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                   href="/coverage"
                 >
                   <LocalizedText value={{ en: "Check coverage", km: "ពិនិត្យតំបន់សេវា" }} />
-                  <MapPin className="size-[18px] text-[#0066FF]" />
+                  <MapPin className="size-[18px] text-brand-accent" />
                 </Link>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-2.5">
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
-                  <Wifi className="size-3.5 text-[#0066FF]" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-border-subtle bg-white px-4 py-2 text-[0.78rem] font-bold text-brand-copy-secondary">
+                  <Wifi className="size-3.5 text-brand-accent" />
                   35–100 Mbps
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
-                  <CircleDollarSign className="size-3.5 text-[#0066FF]" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-border-subtle bg-white px-4 py-2 text-[0.78rem] font-bold text-brand-copy-secondary">
+                  <CircleDollarSign className="size-3.5 text-brand-accent" />
                   <LocalizedText value={{ en: "From $15/month", km: "ចាប់ពី $15/ខែ" }} />
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
-                  <Headset className="size-3.5 text-[#0066FF]" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-border-subtle bg-white px-4 py-2 text-[0.78rem] font-bold text-brand-copy-secondary">
+                  <Headset className="size-3.5 text-brand-accent" />
                   <LocalizedText value={{ en: "Local support", km: "ជំនួយក្នុងស្រុក" }} />
                 </span>
               </div>
             </div>
 
-            <div className="relative isolate min-w-0">
+            <div className={`${heroEnterVisual} relative isolate min-w-0`}>
               <div
                 className="pointer-events-none absolute inset-[10%] -z-10 rounded-[42%] bg-white/95 blur-[42px]"
                 aria-hidden="true"
               />
-              <div className="pointer-events-none absolute inset-x-[8%] bottom-[2%] -z-10 h-[28%] rounded-full bg-[#9DD8FF]/35 blur-[48px]" aria-hidden="true" />
+              <div className="pointer-events-none absolute inset-x-[8%] bottom-[2%] -z-10 h-[28%] rounded-full bg-brand-border/35 blur-[48px]" aria-hidden="true" />
               <div className="relative h-[520px] max-[980px]:h-[470px] max-[640px]:h-[390px]">
                 <Image
                   className="object-contain object-center drop-shadow-[0_24px_32px_rgba(6,27,70,0.1)]"
@@ -182,7 +187,7 @@ export default function PlansPage() {
                   alt=""
                   fill
                   priority
-                  quality={90}
+                  quality={100}
                   sizes="(max-width: 980px) 100vw, 50vw"
                   style={{
                     maskImage:
@@ -203,12 +208,12 @@ export default function PlansPage() {
       >
         <div className={sectionInner}>
           <div className="mx-auto max-w-[760px] text-center">
-            <p className="m-0 flex items-center justify-center gap-3 text-[0.78rem] font-black uppercase tracking-[0.16em] text-[#0066FF]">
-              <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
+            <p className="m-0 flex items-center justify-center gap-3 text-[0.78rem] font-black uppercase tracking-[0.16em] text-brand-accent">
+              <span className="h-px w-9 bg-brand-highlight" aria-hidden="true" />
               <LocalizedText value={{ en: "Compare plans", km: "ប្រៀបធៀបកញ្ចប់" }} />
-              <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
+              <span className="h-px w-9 bg-brand-highlight" aria-hidden="true" />
             </p>
-            <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.15rem)] font-black leading-[1.08] tracking-[-0.035em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:leading-[1.4] [[lang=km]_&]:tracking-normal">
+            <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.15rem)] font-black leading-[1.08] tracking-[-0.035em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:leading-[1.4] [[lang=km]_&]:tracking-normal">
               <LocalizedText
                 value={{
                   en: "Choose the speed that feels right at home.",
@@ -216,7 +221,7 @@ export default function PlansPage() {
                 }}
               />
             </h2>
-            <p className="mx-auto mb-0 mt-5 max-w-[680px] text-[0.98rem] leading-[1.75] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+            <p className="mx-auto mb-0 mt-5 max-w-[680px] text-[0.98rem] leading-[1.75] text-brand-copy [[lang=km]_&]:leading-[1.9]">
               <LocalizedText
                 value={{
                   en: "Every plan comes with premium bandwidth, local support, and router-ready setup. Pick a starting point and our team will help confirm the fit.",
@@ -226,19 +231,19 @@ export default function PlansPage() {
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-[28px] border border-[#D5E6F5] bg-[#F2F8FD] p-2 shadow-[0_24px_64px_rgba(6,27,70,0.09)] max-[640px]:mt-9 max-[640px]:overflow-visible max-[640px]:rounded-none max-[640px]:border-0 max-[640px]:bg-transparent max-[640px]:p-0 max-[640px]:shadow-none">
+          <div className="mt-12 overflow-hidden rounded-[28px] border border-brand-border-subtle bg-brand-surface-soft p-2 shadow-[0_24px_64px_rgba(6,27,70,0.09)] max-[640px]:mt-9 max-[640px]:overflow-visible max-[640px]:rounded-none max-[640px]:border-0 max-[640px]:bg-transparent max-[640px]:p-0 max-[640px]:shadow-none">
             <div className="flex items-center justify-between gap-6 px-5 py-4 max-[820px]:items-start max-[820px]:flex-col max-[820px]:gap-3 max-[640px]:hidden">
               <div className="flex items-center gap-3">
-                <span className="flex size-10 flex-none items-center justify-center rounded-[11px] bg-white text-[#0066FF] shadow-[0_7px_18px_rgba(6,27,70,0.07)] ring-1 ring-[#D9E7F3]">
+                <span className="flex size-10 flex-none items-center justify-center rounded-[11px] bg-white text-brand-accent shadow-[0_7px_18px_rgba(6,27,70,0.07)] ring-1 ring-brand-border-subtle">
                   <Wifi className="size-[18px]" />
                 </span>
                 <div>
-                  <p className="m-0 text-[0.82rem] font-black text-[#173B65]">
+                  <p className="m-0 text-[0.82rem] font-black text-brand-heading">
                     <LocalizedText
                       value={{ en: "Included with every home plan", km: "មានក្នុងគ្រប់កញ្ចប់គេហដ្ឋាន" }}
                     />
                   </p>
-                  <p className="mb-0 mt-0.5 text-[0.72rem] text-[#526C8D]">
+                  <p className="mb-0 mt-0.5 text-[0.72rem] text-brand-copy">
                     <LocalizedText
                       value={{ en: "The speed changes. The service essentials stay.", km: "ល្បឿនខុសគ្នា ប៉ុន្តែសេវាសំខាន់ៗនៅដដែល" }}
                     />
@@ -249,10 +254,10 @@ export default function PlansPage() {
               <div className="flex flex-wrap gap-x-5 gap-y-2 max-[640px]:pl-1">
                 {sharedPlanBenefits.map((benefit) => (
                   <span
-                    className="inline-flex items-center gap-2 text-[0.75rem] font-bold text-[#365B80]"
+                    className="inline-flex items-center gap-2 text-[0.75rem] font-bold text-brand-copy-secondary"
                     key={benefit.en}
                   >
-                    <span className="flex size-[18px] items-center justify-center rounded-full bg-white text-[#0066FF] ring-1 ring-[#CFE1F0]">
+                    <span className="flex size-[18px] items-center justify-center rounded-full bg-white text-brand-accent ring-1 ring-brand-border-subtle">
                       <Check className="size-3" strokeWidth={2.8} />
                     </span>
                     <LocalizedText value={benefit} />
@@ -268,7 +273,7 @@ export default function PlansPage() {
 
                 return (
                   <a
-                    className="group relative grid min-h-[168px] grid-cols-[150px_150px_minmax(200px,1fr)_140px] items-center gap-6 overflow-hidden rounded-[20px] border border-[#DFEAF4] bg-white px-7 py-6 shadow-[0_9px_24px_rgba(6,27,70,0.035)] transition duration-200 hover:-translate-y-0.5 hover:border-[#8CCAF8] hover:bg-[#FBFDFF] hover:shadow-[0_18px_38px_rgba(6,27,70,0.09)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066FF] focus-visible:ring-offset-2 max-[980px]:min-h-0 max-[980px]:grid-cols-[minmax(0,1fr)_auto] max-[980px]:gap-x-5 max-[980px]:gap-y-4 max-[640px]:gap-x-4 max-[640px]:gap-y-4 max-[640px]:rounded-[20px] max-[640px]:border-[#D5E6F5] max-[640px]:px-5 max-[640px]:py-5 max-[640px]:shadow-[0_14px_34px_rgba(6,27,70,0.065)]"
+                    className="group relative grid min-h-[168px] grid-cols-[150px_150px_minmax(200px,1fr)_140px] items-center gap-6 overflow-hidden rounded-[20px] border border-brand-border-subtle bg-white px-7 py-6 shadow-[0_9px_24px_rgba(6,27,70,0.035)] transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-brand-surface-hero hover:shadow-[0_18px_38px_rgba(6,27,70,0.09)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 max-[980px]:min-h-0 max-[980px]:grid-cols-[minmax(0,1fr)_auto] max-[980px]:gap-x-5 max-[980px]:gap-y-4 max-[640px]:gap-x-4 max-[640px]:gap-y-4 max-[640px]:rounded-[20px] max-[640px]:border-brand-border-subtle max-[640px]:px-5 max-[640px]:py-5 max-[640px]:shadow-[0_14px_34px_rgba(6,27,70,0.065)]"
                     href={getPlanSalesUrl(plan.name)}
                     target="_blank"
                     rel="noreferrer"
@@ -293,37 +298,37 @@ export default function PlansPage() {
                           <Icon className="size-5 max-[640px]:size-[18px]" />
                         </span>
                         <div>
-                          <h3 className="m-0 text-[1.02rem] font-black text-[#061B46]">
+                          <h3 className="m-0 text-[1.02rem] font-black text-brand-heading">
                             <LocalizedText value={plan.name} />
                           </h3>
-                          <p className="mb-0 mt-1 text-[0.7rem] font-bold text-[#607890]">
+                          <p className="mb-0 mt-1 text-[0.7rem] font-bold text-brand-copy-secondary">
                             <LocalizedText value={meta.label} />
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="max-[980px]:col-span-2 max-[980px]:col-start-1 max-[980px]:row-start-2 max-[640px]:rounded-[14px] max-[640px]:bg-[#F4F9FE] max-[640px]:px-4 max-[640px]:py-4">
-                      <p className="m-0 whitespace-nowrap text-[3.2rem] font-black leading-none tracking-[-0.055em] text-[#061B46] max-[640px]:text-[2.7rem]">
+                    <div className="max-[980px]:col-span-2 max-[980px]:col-start-1 max-[980px]:row-start-2 max-[640px]:rounded-[14px] max-[640px]:bg-brand-surface-alt max-[640px]:px-4 max-[640px]:py-4">
+                      <p className="m-0 whitespace-nowrap text-[3.2rem] font-black leading-none tracking-[-0.055em] text-brand-ink max-[640px]:text-[2.7rem]">
                         {plan.speed.replace(" Mbps", "")}
-                        <span className="ml-2 text-[0.8rem] font-black tracking-normal text-[#0066FF]">Mbps</span>
+                        <span className="ml-2 text-[0.8rem] font-black tracking-normal text-brand-accent">Mbps</span>
                       </p>
                     </div>
 
-                    <div className="max-[980px]:col-span-2 max-[980px]:col-start-1 max-[980px]:row-start-3 max-[640px]:border-t max-[640px]:border-[#E1ECF5] max-[640px]:pt-4">
-                      <p className="m-0 text-[0.7rem] font-black uppercase tracking-[0.1em] text-[#0066FF] max-[640px]:hidden">
+                    <div className="max-[980px]:col-span-2 max-[980px]:col-start-1 max-[980px]:row-start-3 max-[640px]:border-t max-[640px]:border-brand-border-subtle max-[640px]:pt-4">
+                      <p className="m-0 text-[0.7rem] font-black uppercase tracking-[0.1em] text-brand-accent max-[640px]:hidden">
                         <LocalizedText value={{ en: "Best for", km: "សមស្របសម្រាប់" }} />
                       </p>
-                      <p className="mb-0 mt-2 max-w-[300px] text-[0.86rem] leading-[1.6] text-[#526C8D] [[lang=km]_&]:leading-[1.85] max-[980px]:max-w-none max-[640px]:mt-0">
+                      <p className="mb-0 mt-2 max-w-[300px] text-[0.86rem] leading-[1.6] text-brand-copy [[lang=km]_&]:leading-[1.85] max-[980px]:max-w-none max-[640px]:mt-0">
                         <LocalizedText value={plan.note} />
                       </p>
                     </div>
 
-                    <div className="flex min-h-[112px] min-w-[140px] flex-col items-center justify-center rounded-[16px] border border-[#CFE3F5] bg-[linear-gradient(145deg,#F4FAFF,#E8F4FF)] px-4 py-3 text-center shadow-[0_10px_24px_rgba(0,102,255,0.08)] transition duration-200 group-hover:border-[#8CCAF8] group-hover:shadow-[0_14px_30px_rgba(0,102,255,0.14)] max-[980px]:col-start-2 max-[980px]:row-start-1 max-[640px]:min-h-0 max-[640px]:min-w-0 max-[640px]:rounded-none max-[640px]:border-0 max-[640px]:bg-none max-[640px]:bg-transparent max-[640px]:p-0 max-[640px]:text-right max-[640px]:shadow-none">
-                      <p className="m-0 whitespace-nowrap text-[2.55rem] font-black leading-none tracking-[-0.05em] text-[#0066FF] max-[640px]:text-[2.2rem]">
+                    <div className="flex min-h-[112px] min-w-[140px] flex-col items-center justify-center rounded-[16px] border border-brand-border bg-brand-soft px-4 py-3 text-center shadow-[0_10px_24px_rgba(0,103,172,0.08)] transition duration-200 group-hover:border-brand-border-hover group-hover:shadow-[0_14px_30px_rgba(0,103,172,0.14)] max-[980px]:col-start-2 max-[980px]:row-start-1 max-[640px]:min-h-0 max-[640px]:min-w-0 max-[640px]:rounded-none max-[640px]:border-0 max-[640px]:bg-none max-[640px]:bg-transparent max-[640px]:p-0 max-[640px]:text-right max-[640px]:shadow-none">
+                      <p className="m-0 whitespace-nowrap text-[2.55rem] font-black leading-none tracking-[-0.05em] text-brand-primary max-[640px]:text-[2.2rem]">
                         {plan.price}
                       </p>
-                      <p className="mb-0 mt-1.5 text-[0.7rem] font-bold text-[#526C8D]">
+                      <p className="mb-0 mt-1.5 text-[0.7rem] font-bold text-brand-copy">
                         <LocalizedText value={{ en: "per month", km: "ក្នុងមួយខែ" }} />
                       </p>
                     </div>
@@ -333,16 +338,16 @@ export default function PlansPage() {
             </div>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-[22px] border border-[#D7E7F5] bg-[#F5FAFF] shadow-[0_16px_40px_rgba(6,27,70,0.06)]">
-            <div className="flex items-center gap-3 border-b border-[#D7E7F5] bg-white/70 px-6 py-4 max-[640px]:px-5">
-              <span className="flex size-9 items-center justify-center rounded-[9px] bg-[#E8F4FF] text-[#0066FF]">
+          <div className="mt-8 overflow-hidden rounded-[22px] border border-brand-border-subtle bg-brand-surface-hero shadow-[0_16px_40px_rgba(6,27,70,0.06)]">
+            <div className="flex items-center gap-3 border-b border-brand-border-subtle bg-white/70 px-6 py-4 max-[640px]:px-5">
+              <span className="flex size-9 items-center justify-center rounded-[9px] bg-brand-soft text-brand-accent">
                 <Cable className="size-[18px]" />
               </span>
               <div>
-                <h3 className="m-0 text-[0.94rem] font-black text-[#061B46]">
+                <h3 className="m-0 text-[0.94rem] font-black text-brand-heading">
                   <LocalizedText value={{ en: "Simple terms, shared upfront", km: "លក្ខខណ្ឌសាមញ្ញ បង្ហាញច្បាស់ជាមុន" }} />
                 </h3>
-                <p className="mb-0 mt-0.5 text-[0.76rem] font-medium text-[#526C8D]">
+                <p className="mb-0 mt-0.5 text-[0.76rem] font-medium text-brand-copy">
                   <LocalizedText
                     value={{
                       en: "Coverage and router setup are confirmed before activation.",
@@ -353,21 +358,21 @@ export default function PlansPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 divide-x divide-[#D7E7F5] max-[740px]:grid-cols-1 max-[740px]:divide-x-0 max-[740px]:[&>*]:border-b max-[740px]:[&>*:last-child]:border-b-0">
+            <div className="grid grid-cols-3 divide-x divide-brand-border-subtle max-[740px]:grid-cols-1 max-[740px]:divide-x-0 max-[740px]:[&>*]:border-b max-[740px]:[&>*:last-child]:border-b-0">
               {planTerms.map((term) => (
                 <article className="p-6 max-[640px]:p-5" key={term.title.en}>
                   <div className="flex items-center justify-between gap-3">
-                    <span className="flex size-10 items-center justify-center rounded-[10px] bg-white text-[#0066FF] shadow-[0_7px_18px_rgba(6,27,70,0.07)] ring-1 ring-[#DCEAF6]">
+                    <span className="flex size-10 items-center justify-center rounded-[10px] bg-white text-brand-accent shadow-[0_7px_18px_rgba(6,27,70,0.07)] ring-1 ring-brand-border-subtle">
                       <term.icon className="size-[18px]" />
                     </span>
-                    <span className="text-[1rem] font-black text-[#0066FF]">
+                    <span className="text-[1rem] font-black text-brand-accent">
                       <LocalizedText value={term.value} />
                     </span>
                   </div>
-                  <h4 className="mb-0 mt-5 text-[0.9rem] font-black text-[#173B65]">
+                  <h4 className="mb-0 mt-5 text-[0.9rem] font-black text-brand-heading">
                     <LocalizedText value={term.title} />
                   </h4>
-                  <p className="mb-0 mt-2 text-[0.78rem] leading-[1.6] text-[#526C8D] [[lang=km]_&]:leading-[1.85]">
+                  <p className="mb-0 mt-2 text-[0.78rem] leading-[1.6] text-brand-copy [[lang=km]_&]:leading-[1.85]">
                     <LocalizedText value={term.text} />
                   </p>
                 </article>
@@ -381,19 +386,19 @@ export default function PlansPage() {
 
       <section className="bg-white py-[92px] max-[640px]:py-[64px]">
         <div className={sectionInner}>
-          <div className="relative isolate overflow-hidden rounded-[24px] bg-[linear-gradient(112deg,#061B46_0%,#082E68_58%,#075A8F_100%)] px-[clamp(26px,5vw,58px)] py-[clamp(38px,5vw,54px)] text-white shadow-[0_28px_68px_rgba(6,27,70,0.24)]">
+          <div className="relative isolate overflow-hidden rounded-[24px] bg-[linear-gradient(112deg,#071E3E_0%,#082744_58%,#0A4772_100%)] px-[clamp(26px,5vw,58px)] py-[clamp(38px,5vw,54px)] text-white shadow-[0_28px_70px_rgba(8,49,89,0.2)]">
             <div
-              className="pointer-events-none absolute -right-24 -top-32 -z-10 size-[330px] rounded-full bg-[#00AEEF]/22 blur-[85px]"
+              className="pointer-events-none absolute -right-24 -top-32 -z-10 size-[330px] rounded-full bg-brand-dark-accent/20 blur-[85px]"
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute -bottom-32 left-[34%] -z-10 size-[290px] rounded-full bg-[#0066FF]/30 blur-[85px]"
+              className="pointer-events-none absolute -bottom-32 left-[34%] -z-10 size-[290px] rounded-full bg-brand-highlight/30 blur-[85px]"
               aria-hidden="true"
             />
 
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-10 max-[900px]:grid-cols-1 max-[900px]:gap-7">
               <div>
-                <div className="flex items-center gap-2.5 text-[0.75rem] font-black uppercase tracking-[0.15em] text-[#7DD3FC]">
+                <div className="flex items-center gap-2.5 text-[0.75rem] font-black uppercase tracking-[0.15em] text-brand-dark-accent">
                   <Headset className="size-4" />
                   <LocalizedText value={{ en: "Need a recommendation?", km: "ត្រូវការការណែនាំមែនទេ?" }} />
                 </div>
@@ -405,7 +410,7 @@ export default function PlansPage() {
                     }}
                   />
                 </h2>
-                <p className="mb-0 mt-4 max-w-[620px] text-[0.93rem] leading-[1.7] text-white/70 [[lang=km]_&]:leading-[1.9]">
+                <p className="mb-0 mt-4 max-w-[620px] text-[0.93rem] leading-[1.7] text-brand-dark-copy [[lang=km]_&]:leading-[1.9]">
                   <LocalizedText
                     value={{
                       en: "Share your location and the activities you use most. Fast One sales will help confirm coverage and a suitable plan.",
@@ -417,7 +422,7 @@ export default function PlansPage() {
 
               <div className="flex flex-col gap-3 max-[520px]:w-full">
                 <a
-                  className="group inline-flex min-h-12 min-w-[235px] items-center justify-center gap-3 rounded-[9px] bg-[#0066FF] px-6 text-[0.92rem] font-black text-white shadow-[0_16px_34px_rgba(0,102,255,0.34)] transition duration-150 hover:-translate-y-0.5 hover:bg-[#00AEEF] max-[520px]:min-w-0 max-[520px]:w-full"
+                  className="group inline-flex min-h-12 min-w-[235px] items-center justify-center gap-3 rounded-[9px] bg-brand-primary px-6 text-[0.92rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark max-[520px]:min-w-0 max-[520px]:w-full"
                   href={salesUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -427,10 +432,10 @@ export default function PlansPage() {
                   <ArrowRight className="size-[18px] transition-transform group-hover:translate-x-1" />
                 </a>
                 <Link
-                  className="inline-flex min-h-12 min-w-[235px] items-center justify-center gap-3 rounded-[9px] border border-white/25 bg-white/10 px-6 text-[0.9rem] font-black text-white transition duration-150 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/15 max-[520px]:min-w-0 max-[520px]:w-full"
+                  className="inline-flex min-h-12 min-w-[235px] items-center justify-center gap-3 rounded-[9px] border border-white/25 bg-white/10 px-6 text-[0.9rem] font-black text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark max-[520px]:min-w-0 max-[520px]:w-full"
                   href="/coverage"
                 >
-                  <MapPin className="size-[18px] text-[#7DD3FC]" />
+                  <MapPin className="size-[18px] text-brand-dark-accent" />
                   <LocalizedText value={{ en: "Check coverage", km: "ពិនិត្យតំបន់សេវា" }} />
                 </Link>
               </div>

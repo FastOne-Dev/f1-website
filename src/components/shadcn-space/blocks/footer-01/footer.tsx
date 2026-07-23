@@ -125,12 +125,12 @@ const Footer = () => {
     "inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white/80 transition-colors hover:border-white/45 hover:bg-white/20 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none";
 
   return (
-    <footer className="bg-gradient-to-r from-[#0067AC] to-[#01c7ea] py-6 text-white">
+    <footer className="bg-gradient-to-r from-brand-primary to-brand-primary-hover py-6 text-white">
       <div className="max-w-7xl xl:px-16 lg:px-8 px-4 mx-auto ">
         <div className="flex flex-col gap-6  ">
           <div className="py-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 lg:grid-cols-12 gap-x-6 gap-y-10 px-6 xl:px-0">
             <div className="col-span-full lg:col-span-4">
-              <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+              <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-10 animation-duration-1000 delay-100 ease-in-out fill-mode-both motion-reduce:animate-none">
                 {/* Logo */}
                 <Link href="/" aria-label="Fast One home">
                   <Image
@@ -139,6 +139,8 @@ const Footer = () => {
                     width={200}
                     height={52}
                     className="h-auto w-50 object-contain"
+                    quality={100}
+                    sizes="200px"
                   />
                 </Link>
 
@@ -201,7 +203,7 @@ const Footer = () => {
 
             {footerSections.map(({ titleKey, links }) => (
               <div key={titleKey} className="col-span-2 ">
-                <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+                <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 animation-duration-1000 delay-100 ease-in-out fill-mode-both motion-reduce:animate-none">
                   <p className="text-lg font-semibold text-white">
                     {t[titleKey]}
                   </p>
@@ -222,7 +224,7 @@ const Footer = () => {
             ))}
 
             <div className="col-span-3">
-              <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+              <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 animation-duration-1000 delay-100 ease-in-out fill-mode-both motion-reduce:animate-none">
                 <p className="text-lg font-semibold text-white">{t.location}</p>
                 <ul className="flex flex-col gap-3">
                   <li>
@@ -273,7 +275,7 @@ const Footer = () => {
             </div>
           </div>
           <Separator orientation="horizontal" className="bg-white/25" />
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-normal text-white/75 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-normal text-white/75 animate-in fade-in slide-in-from-bottom-10 animation-duration-1000 delay-100 ease-in-out fill-mode-both motion-reduce:animate-none">
             <p className="m-0">{t.copyright}</p>
           </div>
         </div>

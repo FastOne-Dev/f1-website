@@ -19,6 +19,7 @@ import LocalizedText, {
   type LocalizedString,
 } from "@/components/LocalizedText";
 import { salesUrl } from "@/lib/site-data";
+import { heroEnterCopy, heroEnterVisual } from "@/lib/ui-classes";
 
 export const metadata: Metadata = {
   title: "IP Transit | Fast One Cambodia",
@@ -271,7 +272,7 @@ function NetworkVisual() {
           <LocalizedText value={copy.networkPath} />
         </div>
         <div className="flex items-center gap-2 text-[0.72rem] font-bold text-[#087D88]">
-          <span className="size-1.5 animate-pulse rounded-full bg-[#19B98A] shadow-[0_0_10px_rgba(25,185,138,0.45)]" />
+          <span className="size-1.5 animate-pulse rounded-full bg-[#19B98A] shadow-[0_0_10px_rgba(25,185,138,0.45)] motion-reduce:animate-none" />
           <LocalizedText value={copy.online} />
         </div>
       </div>
@@ -366,7 +367,7 @@ export default function IpTransitPage() {
         <div className="pointer-events-none absolute -bottom-40 -left-20 -z-10 size-[460px] rounded-full bg-[#38BDF8]/12 blur-[100px]" />
 
         <div className={`${pageInner} grid min-h-[660px] grid-cols-[minmax(0,0.92fr)_minmax(440px,0.88fr)] items-center gap-[72px] py-[72px] max-[1080px]:grid-cols-1 max-[1080px]:gap-12 max-[1080px]:py-[68px] max-[640px]:py-[52px]`}>
-          <div className="max-w-[680px]">
+          <div className={`${heroEnterCopy} max-w-[680px]`}>
             <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[#A9D8E9] bg-white/70 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0077A8] shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
               <span className="size-1.5 rounded-full bg-[#08A9CC] shadow-[0_0_12px_rgba(8,169,204,0.5)]" />
               <LocalizedText value={copy.heroEyebrow} />
@@ -385,7 +386,7 @@ export default function IpTransitPage() {
 
             <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid max-[520px]:grid-cols-1">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-[#0067AC] px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#008FC1]"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-brand-primary px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -394,7 +395,7 @@ export default function IpTransitPage() {
                 <ArrowRight className="size-4.5" />
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-[#9FCDE2] bg-white/70 px-6 text-[0.94rem] font-bold text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:border-[#50B4D1] hover:bg-white"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-brand-border bg-white/70 px-6 text-[0.94rem] font-bold text-brand-link transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href="#capabilities"
               >
                 <LocalizedText value={copy.exploreCapabilities} />
@@ -402,7 +403,9 @@ export default function IpTransitPage() {
             </div>
           </div>
 
-          <NetworkVisual />
+          <div className={heroEnterVisual}>
+            <NetworkVisual />
+          </div>
         </div>
       </section>
 
@@ -667,7 +670,7 @@ export default function IpTransitPage() {
             </div>
             <div className="grid min-w-[250px] gap-3 max-[820px]:min-w-0">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:bg-[#E9FBFD]"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-brand-link transition duration-200 hover:-translate-y-0.5 hover:bg-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark-cta"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -676,7 +679,7 @@ export default function IpTransitPage() {
                 <ArrowRight className="size-4.5" />
               </a>
               <Link
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-white/22 px-6 text-[0.94rem] font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/45"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-white/22 px-6 text-[0.94rem] font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark-cta"
                 href="/business"
               >
                 <LocalizedText value={copy.businessOverview} />

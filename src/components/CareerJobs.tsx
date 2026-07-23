@@ -223,29 +223,29 @@ export default function CareerJobs() {
   };
 
   const inputBase =
-    "h-12 w-full rounded-[10px] border border-[#D8E8F8] bg-white text-[0.9rem] font-medium text-[#173D56] transition focus:border-[#0066FF] focus:outline-none focus:ring-2 focus:ring-[#0066FF]/15";
+    "h-12 w-full rounded-[10px] border border-brand-border-subtle bg-white text-[0.9rem] font-medium text-brand-heading transition focus:border-brand-highlight focus:outline-none focus:ring-2 focus:ring-brand-highlight/15";
 
   return (
     <section className="scroll-mt-[76px] bg-white py-24 max-[820px]:py-16" id="open-positions">
       <div className={sectionInner}>
         <div className="max-w-[720px]">
-          <p className="m-0 flex items-center gap-3 text-[0.75rem] font-black uppercase tracking-[0.14em] text-[#0066FF]">
-            <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
+          <p className="m-0 flex items-center gap-3 text-[0.75rem] font-black uppercase tracking-[0.14em] text-brand-accent">
+            <span className="h-px w-9 bg-brand-highlight" aria-hidden="true" />
             {copy.eyebrow}
           </p>
-          <h2 className="mb-0 mt-4 text-[clamp(2.1rem,3.8vw,3.1rem)] font-black leading-[1.05] tracking-[-0.03em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:leading-[1.42] [[lang=km]_&]:tracking-normal">
+          <h2 className="mb-0 mt-4 text-[clamp(2.1rem,3.8vw,3.1rem)] font-black leading-[1.05] tracking-[-0.03em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:leading-[1.42] [[lang=km]_&]:tracking-normal">
             {copy.title}
           </h2>
-          <p className="mb-0 mt-4 text-[0.98rem] leading-[1.7] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+          <p className="mb-0 mt-4 text-[0.98rem] leading-[1.7] text-brand-copy [[lang=km]_&]:leading-[1.9]">
             {copy.intro}
           </p>
         </div>
 
         <div className="mt-10 grid grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1fr)] gap-3 max-[720px]:grid-cols-1">
           <div className="relative">
-            <Search className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-[#0066FF]" />
+            <Search className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-brand-accent" />
             <input
-              className={cx(inputBase, "pl-11 pr-4 placeholder:font-normal placeholder:text-[#8CA0AE]")}
+              className={cx(inputBase, "pl-11 pr-4 placeholder:font-normal placeholder:text-brand-muted")}
               placeholder={copy.searchPlaceholder}
               value={query}
               onChange={(event) => setQuery(event.target.value)}
@@ -254,7 +254,7 @@ export default function CareerJobs() {
           </div>
 
           <div className="relative">
-            <BriefcaseBusiness className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-[#0066FF]" />
+            <BriefcaseBusiness className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-brand-accent" />
             <select
               className={cx(inputBase, "appearance-none pl-11 pr-10")}
               value={department}
@@ -266,11 +266,11 @@ export default function CareerJobs() {
                 <option value={item.value} key={item.value}>{item.label}</option>
               ))}
             </select>
-            <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 text-[#8CA0AE]" />
+            <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 text-brand-muted" />
           </div>
 
           <div className="relative">
-            <MapPin className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-[#0066FF]" />
+            <MapPin className="pointer-events-none absolute left-4 top-1/2 size-[18px] -translate-y-1/2 text-brand-accent" />
             <select
               className={cx(inputBase, "appearance-none pl-11 pr-10")}
               value={location}
@@ -282,18 +282,18 @@ export default function CareerJobs() {
                 <option value={item.value} key={item.value}>{item.label}</option>
               ))}
             </select>
-            <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 text-[#8CA0AE]" />
+            <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 text-brand-muted" />
           </div>
         </div>
 
         <div className="mt-6 flex items-center justify-between gap-4">
-          <p className="m-0 text-[0.82rem] font-semibold text-[#637B8B]">
-            {copy.showing} <span className="font-black text-[#163E59]">{jobs.length}</span>{" "}
+          <p className="m-0 text-[0.82rem] font-semibold text-brand-copy">
+            {copy.showing} <span className="font-black text-brand-heading">{jobs.length}</span>{" "}
             {jobs.length === 1 ? copy.position : copy.positions}
           </p>
           {hasFilters && (
             <button
-              className="text-[0.78rem] font-bold text-[#0066FF] underline decoration-[#0066FF]/35 underline-offset-4 transition hover:text-[#008DFF]"
+              className="text-[0.78rem] font-bold text-brand-link underline decoration-brand-link/35 underline-offset-4 transition hover:text-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
               type="button"
               onClick={reset}
             >
@@ -302,8 +302,8 @@ export default function CareerJobs() {
           )}
         </div>
 
-        <div className="mt-4 overflow-hidden rounded-[14px] border border-[#E7EEF5]">
-          <div className={cx("grid gap-6 bg-[#F5FAFF] px-5 py-3.5 text-[0.72rem] font-black uppercase tracking-[0.07em] text-[#0066FF] max-[760px]:hidden", columns)}>
+        <div className="mt-4 overflow-hidden rounded-[14px] border border-brand-border-subtle">
+          <div className={cx("grid gap-6 bg-brand-surface-hero px-5 py-3.5 text-[0.72rem] font-black uppercase tracking-[0.07em] text-brand-accent max-[760px]:hidden", columns)}>
             <span>{copy.colTitle}</span>
             <span>{copy.colDepartment}</span>
             <span>{copy.colLocation}</span>
@@ -319,9 +319,9 @@ export default function CareerJobs() {
               return (
                 <button
                   className={cx(
-                    "group grid w-full cursor-pointer items-center gap-6 border-t border-[#EEF3F8] px-5 py-[18px] text-left transition-colors hover:bg-[#EDF4FE] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#0066FF]/40 max-[760px]:flex max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2.5",
+                    "group grid w-full cursor-pointer items-center gap-6 border-t border-brand-border-subtle px-5 py-[18px] text-left transition-colors hover:bg-brand-surface-hero focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-highlight/40 max-[760px]:flex max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2.5",
                     columns,
-                    index % 2 === 1 ? "bg-[#F9FBFE]" : "bg-white",
+                    index % 2 === 1 ? "bg-brand-surface-alt/50" : "bg-white",
                   )}
                   type="button"
                   key={job.id}
@@ -330,7 +330,7 @@ export default function CareerJobs() {
                   onClick={() => setSelectedJob(job)}
                 >
                   <span className="flex min-w-0 flex-wrap items-center gap-2">
-                    <span className="text-[0.98rem] font-black leading-snug tracking-[-0.01em] text-[#061B46] transition-colors group-hover:text-[#0066FF]">
+                    <span className="text-[0.98rem] font-black leading-snug tracking-[-0.01em] text-brand-ink transition-colors group-hover:text-brand-link">
                       {localizedJob.title}
                     </span>
                     {job.isNew && (
@@ -347,30 +347,30 @@ export default function CareerJobs() {
                     )}
                   </span>
 
-                  <span className="flex items-center gap-2 text-[0.86rem] font-semibold text-[#4E6884]">
-                    <BriefcaseBusiness className="hidden size-3.5 flex-none text-[#0066FF] max-[760px]:block" />
+                  <span className="flex items-center gap-2 text-[0.86rem] font-semibold text-brand-copy-secondary">
+                    <BriefcaseBusiness className="hidden size-3.5 flex-none text-brand-accent max-[760px]:block" />
                     {localizedJob.department}
                   </span>
 
-                  <span className="flex items-center gap-2 text-[0.86rem] text-[#4E6884]">
-                    <MapPin className="hidden size-3.5 flex-none text-[#0066FF] max-[760px]:block" />
+                  <span className="flex items-center gap-2 text-[0.86rem] text-brand-copy-secondary">
+                    <MapPin className="hidden size-3.5 flex-none text-brand-accent max-[760px]:block" />
                     {localizedJob.location}
                   </span>
 
-                  <span className="flex items-center gap-2 text-[0.86rem] text-[#4E6884]">
-                    <CalendarDays className="hidden size-3.5 flex-none text-[#0066FF] max-[760px]:block" />
+                  <span className="flex items-center gap-2 text-[0.86rem] text-brand-copy-secondary">
+                    <CalendarDays className="hidden size-3.5 flex-none text-brand-accent max-[760px]:block" />
                     {readableDate(job.deadline, locale)}
                   </span>
                 </button>
               );
             })
           ) : (
-            <div className="border-t border-[#EEF3F8] bg-white py-16 text-center">
-              <Search className="mx-auto size-8 text-[#A0B5C0]" strokeWidth={1.5} />
-              <h3 className="mb-0 mt-5 text-xl font-black text-[#061B46]">{copy.noMatch}</h3>
-              <p className="mx-auto mb-0 mt-2 max-w-[440px] text-sm leading-6 text-[#6B818F]">{copy.noMatchCopy}</p>
+            <div className="border-t border-brand-border-subtle bg-white py-16 text-center">
+              <Search className="mx-auto size-8 text-brand-muted" strokeWidth={1.5} />
+              <h3 className="mb-0 mt-5 text-xl font-black text-brand-ink">{copy.noMatch}</h3>
+              <p className="mx-auto mb-0 mt-2 max-w-[440px] text-sm leading-6 text-brand-copy">{copy.noMatchCopy}</p>
               <button
-                className="mt-5 text-sm font-bold text-[#0066FF] underline underline-offset-4"
+                className="mt-5 text-sm font-bold text-brand-link underline underline-offset-4 transition hover:text-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 type="button"
                 onClick={reset}
               >
@@ -381,9 +381,9 @@ export default function CareerJobs() {
         </div>
 
         <div className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.85rem]">
-          <span className="font-bold text-[#365B80]">{copy.generalApplication}</span>
+          <span className="font-bold text-brand-copy-secondary">{copy.generalApplication}</span>
           <a
-            className="inline-flex items-center gap-1.5 font-bold text-[#0066FF] underline decoration-[#0066FF]/35 underline-offset-4 transition hover:text-[#008DFF]"
+            className="inline-flex items-center gap-1.5 font-bold text-brand-link underline decoration-brand-link/35 underline-offset-4 transition hover:text-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
             href={hrTelegramUrl}
             target="_blank"
             rel="noreferrer"
@@ -396,21 +396,21 @@ export default function CareerJobs() {
 
       {selectedJob && selectedJobContent && (
         <div
-          className="fixed inset-0 z-[80] flex items-center justify-center bg-[#03102a]/60 p-4 backdrop-blur-[3px] max-[560px]:p-0"
+          className="fixed inset-0 z-[80] flex animate-in items-center justify-center bg-brand-dark/60 p-4 backdrop-blur-[3px] fade-in animation-duration-200 fill-mode-both motion-reduce:animate-none max-[560px]:p-0"
           role="presentation"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) setSelectedJob(null);
           }}
         >
           <div
-            className="flex max-h-[86vh] w-full max-w-[640px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_40px_90px_rgba(3,16,42,0.4)] max-[560px]:h-full max-[560px]:max-h-full max-[560px]:rounded-none"
+            className="flex max-h-[86vh] w-full max-w-[640px] animate-in flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_40px_90px_rgba(7,30,62,0.4)] fade-in zoom-in-95 slide-in-from-bottom-4 animation-duration-300 ease-out fill-mode-both motion-reduce:animate-none max-[560px]:h-full max-[560px]:max-h-full max-[560px]:rounded-none"
             role="dialog"
             aria-modal="true"
             aria-labelledby="job-dialog-title"
           >
-            <header className="relative border-b border-[#EEF3F8] px-8 pb-6 pt-7 max-[560px]:px-6">
+            <header className="relative border-b border-brand-border-subtle px-8 pb-6 pt-7 max-[560px]:px-6">
               <button
-                className="absolute right-5 top-5 flex size-9 items-center justify-center rounded-full text-[#7E93A3] transition hover:bg-[#F0F5FB] hover:text-[#061B46]"
+                className="absolute right-5 top-5 flex size-9 items-center justify-center rounded-full text-brand-muted transition hover:bg-brand-soft hover:text-brand-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 type="button"
                 aria-label={copy.close}
                 autoFocus
@@ -419,25 +419,25 @@ export default function CareerJobs() {
                 <X className="size-5" />
               </button>
 
-              <p className="m-0 pr-12 text-[0.68rem] font-black uppercase tracking-[0.13em] text-[#0066FF]">
+              <p className="m-0 pr-12 text-[0.68rem] font-black uppercase tracking-[0.13em] text-brand-accent">
                 {selectedJobContent.department}
               </p>
               <h3
-                className="mb-0 mt-2.5 pr-8 text-[clamp(1.5rem,3vw,2.05rem)] font-black leading-[1.12] tracking-[-0.02em] text-[#061B46]"
+                className="mb-0 mt-2.5 pr-8 text-[clamp(1.5rem,3vw,2.05rem)] font-black leading-[1.12] tracking-[-0.02em] text-brand-ink"
                 id="job-dialog-title"
               >
                 {selectedJobContent.title}
               </h3>
 
-              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2.5 text-[0.8rem] font-semibold text-[#4E6884]">
-                <span className="flex items-center gap-1.5"><MapPin className="size-4 text-[#0066FF]" />{selectedJobContent.location}</span>
-                <span className="flex items-center gap-1.5"><Clock3 className="size-4 text-[#0066FF]" />{selectedJobContent.type}</span>
-                <span className="flex items-center gap-1.5"><CalendarDays className="size-4 text-[#0066FF]" />{copy.applyBy} {readableDate(selectedJob.deadline, locale)}</span>
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2.5 text-[0.8rem] font-semibold text-brand-copy-secondary">
+                <span className="flex items-center gap-1.5"><MapPin className="size-4 text-brand-accent" />{selectedJobContent.location}</span>
+                <span className="flex items-center gap-1.5"><Clock3 className="size-4 text-brand-accent" />{selectedJobContent.type}</span>
+                <span className="flex items-center gap-1.5"><CalendarDays className="size-4 text-brand-accent" />{copy.applyBy} {readableDate(selectedJob.deadline, locale)}</span>
               </div>
             </header>
 
             <div className="flex-1 overflow-y-auto px-8 py-7 max-[560px]:px-6">
-              <p className="m-0 rounded-[12px] bg-[#F5FAFF] px-5 py-4 text-[0.95rem] leading-7 text-[#3F5F76]">
+              <p className="m-0 rounded-[12px] bg-brand-surface-hero px-5 py-4 text-[0.95rem] leading-7 text-brand-copy-secondary">
                 {selectedJobContent.summary}
               </p>
 
@@ -446,11 +446,11 @@ export default function CareerJobs() {
                 { title: copy.lookingFor, items: selectedJobContent.requirements },
               ].map((block) => (
                 <section className="mt-8" key={block.title}>
-                  <h4 className="m-0 text-[1.05rem] font-black text-[#061B46]">{block.title}</h4>
+                  <h4 className="m-0 text-[1.05rem] font-black text-brand-heading">{block.title}</h4>
                   <ul className="mb-0 mt-4 grid list-none gap-3.5 p-0">
                     {block.items.map((item) => (
-                      <li className="flex gap-3 text-[0.9rem] leading-6 text-[#4E6884]" key={item}>
-                        <span className="mt-0.5 flex size-5 flex-none items-center justify-center rounded-full bg-[#E7F0FF] text-[#0066FF]">
+                      <li className="flex gap-3 text-[0.9rem] leading-6 text-brand-copy-secondary" key={item}>
+                        <span className="mt-0.5 flex size-5 flex-none items-center justify-center rounded-full bg-brand-soft text-brand-accent">
                           <Check className="size-3" strokeWidth={3} />
                         </span>
                         {item}
@@ -461,13 +461,13 @@ export default function CareerJobs() {
               ))}
             </div>
 
-            <footer className="border-t border-[#EEF3F8] px-8 py-5 max-[560px]:px-6">
-              <p className="m-0 text-[0.78rem] leading-6 text-[#7288A0]">
+            <footer className="border-t border-brand-border-subtle px-8 py-5 max-[560px]:px-6">
+              <p className="m-0 text-[0.78rem] leading-6 text-brand-muted">
                 {copy.applicationNote}{" "}
-                <span className="font-bold text-[#0066FF]">{hrTelegramHandle}</span>
+                <span className="font-bold text-brand-link">{hrTelegramHandle}</span>
               </p>
               <a
-                className="group mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[10px] bg-[#0066FF] px-6 text-[0.9rem] font-black text-white shadow-[0_14px_30px_rgba(0,102,255,0.28)] transition duration-150 hover:-translate-y-px hover:bg-[#008DFF]"
+                className="group mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-[10px] bg-brand-primary px-6 text-[0.9rem] font-black text-white shadow-[0_14px_30px_rgba(0,103,172,0.28)] transition duration-150 hover:-translate-y-px hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href={hrTelegramUrl}
                 target="_blank"
                 rel="noreferrer"

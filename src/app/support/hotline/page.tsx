@@ -17,6 +17,7 @@ import LocalizedText, {
   type LocalizedString,
 } from "@/components/LocalizedText";
 import { address, officeMapUrl, salesUrl } from "@/lib/site-data";
+import { heroEnterCopy, heroEnterVisual } from "@/lib/ui-classes";
 
 export const metadata: Metadata = {
   title: "Hotline | Fast One Cambodia",
@@ -290,7 +291,7 @@ function HotlineConsole() {
     >
       <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-[#B9D8E8] pb-3">
         <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#3F6683] [[lang=km]_&]:tracking-normal" id="hotline-console-title">
-          <Headphones className="size-3.5 text-[#087DB5]" />
+          <Headphones className="size-3.5 text-brand-accent" />
           <LocalizedText value={copy.consoleTitle} />
         </div>
         <div className="flex items-center gap-2 text-[0.7rem] font-bold text-[#126D9D] max-[420px]:hidden">
@@ -303,7 +304,7 @@ function HotlineConsole() {
         <span className="hotline-signal-ring absolute inset-0 rounded-full border border-[#63C7DE]/45" />
         <span className="hotline-signal-ring hotline-signal-ring--delay absolute inset-[18%] rounded-full border border-[#459DD6]/45" />
         <span className="absolute inset-[33%] rounded-full bg-[#DDF5FA] shadow-[0_0_42px_rgba(19,175,197,0.18)]" />
-        <span className="hotline-handset relative flex size-[76px] items-center justify-center rounded-full bg-[#0875B7] text-white shadow-[0_18px_38px_rgba(8,117,183,0.24)] max-[640px]:size-[66px]">
+        <span className="hotline-handset relative flex size-[76px] items-center justify-center rounded-full bg-brand-primary text-white shadow-[0_18px_38px_rgba(0,103,172,0.24)] max-[640px]:size-[66px]">
           <PhoneCall className="size-8 max-[640px]:size-7" />
         </span>
       </div>
@@ -320,11 +321,11 @@ function HotlineConsole() {
       <div className="absolute inset-x-0 bottom-[76px] grid grid-cols-2 gap-3 max-[640px]:bottom-0">
         {phoneLinks.map(({ label, phone }) => (
           <a
-            className="group flex min-h-[72px] items-center gap-3 rounded-[10px] border border-[#B7D8E8] bg-white/85 px-4 transition duration-200 hover:-translate-y-0.5 hover:border-[#4DB2CF] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0875B7] focus-visible:ring-offset-2 max-[480px]:gap-2 max-[480px]:px-3"
+            className="group flex min-h-[72px] items-center gap-3 rounded-[10px] border border-brand-border bg-white/85 px-4 transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 max-[480px]:gap-2 max-[480px]:px-3"
             href={phone.href}
             key={phone.display}
           >
-            <span className="flex size-10 flex-none items-center justify-center rounded-full bg-[#E7F6FA] text-[#0786A9] group-hover:bg-[#0875B7] group-hover:text-white">
+            <span className="flex size-10 flex-none items-center justify-center rounded-full bg-brand-soft text-brand-accent group-hover:bg-brand-primary group-hover:text-white">
               <PhoneCall className="size-[18px]" />
             </span>
             <span className="min-w-0">
@@ -343,7 +344,7 @@ function HotlineConsole() {
         {facts.map(({ icon: Icon, label, value }, index) => (
           <div className={`px-3 py-3 max-[480px]:px-2 ${index ? "border-l border-[#D2E5EC]" : ""}`} key={index}>
             <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.08em] text-[#4C7189] [[lang=km]_&]:tracking-normal">
-              <Icon className="size-3 text-[#0786A9]" />
+              <Icon className="size-3 text-brand-accent" />
               <LocalizedText value={label} />
             </div>
             <p className="mb-0 mt-1 text-[0.72rem] font-bold leading-[1.4] text-[#173C5D]">
@@ -385,7 +386,7 @@ function ContactBrief() {
       </div>
 
       <a
-        className="mt-4 inline-flex min-h-11 items-center gap-2 py-2 text-[0.82rem] font-black text-[#72E5ED] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#72E5ED] focus-visible:ring-offset-2 focus-visible:ring-offset-[#082B50]"
+        className="mt-4 inline-flex min-h-11 items-center gap-2 py-2 text-[0.82rem] font-black text-brand-dark-accent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#082B50]"
         href="#contact-channels"
       >
         <LocalizedText value={copy.chooseContactChannel} />
@@ -397,40 +398,40 @@ function ContactBrief() {
 
 export default function HotlinePage() {
   return (
-    <main className="overflow-hidden bg-white text-[#081B37]">
-      <section className="relative isolate overflow-hidden border-b border-[#CFE3EF] bg-[#F6FAFF]">
+    <main className="overflow-hidden bg-white text-brand-ink">
+      <section className="relative isolate overflow-hidden border-b border-brand-border-subtle bg-brand-surface-hero">
         <div className="pointer-events-none absolute inset-0 -z-30 bg-[radial-gradient(circle_at_78%_28%,rgba(0,190,218,0.18),transparent_30%),linear-gradient(120deg,#FFFFFF_0%,#F5FAFF_49%,#E6F6FC_100%)]" />
         <div className="pointer-events-none absolute inset-0 -z-20 opacity-42 [background-image:linear-gradient(rgba(0,119,185,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,119,185,0.06)_1px,transparent_1px)] [background-size:54px_54px] [mask-image:linear-gradient(to_right,transparent,black_46%,black)]" />
         <div className="pointer-events-none absolute -bottom-48 -left-28 -z-10 size-[490px] rounded-full bg-[#38BDF8]/10 blur-[110px]" />
 
         <div className={`${pageInner} grid min-h-[700px] grid-cols-[minmax(0,0.94fr)_minmax(450px,0.86fr)] items-center gap-[74px] py-[72px] max-[1080px]:grid-cols-1 max-[1080px]:gap-10 max-[1080px]:py-[68px] max-[640px]:py-[52px]`}>
-          <div className="max-w-[680px]">
-            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[#A9D8E9] bg-white/75 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0077A8] shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
+          <div className={`${heroEnterCopy} max-w-[680px]`}>
+            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-brand-border bg-white/75 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
               <span className="size-1.5 rounded-full bg-[#08A9CC] shadow-[0_0_12px_rgba(8,169,204,0.45)]" />
               <LocalizedText value={copy.heroEyebrow} />
             </p>
 
-            <h1 className="m-0 text-[clamp(2.75rem,5.2vw,4.7rem)] font-black leading-[1.12] tracking-[-0.01em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
+            <h1 className="m-0 text-[clamp(2.75rem,5.2vw,4.7rem)] font-black leading-[1.12] tracking-[-0.01em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.heroTitleLead} />{" "}
-              <span className="text-[#009ABF]">
+              <span className="text-brand-highlight">
                 <LocalizedText value={copy.heroTitleAccent} />
               </span>
             </h1>
 
-            <p className="mb-0 mt-6 max-w-[620px] text-[1.06rem] leading-[1.74] text-[#526F8D] max-[640px]:text-[1rem]">
+            <p className="mb-0 mt-6 max-w-[620px] text-[1.06rem] leading-[1.74] text-brand-copy max-[640px]:text-[1rem]">
               <LocalizedText value={copy.heroCopy} />
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid max-[520px]:grid-cols-1">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-[#0875B7] px-6 py-3 text-center text-[0.94rem] font-black leading-[1.4] text-white shadow-[0_16px_34px_rgba(8,117,183,0.22)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#008FAF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0875B7] focus-visible:ring-offset-2"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-brand-primary px-6 py-3 text-center text-[0.94rem] font-black leading-[1.4] text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href="#contact-channels"
               >
                 <PhoneCall className="size-[18px]" />
                 <LocalizedText value={copy.callPrimary} />
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-[#9FCDE2] bg-white/75 px-6 py-3 text-center text-[0.94rem] font-bold leading-[1.4] text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:border-[#50B4D1] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0875B7] focus-visible:ring-offset-2"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-brand-border bg-white/75 px-6 py-3 text-center text-[0.94rem] font-bold leading-[1.4] text-brand-link transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -444,14 +445,16 @@ export default function HotlinePage() {
             </div>
           </div>
 
-          <HotlineConsole />
+          <div className={heroEnterVisual}>
+            <HotlineConsole />
+          </div>
         </div>
       </section>
 
       <section className="py-[112px] max-[640px]:py-[76px]">
         <div className={`${pageInner} grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.08fr)] items-start gap-[88px] max-[980px]:grid-cols-1 max-[980px]:gap-12`}>
           <div className="max-w-[520px]">
-            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#087FA8] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.routerEyebrow} />
             </p>
             <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.25rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -468,7 +471,7 @@ export default function HotlinePage() {
 
               return (
                 <li className="grid grid-cols-[52px_minmax(0,1fr)_auto] items-center gap-5 border-b border-[#D9E5ED] py-7 max-[620px]:grid-cols-[48px_minmax(0,1fr)]" key={item.number}>
-                  <span className="flex size-[52px] items-center justify-center rounded-full border border-[#B9D6E8] text-[#087FA8] max-[620px]:size-12">
+                  <span className="flex size-[52px] items-center justify-center rounded-full border border-brand-border text-brand-accent max-[620px]:size-12">
                     <Icon className="size-[22px]" />
                   </span>
                   <div>
@@ -481,7 +484,7 @@ export default function HotlinePage() {
                   </div>
                   <div className="min-w-[170px] text-right max-[620px]:col-[2] max-[620px]:min-w-0 max-[620px]:text-left">
                     <span aria-hidden="true" className="text-[0.68rem] font-black tracking-[0.12em] text-[#6F899D]">{item.number}</span>
-                    <p className="mb-0 mt-2 text-[0.72rem] font-black leading-[1.45] text-[#087FA8]">
+                    <p className="mb-0 mt-2 text-[0.72rem] font-black leading-[1.45] text-brand-accent">
                       <LocalizedText value={item.note} />
                     </p>
                   </div>
@@ -492,11 +495,11 @@ export default function HotlinePage() {
         </div>
       </section>
 
-      <section className="scroll-mt-[90px] bg-[#071E3E] py-[72px] text-white max-[640px]:py-[58px]" id="contact-channels">
+      <section className="scroll-mt-[90px] bg-brand-dark py-[72px] text-white max-[640px]:py-[58px]" id="contact-channels">
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(280px,0.8fr)_minmax(0,1fr)] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-6">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#6DE1EC] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-dark-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.contactEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,3.4vw,2.9rem)] font-black leading-[1.18] tracking-[-0.015em] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -504,11 +507,11 @@ export default function HotlinePage() {
               </h2>
             </div>
             <div>
-              <p className="m-0 max-w-[600px] text-[0.96rem] leading-[1.7] text-[#B8CCDE]">
+              <p className="m-0 max-w-[600px] text-[0.96rem] leading-[1.7] text-brand-dark-copy">
                 <LocalizedText value={copy.contactCopy} />
               </p>
               <Link
-                className="mt-3 inline-flex min-h-11 items-center gap-2 py-2 text-[0.86rem] font-black text-[#72E5ED] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#72E5ED] focus-visible:ring-offset-2 focus-visible:ring-offset-[#071E3E]"
+                className="mt-3 inline-flex min-h-11 items-center gap-2 py-2 text-[0.86rem] font-black text-brand-dark-accent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
                 href="/support/social-media"
               >
                 <LocalizedText value={copy.socialContact} />
@@ -518,8 +521,8 @@ export default function HotlinePage() {
           </div>
 
           <div className="mt-10 grid grid-cols-12 gap-px bg-white/15 p-px max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
-            <article className="col-span-4 bg-[#071E3E] p-6 max-[900px]:col-span-2 max-[620px]:col-span-1">
-              <span className="flex size-11 items-center justify-center rounded-[10px] bg-white/[0.07] text-[#71E2EC]">
+            <article className="col-span-4 bg-brand-dark p-6 max-[900px]:col-span-2 max-[620px]:col-span-1">
+              <span className="flex size-11 items-center justify-center rounded-[10px] bg-white/[0.07] text-brand-dark-accent">
                 <PhoneCall className="size-[21px]" />
               </span>
               <h3 className="mb-0 mt-5 text-[1.05rem] font-black leading-[1.42]">
@@ -531,7 +534,7 @@ export default function HotlinePage() {
               <div className="mt-5 flex flex-wrap gap-2.5">
                 {[phoneOne, phoneTwo].map((phone) => (
                   <a
-                    className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-3.5 text-[0.86rem] font-black text-white transition hover:border-[#6DE1EC] hover:text-[#7CE8EF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#72E5ED] focus-visible:ring-offset-2 focus-visible:ring-offset-[#071E3E]"
+                    className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-3.5 text-[0.86rem] font-black text-white transition hover:border-brand-dark-accent hover:text-brand-dark-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
                     dir="ltr"
                     href={phone.href}
                     key={phone.display}
@@ -544,7 +547,7 @@ export default function HotlinePage() {
             </article>
 
             <a
-              className="group col-span-2 bg-[#071E3E] p-6 transition hover:bg-[#0A294E] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#72E5ED] max-[900px]:col-span-1"
+              className="group col-span-2 bg-brand-dark p-6 transition hover:bg-brand-dark-cta focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-dark-accent max-[900px]:col-span-1"
               href={salesUrl}
               rel="noreferrer"
               target="_blank"
@@ -561,11 +564,11 @@ export default function HotlinePage() {
               <p className="mb-0 mt-2 text-[0.82rem] leading-[1.55] text-[#AFC4D6]">
                 <LocalizedText value={copy.sharePinAndDetails} />
               </p>
-              <ArrowRight className="mt-5 size-4 text-[#71E2EC] transition group-hover:translate-x-1" />
+              <ArrowRight className="mt-5 size-4 text-brand-dark-accent transition group-hover:translate-x-1" />
             </a>
 
             <a
-              className="group col-span-3 bg-[#071E3E] p-6 transition hover:bg-[#0A294E] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#72E5ED] max-[900px]:col-span-1"
+              className="group col-span-3 bg-brand-dark p-6 transition hover:bg-brand-dark-cta focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-dark-accent max-[900px]:col-span-1"
               href={email.href}
             >
               <span className="flex size-11 items-center justify-center rounded-[10px] bg-white/[0.07] text-[#71E2EC]">
@@ -575,11 +578,11 @@ export default function HotlinePage() {
                 <LocalizedText value={copy.generalEmail} />
               </h3>
               <p className="mb-0 mt-2 break-all text-[0.82rem] leading-[1.55] text-[#AFC4D6]">{email.display}</p>
-              <ArrowRight className="mt-5 size-4 text-[#71E2EC] transition group-hover:translate-x-1" />
+              <ArrowRight className="mt-5 size-4 text-brand-dark-accent transition group-hover:translate-x-1" />
             </a>
 
             <a
-              className="group col-span-3 bg-[#071E3E] p-6 transition hover:bg-[#0A294E] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#72E5ED] max-[900px]:col-span-2 max-[620px]:col-span-1"
+              className="group col-span-3 bg-brand-dark p-6 transition hover:bg-brand-dark-cta focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-dark-accent max-[900px]:col-span-2 max-[620px]:col-span-1"
               href={officeMapUrl}
               rel="noreferrer"
               target="_blank"

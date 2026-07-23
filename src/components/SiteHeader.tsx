@@ -289,8 +289,8 @@ export default function SiteHeader() {
       "relative inline-flex min-h-[38px] cursor-pointer items-center gap-[5px] px-[14px] text-[18px] transition-colors duration-200 focus-visible:outline-none",
       language === "km" ? "tracking-normal" : "tracking-[0.01em]",
       active
-        ? "font-semibold text-white after:absolute after:bottom-[5px] after:left-4 after:right-4 after:h-[2px] after:rounded-full after:bg-[#38BDF8]"
-        : "font-medium text-white/[0.78] after:absolute after:bottom-[5px] after:left-1/2 after:right-1/2 after:h-[2px] after:rounded-full after:bg-[#38BDF8] after:opacity-0 after:transition-all after:duration-200 hover:text-white hover:after:left-4 hover:after:right-4 hover:after:opacity-80 focus-visible:text-white focus-visible:after:left-4 focus-visible:after:right-4 focus-visible:after:opacity-80",
+        ? "font-semibold text-white after:absolute after:bottom-[5px] after:left-4 after:right-4 after:h-[2px] after:rounded-full after:bg-brand-dark-accent"
+        : "font-medium text-white/[0.78] after:absolute after:bottom-[5px] after:left-1/2 after:right-1/2 after:h-[2px] after:rounded-full after:bg-brand-dark-accent after:opacity-0 after:transition-all after:duration-200 hover:text-white hover:after:left-4 hover:after:right-4 hover:after:opacity-80 focus-visible:text-white focus-visible:after:left-4 focus-visible:after:right-4 focus-visible:after:opacity-80",
     );
   }
 
@@ -299,7 +299,7 @@ export default function SiteHeader() {
       "relative flex min-h-10 items-center rounded-[8px] border px-3 text-[0.92rem] transition-colors duration-150",
       language === "km" ? "tracking-normal" : "tracking-[0.005em]",
       active
-        ? "border-white/15 bg-white/[0.12] font-semibold text-white shadow-[inset_3px_0_0_#38BDF8]"
+        ? "border-white/15 bg-white/[0.12] font-semibold text-white shadow-[inset_3px_0_0_var(--color-brand-dark-accent)]"
         : "border-transparent font-medium text-white/80 hover:border-white/10 hover:bg-white/[0.09] hover:text-white",
     );
   }
@@ -309,7 +309,7 @@ export default function SiteHeader() {
       "flex min-h-12 w-full items-center justify-between rounded-[8px] border px-3 text-left text-[1rem] font-semibold transition-colors duration-150",
       language === "km" ? "tracking-normal" : "tracking-[0.005em]",
       active
-        ? "border-white/15 bg-white/[0.12] text-white shadow-[inset_3px_0_0_#38BDF8]"
+        ? "border-white/15 bg-white/[0.12] text-white shadow-[inset_3px_0_0_var(--color-brand-dark-accent)]"
         : open
           ? "border-white/10 bg-white/[0.08] text-white"
           : "border-transparent text-white/[0.84] hover:border-white/10 hover:bg-white/[0.09] hover:text-white",
@@ -366,10 +366,10 @@ export default function SiteHeader() {
       return (
         <Link
           className={cx(
-            "group grid min-h-[58px] grid-cols-[42px_minmax(0,1fr)] items-center gap-2.5 rounded-[10px] border p-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]/40",
+            "group grid min-h-[58px] grid-cols-[42px_minmax(0,1fr)] items-center gap-2.5 rounded-[10px] border p-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight/35",
             active
-              ? "border-[#38BDF8]/30 bg-[#38BDF8]/[0.10]"
-              : "border-transparent bg-transparent hover:border-[#38BDF8]/20 hover:bg-[#38BDF8]/[0.06]",
+              ? "border-brand-border bg-brand-soft"
+              : "border-transparent bg-transparent hover:border-brand-border/60 hover:bg-brand-soft/60",
           )}
           key={`${item.label}-${item.href}`}
           href={item.href}
@@ -379,8 +379,8 @@ export default function SiteHeader() {
             className={cx(
               "inline-flex h-10 w-10 flex-none items-center justify-center rounded-[8px] transition-colors duration-150 [&_svg]:h-[18px] [&_svg]:w-[18px]",
               active
-                ? "bg-[#0067AC] text-[#F8FAFC]"
-                : "bg-[#0067AC]/10 text-[#0067AC] group-hover:bg-[#0067AC] group-hover:text-[#F8FAFC]",
+                ? "bg-brand-primary text-white"
+                : "bg-brand-soft text-brand-accent group-hover:bg-brand-primary group-hover:text-white",
             )}
           >
             <Icon />
@@ -388,13 +388,13 @@ export default function SiteHeader() {
           <span>
             <strong
               className={cx(
-                "block text-[0.9rem] font-semibold leading-tight text-[#081120]",
+                "block text-[0.9rem] font-semibold leading-tight text-brand-heading",
                 language === "km" ? "tracking-normal" : "tracking-[0.005em]",
               )}
             >
               {item.label}
             </strong>
-            <small className="mt-0.5 block text-[0.76rem] font-medium leading-tight text-[#0F172A]/70">
+            <small className="mt-0.5 block text-[0.76rem] font-medium leading-tight text-brand-copy">
               {item.description}
             </small>
           </span>
@@ -414,7 +414,7 @@ export default function SiteHeader() {
     >
       <button
         className={cx(
-          "absolute inset-0 cursor-default bg-[#081120]/20 backdrop-blur-sm transition-opacity duration-200 text-white",
+          "absolute inset-0 cursor-default bg-brand-dark/20 text-white backdrop-blur-sm transition-opacity duration-200",
           menuOpen ? "opacity-100" : "opacity-0",
         )}
         type="button"
@@ -423,13 +423,13 @@ export default function SiteHeader() {
       />
       <div
         className={cx(
-          "absolute bottom-0 right-0 top-0 flex w-[min(330px,calc(100vw-32px))] flex-col overflow-y-auto rounded-l-[8px] bg-[#04395c] p-5 shadow-2xl transition-transform duration-200 max-[420px]:w-[calc(100vw-28px)]",
+          "absolute bottom-0 right-0 top-0 flex w-[min(330px,calc(100vw-32px))] flex-col overflow-y-auto rounded-l-[8px] bg-brand-dark p-5 shadow-2xl transition-transform duration-200 max-[420px]:w-[calc(100vw-28px)]",
           menuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
         <div className="mb-8 flex items-center justify-between gap-4">
           <Link
-            className="inline-flex min-w-0 items-center gap-2.5 font-extrabold"
+            className="inline-flex min-w-0 items-center gap-2.5 font-extrabold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
             href="/"
             aria-label="Fast One home"
             onClick={() => setMenuOpen(false)}
@@ -437,13 +437,15 @@ export default function SiteHeader() {
             <Image
               src="/img/Fast_One_Logo.png"
               alt=""
-              width={36}
-              height={30}
+              width={154}
+              height={40}
               className="h-auto w-36"
+              quality={100}
+              sizes="144px"
             />
           </Link>
           <button
-            className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[#0067AC] text-[#F8FAFC] transition-colors hover:bg-[#0067AC]"
+            className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-primary text-white transition-colors hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
             type="button"
             aria-label="Close navigation menu"
             onClick={() => setMenuOpen(false)}
@@ -471,7 +473,7 @@ export default function SiteHeader() {
 
         <a
           className={cx(
-            "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-[8px] bg-[#0067AC] px-5 text-[0.95rem] font-semibold text-[#F8FAFC] transition-colors hover:bg-[#0067AC]",
+            "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-[8px] bg-brand-primary px-5 text-[0.95rem] font-semibold text-white transition-colors hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark",
             language === "km" ? "tracking-normal" : "tracking-[0.01em]",
           )}
           href="/support/hotline"
@@ -487,7 +489,7 @@ export default function SiteHeader() {
     <>
       <header
         className={cx(
-          "sticky top-0 z-50 grid min-h-[74px] grid-cols-[minmax(180px,1fr)_auto_minmax(180px,1fr)] items-center gap-8 bg-gradient-to-r from-[#0067AC] to-[#01c7ea] px-[clamp(24px,8vw,124px)] antialiased backdrop-blur-[16px] max-[980px]:grid-cols-[minmax(0,1fr)_auto] max-[980px]:px-6 max-[640px]:min-h-[66px] max-[640px]:gap-3.5 max-[640px]:px-[18px]",
+          "sticky top-0 z-50 grid min-h-[74px] grid-cols-[minmax(180px,1fr)_auto_minmax(180px,1fr)] items-center gap-8 bg-gradient-to-r from-brand-primary to-brand-primary-hover px-[clamp(24px,8vw,124px)] antialiased backdrop-blur-[16px] max-[980px]:grid-cols-[minmax(0,1fr)_auto] max-[980px]:px-6 max-[640px]:min-h-[66px] max-[640px]:gap-3.5 max-[640px]:px-[18px]",
           language === "km" ? "font-['Kantumruy_Pro',sans-serif]" : "font-sans",
         )}
       >
@@ -504,6 +506,8 @@ export default function SiteHeader() {
               height={40}
               className="h-auto w-full"
               priority
+              quality={100}
+              sizes="(max-width: 640px) 134px, 154px"
             />
           </span>
         </Link>
@@ -543,10 +547,10 @@ export default function SiteHeader() {
                   : "pointer-events-none opacity-0",
               )}
             >
-              <div className="rounded-[8px] border border-[#cbcbcb] bg-[#F8FAFC] p-2">
+              <div className="rounded-[8px] border border-brand-border-subtle bg-white p-2">
                 <p
                   className={cx(
-                    "m-0 border-b border-[#cbcbcb] px-[9px] pb-3.5 pt-[11px] text-[0.8rem] font-semibold uppercase text-[#0F172A]",
+                    "m-0 border-b border-brand-border-subtle px-[9px] pb-3.5 pt-[11px] text-[0.8rem] font-semibold uppercase text-brand-heading",
                     language === "km" ? "tracking-normal" : "tracking-[0.08em]",
                   )}
                 >
@@ -584,10 +588,10 @@ export default function SiteHeader() {
                   : "pointer-events-none opacity-0",
               )}
             >
-              <div className="rounded-[8px] border border-[#cbcbcb] bg-[#F8FAFC] p-2">
+              <div className="rounded-[8px] border border-brand-border-subtle bg-white p-2">
                 <p
                   className={cx(
-                    "m-0 border-b border-[#cbcbcb] px-[9px] pb-3.5 pt-[11px] text-[0.8rem] font-semibold uppercase text-[#0F172A]",
+                    "m-0 border-b border-brand-border-subtle px-[9px] pb-3.5 pt-[11px] text-[0.8rem] font-semibold uppercase text-brand-heading",
                     language === "km" ? "tracking-normal" : "tracking-[0.08em]",
                   )}
                 >
@@ -625,10 +629,10 @@ export default function SiteHeader() {
                   : "pointer-events-none opacity-0",
               )}
             >
-              <div className="rounded-[8px] border border-[#cbcbcb] bg-[#F8FAFC] p-2">
+              <div className="rounded-[8px] border border-brand-border-subtle bg-white p-2">
                 <p
                   className={cx(
-                    "m-0 border-b border-[#cbcbcb] px-[9px] pb-3.5 pt-[11px] text-[0.8rem] font-semibold uppercase text-[#0F172A]",
+                    "m-0 border-b border-brand-border-subtle px-[9px] pb-3.5 pt-[11px] text-[0.8rem] font-semibold uppercase text-brand-heading",
                     language === "km" ? "tracking-normal" : "tracking-[0.08em]",
                   )}
                 >
@@ -650,10 +654,10 @@ export default function SiteHeader() {
               return (
                 <button
                   className={cx(
-                    "inline-flex h-9 w-9 items-center justify-center rounded-full p-0.5 transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F8FAFC]",
+                    "inline-flex h-9 w-9 items-center justify-center rounded-full p-0.5 transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
                     language === item.code
-                      ? "bg-[#F8FAFC] ring-1 ring-[#F8FAFC]"
-                      : "bg-[#38BDF8] opacity-80 hover:opacity-100",
+                      ? "bg-white ring-1 ring-white"
+                      : "bg-brand-dark-accent opacity-80 hover:opacity-100",
                   )}
                   key={item.code}
                   type="button"
@@ -669,6 +673,8 @@ export default function SiteHeader() {
                       width={36}
                       height={36}
                       className="h-full w-full object-cover"
+                      quality={100}
+                      sizes="36px"
                     />
                   </span>
                 </button>
@@ -677,7 +683,7 @@ export default function SiteHeader() {
           </div>
           {/* <a
             className={cx(
-              "inline-flex min-h-[42px] items-center justify-center gap-2 rounded-[8px] bg-[#0cb7d5] px-5 text-[0.94rem] font-semibold text-[#F8FAFC] transition duration-150 hover:-translate-y-px max-[640px]:hidden",
+              "inline-flex min-h-[42px] items-center justify-center gap-2 rounded-[8px] bg-brand-primary px-5 text-[0.94rem] font-semibold text-white transition duration-150 hover:-translate-y-px hover:bg-brand-primary-hover max-[640px]:hidden",
               language === "km" ? "tracking-normal" : "tracking-[0.01em]",
             )}
             href="/support/hotline"
@@ -685,7 +691,7 @@ export default function SiteHeader() {
             {t.hotline}
           </a> */}
           <button
-            className="hidden h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full border border-[#38BDF8] bg-[#F8FAFC] text-[#081120] max-[980px]:inline-flex"
+            className="hidden h-10 w-10 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full border border-brand-dark-accent bg-white text-brand-ink max-[980px]:inline-flex"
             type="button"
             aria-label={
               menuOpen ? "Close navigation menu" : "Open navigation menu"

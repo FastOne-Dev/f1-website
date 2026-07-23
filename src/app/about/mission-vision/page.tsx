@@ -12,7 +12,11 @@ import LocalizedText from "@/components/LocalizedText";
 import MotionReveal from "@/components/MotionReveal";
 import { aboutDetailPages } from "@/lib/nav-page-content";
 import { qualities } from "@/lib/site-data";
-import { sectionInner } from "@/lib/ui-classes";
+import {
+  heroEnterCopy,
+  heroEnterVisual,
+  sectionInner,
+} from "@/lib/ui-classes";
 
 const mission = aboutDetailPages.mission;
 const vision = aboutDetailPages.vision;
@@ -34,94 +38,102 @@ const values = [
 
 export default function MissionVisionPage() {
   return (
-    <main className="bg-white text-[#061B46]">
+    <main className="bg-brand-surface text-brand-ink">
       {/* 01 — Introduction */}
-      <section className="relative isolate overflow-hidden bg-[#F5FAFF] pb-[88px] pt-20 max-[820px]:pb-14 max-[820px]:pt-11">
+      <section className="relative isolate overflow-hidden bg-brand-surface-hero pb-[88px] pt-20 max-[820px]:pb-14 max-[820px]:pt-11">
         <div
-          className="pointer-events-none absolute left-1/2 top-[-260px] -z-10 h-[560px] w-[1020px] -translate-x-1/2 rounded-full bg-[#D9ECFF]/80 blur-[120px]"
+          className="pointer-events-none absolute left-1/2 top-[-260px] -z-10 h-[560px] w-[1020px] -translate-x-1/2 rounded-full bg-brand-soft/80 blur-[120px]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -right-40 top-10 -z-10 size-[430px] rounded-full border-[86px] border-[#0066FF]/[0.035]"
+          className="pointer-events-none absolute -right-40 top-10 -z-10 size-[430px] rounded-full border-[86px] border-brand-highlight/[0.035]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -left-20 bottom-[-210px] -z-10 size-[390px] rounded-full bg-[#38BDF8]/10 blur-[90px]"
+          className="pointer-events-none absolute -left-20 bottom-[-210px] -z-10 size-[390px] rounded-full bg-brand-highlight/10 blur-[90px]"
           aria-hidden="true"
         />
 
         <div className={sectionInner}>
           <div className="grid grid-cols-[minmax(0,0.92fr)_minmax(460px,1.08fr)] items-center gap-[clamp(42px,6vw,76px)] max-[980px]:grid-cols-1 max-[980px]:gap-11">
-            <MotionReveal direction="left">
-              <p className="m-0 flex items-center gap-3 text-[0.8rem] font-black uppercase tracking-[0.14em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
-                <span className="h-px w-9 bg-[#0066FF]" aria-hidden="true" />
+            <div className={heroEnterCopy}>
+              <p className="m-0 flex items-center gap-3 text-[0.8rem] font-black uppercase tracking-[0.14em] text-brand-accent [[lang=km]_&]:tracking-normal">
+                <span className="h-px w-9 bg-brand-accent" aria-hidden="true" />
                 <LocalizedText
                   value={{ en: "Our purpose", km: "គោលបំណងរបស់យើង" }}
                 />
               </p>
 
-              <h1 className="mb-0 mt-5 text-[clamp(2.65rem,5vw,4.25rem)] font-black leading-[1.02] tracking-[-0.045em] text-[#061B46] [text-wrap:balance] max-[640px]:text-[2.35rem] [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
+              <h1 className="mb-0 mt-5 text-[clamp(2.65rem,5vw,4.25rem)] font-black leading-[1.02] tracking-[-0.045em] text-brand-ink [text-wrap:balance] max-[640px]:text-[2.35rem] [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
                 <LocalizedText
                   value={{
-                    en: "Connection should move everyone forward.",
-                    km: "ការតភ្ជាប់គួរតែនាំមនុស្សគ្រប់គ្នាឆ្ពោះទៅមុខ។",
+                    en: "Connection should move",
+                    km: "ការតភ្ជាប់គួរតែនាំ",
                   }}
-                />
+                />{" "}
+                <span className="text-brand-highlight">
+                  <LocalizedText
+                    value={{
+                      en: "everyone forward.",
+                      km: "មនុស្សគ្រប់គ្នាឆ្ពោះទៅមុខ។",
+                    }}
+                  />
+                </span>
               </h1>
 
-              <p className="mb-0 mt-6 max-w-[540px] text-[1.02rem] leading-[1.75] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+              <p className="mb-0 mt-6 max-w-[540px] text-[1.02rem] leading-[1.75] text-brand-copy [[lang=km]_&]:leading-[1.9]">
                 <LocalizedText value={mission.copy} />
               </p>
               <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid">
                 <a
-                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] bg-[#0066FF] px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,102,255,0.28)] transition duration-150 hover:-translate-y-0.5 hover:bg-[#008DFF]"
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] bg-brand-primary px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-150 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                   href="#mission-vision"
                 >
                   Explore our direction
                   <ArrowRight className="size-[18px] transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] border border-[#BED8EB] bg-white px-6 text-[0.94rem] font-black text-[#061B46] transition duration-150 hover:-translate-y-0.5 hover:border-[#0066FF] hover:text-[#0066FF]"
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[9px] border border-brand-border bg-brand-surface px-6 text-[0.94rem] font-black text-brand-link transition duration-150 hover:-translate-y-0.5 hover:border-brand-border-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                   href="#our-values"
                 >
                   Our values
-                  <HeartHandshake className="size-[18px] text-[#0066FF]" />
+                  <HeartHandshake className="size-[18px] text-brand-accent" />
                 </a>
               </div>
               <div className="mt-8 flex flex-wrap gap-2.5">
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
-                  <Target className="size-3.5 text-[#0066FF]" /> Mission-led
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-border-subtle bg-brand-surface px-4 py-2 text-[0.78rem] font-bold text-brand-copy">
+                  <Target className="size-3.5 text-brand-accent" /> Mission-led
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#D5E6F5] bg-white px-4 py-2 text-[0.78rem] font-bold text-[#365B80]">
-                  <Eye className="size-3.5 text-[#0066FF]" /> Future-focused
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-border-subtle bg-brand-surface px-4 py-2 text-[0.78rem] font-bold text-brand-copy">
+                  <Eye className="size-3.5 text-brand-accent" /> Future-focused
                 </span>
               </div>
-            </MotionReveal>
+            </div>
 
-            <MotionReveal className="relative min-w-0" delay={0.12} direction="right">
+            <div className={`${heroEnterVisual} relative min-w-0`}>
               <div className="relative h-[560px] max-[980px]:h-[500px] max-[640px]:h-[380px]">
-                <div className="absolute left-[-3%] top-[5%] z-10 w-[220px] animate-[chip-float_5.5s_ease-in-out_infinite] overflow-hidden rounded-full border border-[#8FCBFF] bg-[linear-gradient(135deg,#E3F2FF,#BFE0FF)] px-4 py-3 shadow-[0_16px_38px_rgba(0,141,255,0.3)] ring-1 ring-white/60 backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-[linear-gradient(180deg,rgba(255,255,255,0.6),transparent)] motion-reduce:animate-none max-[640px]:w-[190px] max-[640px]:px-3">
+                <div className="absolute left-[-3%] top-[5%] z-10 w-[220px] animate-[chip-float_5.5s_ease-in-out_infinite] overflow-hidden rounded-full border border-brand-border bg-brand-soft px-4 py-3 shadow-[0_12px_30px_rgba(18,62,98,0.08)] motion-reduce:animate-none max-[640px]:w-[190px] max-[640px]:px-3">
                   <div className="relative flex items-center gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#0066FF] text-white shadow-[0_4px_12px_rgba(0,102,255,0.5)]">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-surface text-brand-accent ring-1 ring-brand-border">
                       <Target className="size-[17px]" />
                     </span>
                     <span>
-                      <span className="block text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#0053D6]">Mission</span>
-                      <span className="mt-0.5 block text-[0.75rem] font-bold leading-[1.3] text-[#285C91]">Access for everyone</span>
+                      <span className="block text-[0.65rem] font-black uppercase tracking-[0.12em] text-brand-accent">Mission</span>
+                      <span className="mt-0.5 block text-[0.75rem] font-bold leading-[1.3] text-brand-copy-secondary">Access for everyone</span>
                     </span>
                   </div>
                 </div>
                 <div
-                  className="absolute bottom-[9%] right-[-10%] z-10 w-[230px] animate-[chip-float_5.5s_ease-in-out_infinite] overflow-hidden rounded-full border border-[#8FCBFF] bg-[linear-gradient(135deg,#E3F2FF,#BFE0FF)] px-4 py-3 shadow-[0_16px_38px_rgba(0,141,255,0.3)] ring-1 ring-white/60 backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-[linear-gradient(180deg,rgba(255,255,255,0.6),transparent)] motion-reduce:animate-none max-[640px]:right-0 max-[640px]:w-[200px] max-[640px]:px-3"
+                  className="absolute bottom-[9%] right-[-10%] z-10 w-[230px] animate-[chip-float_5.5s_ease-in-out_infinite] overflow-hidden rounded-full border border-brand-border bg-brand-soft px-4 py-3 shadow-[0_12px_30px_rgba(18,62,98,0.08)] motion-reduce:animate-none max-[640px]:right-0 max-[640px]:w-[200px] max-[640px]:px-3"
                   style={{ animationDelay: "-2.75s" }}
                 >
                   <div className="relative flex items-center gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#0066FF] text-white shadow-[0_4px_12px_rgba(0,102,255,0.5)]">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-surface text-brand-accent ring-1 ring-brand-border">
                       <Eye className="size-[17px]" />
                     </span>
                     <span>
-                      <span className="block text-[0.65rem] font-black uppercase tracking-[0.12em] text-[#0053D6]">Vision</span>
-                      <span className="mt-0.5 block text-[0.75rem] font-bold leading-[1.3] text-[#285C91]">A connected Cambodia</span>
+                      <span className="block text-[0.65rem] font-black uppercase tracking-[0.12em] text-brand-accent">Vision</span>
+                      <span className="mt-0.5 block text-[0.75rem] font-bold leading-[1.3] text-brand-copy-secondary">A connected Cambodia</span>
                     </span>
                   </div>
                 </div>
@@ -132,12 +144,12 @@ export default function MissionVisionPage() {
                     alt="A Cambodian network specialist helping a student and local business owner get connected"
                     fill
                     sizes="(max-width: 980px) 100vw, 50vw"
-                    quality={82}
+                    quality={100}
                     preload
                   />
                 </div>
               </div>
-            </MotionReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -145,15 +157,15 @@ export default function MissionVisionPage() {
       {/* 02 — Mission and Vision */}
       <section
         id="mission-vision"
-        className="relative scroll-mt-20 overflow-hidden bg-[#F5FAFF] py-20 max-[760px]:py-14"
+        className="relative scroll-mt-20 overflow-hidden bg-brand-surface-soft py-20 max-[760px]:py-14"
       >
         <div className={container}>
           <MotionReveal className="mx-auto max-w-[720px] text-center">
-            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.82rem] font-black uppercase tracking-[0.1em] text-brand-accent [[lang=km]_&]:tracking-normal">
               Mission &amp; Vision
             </p>
 
-            <h2 className="mb-0 mt-3 text-[clamp(2rem,3.2vw,2.65rem)] font-black leading-[1.12] tracking-[-0.035em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.4] [[lang=km]_&]:tracking-normal max-[640px]:text-[1.85rem]">
+            <h2 className="mb-0 mt-3 text-[clamp(2rem,3.2vw,2.65rem)] font-black leading-[1.12] tracking-[-0.035em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.4] [[lang=km]_&]:tracking-normal max-[640px]:text-[1.85rem]">
               <LocalizedText
                 value={{
                   en: "One purpose. One direction.",
@@ -165,62 +177,63 @@ export default function MissionVisionPage() {
 
           <MotionReveal className="relative mx-auto mt-10 min-h-[480px] max-w-[960px] max-[820px]:flex max-[820px]:min-h-0 max-[820px]:flex-col max-[820px]:gap-5" delay={0.1}>
             <div
-              className="absolute left-1/2 top-1/2 size-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C9E0F7] max-[820px]:hidden"
+              className="absolute left-1/2 top-1/2 size-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-border-subtle max-[820px]:hidden"
               aria-hidden="true"
             />
             <div
-              className="absolute left-1/2 top-1/2 size-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#BFD9EF] max-[820px]:hidden"
+              className="absolute left-1/2 top-1/2 size-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-brand-border-strong max-[820px]:hidden"
               aria-hidden="true"
             />
 
             <div className="absolute left-1/2 top-1/2 z-10 flex size-32 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-transparent text-center max-[820px]:relative max-[820px]:left-auto max-[820px]:top-auto max-[820px]:mx-auto max-[820px]:translate-x-0 max-[820px]:translate-y-0">
               <Image
-                className="h-auto w-[86px] drop-shadow-[0_12px_18px_rgba(0,122,168,0.16)]"
+                className="h-auto w-[86px] drop-shadow-[0_12px_18px_rgba(0,103,172,0.16)]"
                 src="/img/fastone_mini_logo.png"
                 alt="Fast One"
                 width={1143}
                 height={864}
                 sizes="86px"
+                quality={100}
               />
-              <span className="mt-3 text-[0.72rem] font-black uppercase tracking-[0.14em] text-[#0066FF]/65 [[lang=km]_&]:tracking-normal">
+              <span className="mt-3 text-[0.72rem] font-black uppercase tracking-[0.14em] text-brand-accent/70 [[lang=km]_&]:tracking-normal">
                 Our purpose
               </span>
             </div>
 
-            <article className="absolute left-0 top-1/2 z-20 flex h-[430px] w-[42%] -translate-y-1/2 flex-col rounded-[8px] border border-[#D8E8F8] bg-white p-[clamp(1.25rem,2vw,1.75rem)] shadow-[0_16px_36px_rgba(13,39,77,0.07)] max-[820px]:relative max-[820px]:top-auto max-[820px]:mx-auto max-[820px]:h-auto max-[820px]:w-full max-[820px]:max-w-[580px] max-[820px]:translate-y-0">
+            <article className="absolute left-0 top-1/2 z-20 flex h-[430px] w-[42%] -translate-y-1/2 flex-col rounded-[8px] border border-brand-border-subtle bg-brand-surface p-[clamp(1.25rem,2vw,1.75rem)] shadow-[0_16px_36px_rgba(13,39,77,0.07)] max-[820px]:relative max-[820px]:top-auto max-[820px]:mx-auto max-[820px]:h-auto max-[820px]:w-full max-[820px]:max-w-[580px] max-[820px]:translate-y-0">
               <div className="flex items-center justify-between mb-5">
-                <span className="flex size-11 items-center justify-center rounded-[8px] bg-[#EAF6FF] text-[#0066FF]">
+                <span className="flex size-11 items-center justify-center rounded-[8px] bg-brand-soft text-brand-accent">
                   <Target className="size-5" />
                 </span>
-                <span className="text-[0.72rem] font-black uppercase tracking-[0.1em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
+                <span className="text-[0.72rem] font-black uppercase tracking-[0.1em] text-brand-accent [[lang=km]_&]:tracking-normal">
                   Our Mission
                 </span>
               </div>
 
-              <h3 className="mb-0 mt-3 text-[clamp(1.75rem,2.35vw,2.15rem)] font-black leading-[1.1] tracking-[-0.035em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.45] [[lang=km]_&]:tracking-normal">
+              <h3 className="mb-0 mt-3 text-[clamp(1.75rem,2.35vw,2.15rem)] font-black leading-[1.1] tracking-[-0.035em] text-brand-heading [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.45] [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={mission.title} />
               </h3>
 
-              <p className="mb-0 mt-4 text-[0.94rem] leading-[1.6] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+              <p className="mb-0 mt-4 text-[0.94rem] leading-[1.6] text-brand-copy [[lang=km]_&]:leading-[1.9]">
                 <LocalizedText value={mission.intro.copy} />
               </p>
             </article>
 
-            <article className="absolute right-0 top-1/2 z-20 flex h-[430px] w-[42%] -translate-y-1/2 flex-col rounded-[8px] border border-[#D8E8F8] bg-white p-[clamp(1.25rem,2vw,1.75rem)] text-[#061B46] shadow-[0_16px_36px_rgba(13,39,77,0.07)] max-[820px]:relative max-[820px]:top-auto max-[820px]:mx-auto max-[820px]:h-auto max-[820px]:w-full max-[820px]:max-w-[580px] max-[820px]:translate-y-0">
+            <article className="absolute right-0 top-1/2 z-20 flex h-[430px] w-[42%] -translate-y-1/2 flex-col rounded-[8px] border border-brand-border-subtle bg-brand-surface p-[clamp(1.25rem,2vw,1.75rem)] text-brand-ink shadow-[0_16px_36px_rgba(13,39,77,0.07)] max-[820px]:relative max-[820px]:top-auto max-[820px]:mx-auto max-[820px]:h-auto max-[820px]:w-full max-[820px]:max-w-[580px] max-[820px]:translate-y-0">
               <div className="flex items-center justify-between mb-5">
-                <span className="flex size-11 items-center justify-center rounded-[8px] bg-[#EAF6FF] text-[#0066FF]">
+                <span className="flex size-11 items-center justify-center rounded-[8px] bg-brand-soft text-brand-accent">
                   <Eye className="size-5" />
                 </span>
-                <span className="text-[0.72rem] font-black uppercase tracking-[0.1em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
+                <span className="text-[0.72rem] font-black uppercase tracking-[0.1em] text-brand-accent [[lang=km]_&]:tracking-normal">
                   Our Vision
                 </span>
               </div>
 
-              <h3 className="mb-0 mt-3 text-[clamp(1.75rem,2.35vw,2.15rem)] font-black leading-[1.1] tracking-[-0.035em] text-[#061B46] [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.45] [[lang=km]_&]:tracking-normal">
+              <h3 className="mb-0 mt-3 text-[clamp(1.75rem,2.35vw,2.15rem)] font-black leading-[1.1] tracking-[-0.035em] text-brand-heading [text-wrap:balance] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.45] [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={vision.title} />
               </h3>
 
-              <p className="mb-0 mt-4 text-[0.94rem] leading-[1.6] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+              <p className="mb-0 mt-4 text-[0.94rem] leading-[1.6] text-brand-copy [[lang=km]_&]:leading-[1.9]">
                 <LocalizedText value={vision.intro.copy} />
               </p>
             </article>
@@ -231,20 +244,20 @@ export default function MissionVisionPage() {
       {/* 03 — Values and progress */}
       <section
         id="our-values"
-        className="scroll-mt-20 overflow-hidden bg-white py-[100px] max-[640px]:py-[68px]"
+        className="scroll-mt-20 overflow-hidden bg-brand-surface py-[100px] max-[640px]:py-[68px]"
       >
         <div className={container}>
           <MotionReveal className="flex items-end justify-between gap-10 max-[760px]:flex-col max-[760px]:items-start">
             <div>
-              <div className="flex items-center gap-4 text-[0.76rem] font-black uppercase tracking-[0.16em] text-[#0066FF] [[lang=km]_&]:tracking-normal">
+              <div className="flex items-center gap-4 text-[0.76rem] font-black uppercase tracking-[0.16em] text-brand-accent [[lang=km]_&]:tracking-normal">
                 <span>03</span>
-                <span className="h-px w-10 bg-[#0066FF]" />
+                <span className="h-px w-10 bg-brand-accent" />
                 <LocalizedText
                   value={{ en: "Our Values", km: "គុណតម្លៃរបស់យើង" }}
                 />
               </div>
 
-              <h2 className="mb-0 mt-5 max-w-[680px] text-[clamp(2.5rem,5vw,4.75rem)] font-black leading-[0.95] tracking-[-0.06em] text-[#061B46] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
+              <h2 className="mb-0 mt-5 max-w-[680px] text-[clamp(2.5rem,5vw,4.75rem)] font-black leading-[0.95] tracking-[-0.06em] text-brand-ink [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.35] [[lang=km]_&]:tracking-normal">
                 <LocalizedText
                   value={{
                     en: "The principles behind every connection.",
@@ -254,7 +267,7 @@ export default function MissionVisionPage() {
               </h2>
             </div>
 
-            <p className="m-0 max-w-[350px] text-[0.96rem] leading-[1.8] text-[#526C8D] [[lang=km]_&]:leading-[1.9]">
+            <p className="m-0 max-w-[350px] text-[0.96rem] leading-[1.8] text-brand-copy [[lang=km]_&]:leading-[1.9]">
               <LocalizedText
                 value={{
                   en: "A clear set of values keeps our people, technology and progress moving in one direction.",
@@ -266,7 +279,7 @@ export default function MissionVisionPage() {
 
           <MotionReveal className="relative mt-20" delay={0.08}>
             <span
-              className="absolute left-[8%] right-[8%] top-8 h-px bg-gradient-to-r from-transparent via-[#9EC9F6] to-transparent max-[760px]:bottom-8 max-[760px]:left-8 max-[760px]:right-auto max-[760px]:top-8 max-[760px]:h-auto max-[760px]:w-px"
+              className="absolute left-[8%] right-[8%] top-8 h-px bg-gradient-to-r from-transparent via-brand-border to-transparent max-[760px]:bottom-8 max-[760px]:left-8 max-[760px]:right-auto max-[760px]:top-8 max-[760px]:h-auto max-[760px]:w-px"
               aria-hidden="true"
             />
 
@@ -276,20 +289,20 @@ export default function MissionVisionPage() {
                   className="group relative text-center max-[760px]:grid max-[760px]:grid-cols-[64px_1fr] max-[760px]:gap-6 max-[760px]:text-left"
                   key={typeof title === "string" ? title : title.en}
                 >
-                  <div className="relative z-10 mx-auto flex size-16 items-center justify-center rounded-full border-[6px] border-white bg-[#EAF4FF] text-[#0066FF] shadow-[0_12px_30px_rgba(0,102,255,0.16)] transition duration-300 group-hover:scale-110 group-hover:bg-[#0066FF] group-hover:text-white max-[760px]:mx-0">
+                  <div className="relative z-10 mx-auto flex size-16 items-center justify-center rounded-full border-[6px] border-brand-surface bg-brand-soft text-brand-accent shadow-[0_12px_30px_rgba(0,103,172,0.12)] transition duration-300 group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white max-[760px]:mx-0">
                     <Icon className="size-5" />
                   </div>
 
                   <div>
-                    <span className="mt-5 inline-block text-[0.68rem] font-black uppercase tracking-[0.16em] text-[#8DA4BB] max-[760px]:mt-0">
+                    <span className="mt-5 inline-block text-[0.68rem] font-black uppercase tracking-[0.16em] text-brand-muted max-[760px]:mt-0">
                       Principle {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <h3 className="mb-0 mt-3 text-[1.3rem] font-black text-[#061B46] [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.6]">
+                    <h3 className="mb-0 mt-3 text-[1.3rem] font-black text-brand-heading [[lang=km]_&]:font-bold [[lang=km]_&]:leading-[1.6]">
                       <LocalizedText value={title} />
                     </h3>
 
-                    <p className="mx-auto mb-0 mt-3 max-w-[320px] text-[0.94rem] leading-[1.75] text-[#526C8D] [[lang=km]_&]:leading-[1.9] max-[760px]:mx-0 max-[760px]:max-w-[580px]">
+                    <p className="mx-auto mb-0 mt-3 max-w-[320px] text-[0.94rem] leading-[1.75] text-brand-copy [[lang=km]_&]:leading-[1.9] max-[760px]:mx-0 max-[760px]:max-w-[580px]">
                       <LocalizedText value={text} />
                     </p>
                   </div>
@@ -298,21 +311,21 @@ export default function MissionVisionPage() {
             </div>
           </MotionReveal>
 
-          <MotionReveal className="relative mt-20 overflow-hidden rounded-[30px] bg-[#F0F7FF] p-[clamp(1.5rem,4vw,3.5rem)]" delay={0.1}>
+          <MotionReveal className="relative mt-20 overflow-hidden rounded-[30px] bg-brand-surface-soft p-[clamp(1.5rem,4vw,3.5rem)]" delay={0.1}>
             <div
-              className="absolute -right-24 -top-32 size-[420px] rounded-full border-[70px] border-[#0066FF]/[0.04]"
+              className="absolute -right-24 -top-32 size-[420px] rounded-full border-[70px] border-brand-highlight/[0.04]"
               aria-hidden="true"
             />
 
             <div className="relative grid grid-cols-[1fr_auto] items-center gap-10 max-[760px]:grid-cols-1">
               <div>
-                <p className="m-0 text-[0.74rem] font-black uppercase tracking-[0.16em] text-[#0066FF]">
+                <p className="m-0 text-[0.74rem] font-black uppercase tracking-[0.16em] text-brand-accent">
                   <LocalizedText
                     value={{ en: "Our progress", km: "វឌ្ឍនភាពរបស់យើង" }}
                   />
                 </p>
 
-                <h3 className="mb-0 mt-3 max-w-[650px] text-[clamp(1.65rem,3vw,2.8rem)] font-black leading-[1.08] tracking-[-0.04em] text-[#061B46] [[lang=km]_&]:leading-[1.45] [[lang=km]_&]:tracking-normal">
+                <h3 className="mb-0 mt-3 max-w-[650px] text-[clamp(1.65rem,3vw,2.8rem)] font-black leading-[1.08] tracking-[-0.04em] text-brand-ink [[lang=km]_&]:leading-[1.45] [[lang=km]_&]:tracking-normal">
                   <LocalizedText
                     value={vision.closing?.title ?? vision.title}
                   />
@@ -320,7 +333,7 @@ export default function MissionVisionPage() {
               </div>
 
               <a
-                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-[#0066FF] px-6 font-black text-white transition hover:bg-[#1684FF] max-[480px]:w-full"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-brand-primary px-6 font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 max-[480px]:w-full"
                 href={mission.action.href}
                 target="_blank"
                 rel="noreferrer"
@@ -330,21 +343,21 @@ export default function MissionVisionPage() {
               </a>
             </div>
 
-            <div className="relative mt-10 grid grid-cols-3 overflow-hidden rounded-2xl border border-[#D6E8FA] bg-white max-[620px]:grid-cols-1">
+            <div className="relative mt-10 grid grid-cols-3 overflow-hidden rounded-2xl border border-brand-border-subtle bg-brand-surface max-[620px]:grid-cols-1">
               {qualities.map((quality, index) => (
                 <article
                   className={`px-6 py-7 ${
                     index
-                      ? "border-l border-[#D6E8FA] max-[620px]:border-l-0 max-[620px]:border-t"
+                      ? "border-l border-brand-border-subtle max-[620px]:border-l-0 max-[620px]:border-t"
                       : ""
                   }`}
                   key={quality.label}
                 >
-                  <span className="text-[clamp(2.2rem,4vw,3.5rem)] font-black leading-none tracking-[-0.05em] text-[#0066FF]">
+                  <span className="text-[clamp(2.2rem,4vw,3.5rem)] font-black leading-none tracking-[-0.05em] text-brand-highlight">
                     {quality.value}
                   </span>
 
-                  <p className="mb-0 mt-3 text-[0.88rem] font-bold text-[#526C8D]">
+                  <p className="mb-0 mt-3 text-[0.88rem] font-bold text-brand-copy">
                     <LocalizedText value={quality.label} />
                   </p>
                 </article>

@@ -87,17 +87,17 @@ export default function NavDetailPage({ content }: NavDetailPageProps) {
             <h2 className={splitHeading}>
               <LocalizedText value={content.intro.title} />
             </h2>
-            <p className="mt-[18px] max-w-[620px] leading-[1.65] text-[#0F172A]/80">
+            <p className="mt-[18px] max-w-[620px] leading-[1.65] text-brand-copy">
               <LocalizedText value={content.intro.copy} />
             </p>
           </div>
           <div className="grid grid-cols-1 gap-3">
             {content.highlights.map((item) => (
               <div
-                className="flex min-h-14 items-center gap-2.5 rounded-[8px] bg-[#38BDF8] p-3 font-extrabold text-[#081120]"
+                className="flex min-h-14 items-center gap-2.5 rounded-[8px] bg-brand-soft p-3 font-extrabold text-brand-heading"
                 key={localizedKey(item)}
               >
-                <CheckIcon className="text-[#0066FF]" />
+                <CheckIcon className="text-brand-accent" />
                 <span>
                   <LocalizedText value={item} />
                 </span>
@@ -111,13 +111,13 @@ export default function NavDetailPage({ content }: NavDetailPageProps) {
         <div className={`${sectionInner} grid grid-cols-3 gap-[18px] max-[980px]:grid-cols-1`}>
           {content.cards.map((card) => (
             <article
-              className="min-h-[230px] rounded-[8px] border border-[#38BDF8] bg-[#F8FAFC] p-7"
+              className="min-h-[230px] rounded-[8px] border border-brand-border-subtle bg-white p-7"
               key={localizedKey(card.title)}
             >
-              <h2 className="m-0 text-xl font-bold text-[#081120]">
+              <h2 className="m-0 text-xl font-bold text-brand-heading">
                 <LocalizedText value={card.title} />
               </h2>
-              <p className="mt-[18px] leading-[1.6] text-[#0F172A]/80">
+              <p className="mt-[18px] leading-[1.6] text-brand-copy-secondary">
                 <LocalizedText value={card.text} />
               </p>
             </article>
@@ -135,7 +135,7 @@ export default function NavDetailPage({ content }: NavDetailPageProps) {
               <h2 className={heading2}>
                 <LocalizedText value={content.closing.title} />
               </h2>
-              <p className="mt-[18px] max-w-[620px] leading-[1.65] text-[#0F172A]/80">
+              <p className="mt-[18px] max-w-[620px] leading-[1.65] text-brand-copy">
                 <LocalizedText value={content.closing.copy} />
               </p>
               {content.closing.action && (
@@ -152,6 +152,8 @@ export default function NavDetailPage({ content }: NavDetailPageProps) {
                   alt={content.closing.imageAlt ?? ""}
                   width={640}
                   height={420}
+                  quality={100}
+                  sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 980px) min(720px, calc(100vw - 40px)), 560px"
                 />
               </div>
             )}

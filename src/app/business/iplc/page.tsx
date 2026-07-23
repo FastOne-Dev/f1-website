@@ -22,6 +22,7 @@ import LocalizedText, {
   type LocalizedString,
 } from "@/components/LocalizedText";
 import { salesUrl } from "@/lib/site-data";
+import { heroEnterCopy, heroEnterVisual } from "@/lib/ui-classes";
 
 export const metadata: Metadata = {
   title: "IPLC | Fast One Cambodia",
@@ -394,9 +395,9 @@ function GlobalCircuitMap() {
       >
         <defs>
           <linearGradient id="iplcRoute" x1="64" y1="286" x2="570" y2="86" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#0878BC" />
-            <stop offset="0.52" stopColor="#09B3CA" />
-            <stop offset="1" stopColor="#4158D8" />
+            <stop stopColor="#0077B9" />
+            <stop offset="0.52" stopColor="#00A9C7" />
+            <stop offset="1" stopColor="#48CDDD" />
           </linearGradient>
           <radialGradient id="iplcCore" cx="0" cy="0" r="1" gradientTransform="translate(320 188) rotate(90) scale(92)">
             <stop stopColor="#0BAFC8" stopOpacity="0.22" />
@@ -408,14 +409,14 @@ function GlobalCircuitMap() {
         <path d="M64 286C158 286 214 216 320 180C408 150 470 105 570 86" stroke="#A8CDDE" strokeWidth="2" />
         <path className="iplc-route" d="M64 286C158 286 214 216 320 180C408 150 470 105 570 86" stroke="url(#iplcRoute)" strokeWidth="3" />
 
-        <circle cx="64" cy="286" r="7" fill="#0878BC" />
-        <circle cx="320" cy="180" r="12" fill="#09AFC7" />
+        <circle cx="64" cy="286" r="7" fill="#0077B9" />
+        <circle cx="320" cy="180" r="12" fill="#00A9C7" />
         <circle cx="320" cy="180" r="4" fill="white" />
-        <circle cx="570" cy="86" r="7" fill="#4158D8" />
+        <circle cx="570" cy="86" r="7" fill="#48CDDD" />
       </svg>
 
       <div className="absolute left-0 top-[55%] flex w-[120px] flex-col items-center gap-2 text-center max-[640px]:top-[55%] max-[640px]:w-[108px]">
-        <span className="iplc-node flex size-14 items-center justify-center rounded-[14px] border border-[#96CBE1] bg-white text-[#0878BC] max-[640px]:size-12">
+        <span className="iplc-node flex size-14 items-center justify-center rounded-[14px] border border-brand-border bg-white text-brand-accent max-[640px]:size-12">
           <Building2 className="size-6 max-[640px]:size-5" />
         </span>
         <span>
@@ -449,7 +450,7 @@ function GlobalCircuitMap() {
             <LocalizedText value={copy.destinationSite} />
           </small>
         </span>
-        <span className="iplc-node flex size-14 items-center justify-center rounded-[14px] border border-[#A8B6E9] bg-white text-[#4158D8] max-[640px]:size-12">
+        <span className="iplc-node flex size-14 items-center justify-center rounded-[14px] border border-brand-border bg-white text-brand-accent max-[640px]:size-12">
           <Globe2 className="size-6 max-[640px]:size-5" />
         </span>
       </div>
@@ -475,33 +476,33 @@ function GlobalCircuitMap() {
 
 export default function IplcPage() {
   return (
-    <main className="overflow-hidden bg-white text-[#081B37]">
-      <section className="relative isolate overflow-hidden border-b border-[#CCE2EE] bg-[#F6FAFF]">
-        <div className="pointer-events-none absolute inset-0 -z-30 bg-[radial-gradient(circle_at_78%_23%,rgba(75,96,218,0.13),transparent_27%),radial-gradient(circle_at_68%_44%,rgba(0,190,218,0.16),transparent_31%),linear-gradient(120deg,#FFFFFF_0%,#F5FAFF_50%,#EAF5FF_100%)]" />
+    <main className="overflow-hidden bg-white text-brand-ink">
+      <section className="relative isolate overflow-hidden border-b border-brand-border-subtle bg-brand-surface-hero">
+        <div className="pointer-events-none absolute inset-0 -z-30 bg-[radial-gradient(circle_at_76%_24%,rgba(0,194,255,0.2),transparent_32%),linear-gradient(120deg,#FFFFFF_0%,#F5FAFF_48%,#DFF4FF_100%)]" />
         <div className="pointer-events-none absolute inset-0 -z-20 opacity-40 [background-image:linear-gradient(rgba(0,119,185,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,119,185,0.06)_1px,transparent_1px)] [background-size:54px_54px] [mask-image:linear-gradient(to_right,transparent,black_45%,black)]" />
         <div className="pointer-events-none absolute -bottom-48 -left-32 -z-10 size-[500px] rounded-full bg-[#38BDF8]/10 blur-[110px]" />
 
         <div className={`${pageInner} grid min-h-[700px] grid-cols-[minmax(0,0.92fr)_minmax(460px,0.92fr)] items-center gap-[68px] py-[72px] max-[1080px]:grid-cols-1 max-[1080px]:gap-12 max-[1080px]:py-[68px] max-[640px]:gap-8 max-[640px]:py-[52px]`}>
-          <div className="max-w-[680px]">
-            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[#A8D4E9] bg-white/75 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#096DA4] shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
-              <span className="size-1.5 rounded-full bg-[#13AFC5] shadow-[0_0_12px_rgba(19,175,197,0.5)]" />
+          <div className={`${heroEnterCopy} max-w-[680px]`}>
+            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-brand-border bg-white/75 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
+              <span className="size-1.5 rounded-full bg-[#08A9CC] shadow-[0_0_12px_rgba(8,169,204,0.5)]" />
               <LocalizedText value={copy.heroEyebrow} />
             </p>
 
-            <h1 className="m-0 text-[clamp(2.7rem,5.2vw,4.65rem)] font-black leading-[1.12] tracking-[-0.01em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
+            <h1 className="m-0 text-[clamp(2.7rem,5.2vw,4.65rem)] font-black leading-[1.12] tracking-[-0.01em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.heroTitleLead} />{" "}
-              <span className="bg-gradient-to-r from-[#0878BC] via-[#009FBF] to-[#4158D8] bg-clip-text text-transparent">
+              <span className="text-brand-highlight">
                 <LocalizedText value={copy.heroTitleAccent} />
               </span>
             </h1>
 
-            <p className="mb-0 mt-6 max-w-[615px] text-[1.08rem] leading-[1.72] text-[#526F8D] max-[640px]:text-[1rem]">
+            <p className="mb-0 mt-6 max-w-[615px] text-[1.08rem] leading-[1.72] text-brand-copy max-[640px]:text-[1rem]">
               <LocalizedText value={copy.heroCopy} />
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid max-[520px]:grid-cols-1">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-[#086FAF] px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#008FC1]"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-brand-primary px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -510,7 +511,7 @@ export default function IplcPage() {
                 <ArrowRight className="size-4.5" />
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-[#9FCDE2] bg-white/75 px-6 text-[0.94rem] font-bold text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:border-[#50B4D1] hover:bg-white"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-brand-border bg-white/75 px-6 text-[0.94rem] font-bold text-brand-link transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href="#how-iplc-connects"
               >
                 <LocalizedText value={copy.exploreIplc} />
@@ -518,11 +519,13 @@ export default function IplcPage() {
             </div>
           </div>
 
-          <GlobalCircuitMap />
+          <div className={heroEnterVisual}>
+            <GlobalCircuitMap />
+          </div>
         </div>
       </section>
 
-      <section className="border-b border-[#DDE9F2] bg-white" aria-label="IPLC service values">
+      <section className="border-b border-brand-border-subtle bg-white" aria-label="IPLC service values">
         <div className={`${pageInner} grid grid-cols-3 max-[860px]:grid-cols-1`}>
           {valueRail.map((item, index) => {
             const Icon = item.icon;
@@ -532,14 +535,14 @@ export default function IplcPage() {
                 className={`flex min-h-[178px] gap-4 px-8 py-9 max-[980px]:px-5 max-[860px]:min-h-0 max-[860px]:px-0 ${index > 0 ? "border-l border-[#DDE9F2] max-[860px]:border-l-0 max-[860px]:border-t" : ""}`}
                 key={item.title.en}
               >
-                <span className="flex size-11 flex-none items-center justify-center rounded-[10px] bg-[#E9F6FB] text-[#0878BC]">
+                <span className="flex size-11 flex-none items-center justify-center rounded-[10px] bg-brand-soft text-brand-accent">
                   <Icon className="size-[22px]" />
                 </span>
                 <div>
-                  <h2 className="m-0 text-[1.05rem] font-black leading-[1.4] text-[#092448] [[lang=km]_&]:leading-[1.6]">
+                  <h2 className="m-0 text-[1.05rem] font-black leading-[1.4] text-brand-heading [[lang=km]_&]:leading-[1.6]">
                     <LocalizedText value={item.title} />
                   </h2>
-                  <p className="mb-0 mt-2 text-[0.9rem] leading-[1.64] text-[#58738B]">
+                  <p className="mb-0 mt-2 text-[0.9rem] leading-[1.64] text-brand-copy">
                     <LocalizedText value={item.text} />
                   </p>
                 </div>
@@ -552,7 +555,7 @@ export default function IplcPage() {
       <section className="py-[112px] max-[640px]:py-[76px]">
         <div className={`${pageInner} grid grid-cols-[minmax(280px,0.78fr)_minmax(0,1.12fr)] items-start gap-[88px] max-[980px]:grid-cols-1 max-[980px]:gap-12`}>
           <div className="max-w-[540px]">
-            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#087BAD] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.beyondEyebrow} />
             </p>
             <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.25rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -569,7 +572,7 @@ export default function IplcPage() {
 
               return (
                 <article className="grid grid-cols-[52px_minmax(0,1fr)] gap-5 border-b border-[#D9E5ED] py-7" key={item.title.en}>
-                  <span className="flex size-[52px] items-center justify-center rounded-full border border-[#B9D6E8] text-[#0878BC]">
+                  <span className="flex size-[52px] items-center justify-center rounded-full border border-brand-border text-brand-accent">
                     <Icon className="size-[22px]" />
                   </span>
                   <div>
@@ -587,18 +590,18 @@ export default function IplcPage() {
         </div>
       </section>
 
-      <section className="scroll-mt-[90px] bg-[#071E3E] py-[108px] text-white max-[640px]:py-[74px]" id="how-iplc-connects">
+      <section className="scroll-mt-[90px] bg-brand-dark py-[108px] text-white max-[640px]:py-[74px]" id="how-iplc-connects">
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(0,0.82fr)_minmax(400px,0.9fr)] items-end gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-8">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#6DE1EC] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-dark-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.architectureEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.18] tracking-[-0.015em] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.architectureTitle} />
               </h2>
             </div>
-            <p className="m-0 max-w-[590px] text-[1rem] leading-[1.74] text-[#B8CCDE]">
+            <p className="m-0 max-w-[590px] text-[1rem] leading-[1.74] text-brand-dark-copy">
               <LocalizedText value={copy.architectureCopy} />
             </p>
           </div>
@@ -617,12 +620,12 @@ export default function IplcPage() {
                   <div className="contents" key={(item.title as { en: string }).en}>
                     {index > 0 && (
                       <div className="relative flex items-center max-[800px]:h-10 max-[800px]:justify-center" aria-hidden="true">
-                        <span className="h-px w-full bg-gradient-to-r from-[#44C7D9]/35 via-[#6EE7F2] to-[#6E7CE5]/45 max-[800px]:h-full max-[800px]:w-px" />
-                        <span className="absolute right-0 size-2 rotate-45 border-r-2 border-t-2 border-[#77E5EC] max-[800px]:bottom-0 max-[800px]:right-auto max-[800px]:rotate-[135deg]" />
+                        <span className="h-px w-full bg-gradient-to-r from-brand-accent/35 via-brand-dark-accent to-[#48CDDD]/45 max-[800px]:h-full max-[800px]:w-px" />
+                        <span className="absolute right-0 size-2 rotate-45 border-r-2 border-t-2 border-brand-dark-accent max-[800px]:bottom-0 max-[800px]:right-auto max-[800px]:rotate-[135deg]" />
                       </div>
                     )}
                     <article className="text-center">
-                      <span className="mx-auto flex size-[78px] items-center justify-center rounded-full border border-white/18 bg-white/[0.07] text-[#72E3ED] shadow-[0_0_36px_rgba(31,196,216,0.08)]">
+                      <span className="mx-auto flex size-[78px] items-center justify-center rounded-full border border-white/18 bg-white/[0.07] text-brand-dark-accent shadow-[0_0_36px_rgba(31,196,216,0.08)]">
                         <Icon className="size-8" />
                       </span>
                       <h3 className="mb-0 mt-5 text-[1.08rem] font-black leading-[1.42] text-white [[lang=km]_&]:leading-[1.6]">
@@ -640,11 +643,11 @@ export default function IplcPage() {
         </div>
       </section>
 
-      <section className="bg-[#F4F9FC] py-[112px] max-[640px]:py-[76px]">
+      <section className="bg-brand-surface-alt py-[112px] max-[640px]:py-[76px]">
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(0,0.82fr)_minmax(320px,0.55fr)] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-6">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#087BAD] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.inputsEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -665,7 +668,7 @@ export default function IplcPage() {
                   className="grid min-h-[158px] grid-cols-[56px_minmax(220px,0.68fr)_minmax(0,1fr)_48px] items-center gap-7 border-b border-[#D1E1EB] px-[clamp(18px,3vw,34px)] py-7 transition-colors duration-200 hover:bg-white max-[820px]:grid-cols-[48px_minmax(0,1fr)_auto] max-[820px]:gap-x-5 max-[820px]:gap-y-2"
                   key={item.number}
                 >
-                  <span className="flex size-12 items-center justify-center rounded-[10px] bg-[#E8F5FA] text-[#0878BC] max-[820px]:size-11">
+                  <span className="flex size-12 items-center justify-center rounded-[10px] bg-brand-soft text-brand-accent max-[820px]:size-11">
                     <Icon className="size-6 max-[820px]:size-[22px]" />
                   </span>
                   <h3 className="m-0 text-[1.18rem] font-black leading-[1.42] text-[#092448] [[lang=km]_&]:leading-[1.6]">
@@ -686,7 +689,7 @@ export default function IplcPage() {
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.08fr)] gap-[88px] max-[980px]:grid-cols-1 max-[980px]:gap-12">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#087BAD] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.useCasesEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -703,7 +706,7 @@ export default function IplcPage() {
 
                 return (
                   <article className="grid grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-5 border-b border-[#D8E5ED] py-7 max-[520px]:grid-cols-[44px_minmax(0,1fr)]" key={item.title.en}>
-                    <span className="flex size-11 items-center justify-center rounded-[10px] bg-[#EAF6FA] text-[#0878BC]">
+                    <span className="flex size-11 items-center justify-center rounded-[10px] bg-brand-soft text-brand-accent">
                       <Icon className="size-[21px]" />
                     </span>
                     <div>
@@ -723,10 +726,10 @@ export default function IplcPage() {
         </div>
       </section>
 
-      <section className="bg-[#F4F9FB] py-[108px] max-[640px]:py-[74px]">
+      <section className="bg-brand-surface-alt py-[108px] max-[640px]:py-[74px]">
         <div className={pageInner}>
           <div className="max-w-[760px]">
-            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#087BAD] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.processEyebrow} />
             </p>
             <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -737,8 +740,8 @@ export default function IplcPage() {
           <ol className="m-0 mt-14 grid list-none grid-cols-3 border-t border-[#B8D0DF] p-0 max-[800px]:grid-cols-1">
             {processSteps.map((step, index) => (
               <li className={`relative pt-8 ${index > 0 ? "border-l border-[#D3E2EB] pl-8 max-[800px]:border-l-0 max-[800px]:border-t max-[800px]:pl-0" : "pr-8 max-[800px]:pr-0"} ${index === 1 ? "pr-8 max-[800px]:pr-0" : ""} max-[800px]:py-8`} key={step.number}>
-                <span className="absolute -top-[5px] left-0 size-2.5 rounded-full border-2 border-[#F4F9FB] bg-[#0BAFC7] shadow-[0_0_0_2px_#0BAFC7] max-[800px]:hidden" />
-                <span className="text-[0.72rem] font-black tracking-[0.12em] text-[#087FA8]">{step.number}</span>
+                <span className="absolute -top-[5px] left-0 size-2.5 rounded-full border-2 border-brand-surface-alt bg-[#0AAACA] shadow-[0_0_0_2px_#0AAACA] max-[800px]:hidden" />
+                <span className="text-[0.72rem] font-black tracking-[0.12em] text-brand-accent">{step.number}</span>
                 <h3 className="mb-0 mt-4 text-[1.18rem] font-black leading-[1.42] text-[#092448] [[lang=km]_&]:leading-[1.6]">
                   <LocalizedText value={step.title} />
                 </h3>
@@ -753,11 +756,11 @@ export default function IplcPage() {
 
       <section className="bg-white py-[96px] max-[640px]:py-[64px]">
         <div className={pageInner}>
-          <div className="relative isolate grid min-h-[340px] grid-cols-[minmax(0,1fr)_auto] items-center gap-12 overflow-hidden bg-[#092F58] px-[clamp(28px,6vw,76px)] py-14 text-white shadow-[0_28px_70px_rgba(8,49,89,0.2)] max-[820px]:grid-cols-1">
-            <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_82%_35%,rgba(77,105,229,0.27),transparent_27%),radial-gradient(circle_at_70%_70%,rgba(62,223,238,0.16),transparent_28%),linear-gradient(112deg,#082744,#0B416D)]" />
+          <div className="relative isolate grid min-h-[340px] grid-cols-[minmax(0,1fr)_auto] items-center gap-12 overflow-hidden bg-brand-dark-cta px-[clamp(28px,6vw,76px)] py-14 text-white shadow-[0_28px_70px_rgba(8,49,89,0.2)] max-[820px]:grid-cols-1">
+            <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_82%_35%,rgba(62,223,238,0.2),transparent_27%),linear-gradient(112deg,#082744,#0A4772)]" />
             <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-1/2 opacity-20 [background-image:linear-gradient(rgba(125,211,252,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.13)_1px,transparent_1px)] [background-size:38px_38px]" />
             <div className="max-w-[720px]">
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#72E5ED] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-dark-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.ctaEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.18] tracking-[-0.015em] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -769,7 +772,7 @@ export default function IplcPage() {
             </div>
             <div className="grid min-w-[250px] gap-3 max-[820px]:min-w-0">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:bg-[#E9FBFD]"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-brand-link transition duration-200 hover:-translate-y-0.5 hover:bg-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark-cta"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -778,7 +781,7 @@ export default function IplcPage() {
                 <ArrowRight className="size-4.5" />
               </a>
               <Link
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-white/22 px-6 text-[0.94rem] font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/45"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-white/22 px-6 text-[0.94rem] font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark-cta"
                 href="/business"
               >
                 <LocalizedText value={copy.businessOverview} />

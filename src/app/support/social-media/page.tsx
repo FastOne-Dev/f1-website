@@ -23,6 +23,7 @@ import LocalizedText, {
   type LocalizedString,
 } from "@/components/LocalizedText";
 import { salesUrl, socialUrls } from "@/lib/site-data";
+import { heroEnterCopy, heroEnterVisual } from "@/lib/ui-classes";
 
 export const metadata: Metadata = {
   title: "Social Media | Fast One Cambodia",
@@ -266,7 +267,7 @@ const topics = [
       "col-span-7 row-span-2 min-h-[430px] max-[860px]:col-span-1 max-[860px]:row-span-1 max-[860px]:min-h-[300px]",
     surface:
       "bg-[radial-gradient(circle_at_82%_22%,rgba(50,220,231,0.24),transparent_27%),linear-gradient(145deg,#082A4E,#075B82)] text-white",
-    iconStyle: "bg-white/10 text-[#70E5EC]",
+    iconStyle: "bg-white/10 text-brand-dark-accent",
     mutedStyle: "text-[#C2D7E5]",
   },
   {
@@ -275,9 +276,9 @@ const topics = [
     title: copy.internetTitle,
     text: copy.internetText,
     layout: "col-span-5 min-h-[205px] max-[860px]:col-span-1",
-    surface: "bg-[#EAF7FC] text-[#082449]",
-    iconStyle: "bg-white text-[#008BAE]",
-    mutedStyle: "text-[#56728C]",
+    surface: "bg-brand-soft text-brand-heading",
+    iconStyle: "bg-white text-brand-accent",
+    mutedStyle: "text-brand-copy",
   },
   {
     number: "03",
@@ -285,9 +286,9 @@ const topics = [
     title: copy.careerTitle,
     text: copy.careerText,
     layout: "col-span-5 min-h-[205px] max-[860px]:col-span-1",
-    surface: "border border-[#C9DEE9] bg-white text-[#082449]",
-    iconStyle: "bg-[#EAF7FC] text-[#087FA8]",
-    mutedStyle: "text-[#56728C]",
+    surface: "border border-brand-border-subtle bg-white text-brand-heading",
+    iconStyle: "bg-brand-soft text-brand-accent",
+    mutedStyle: "text-brand-copy",
   },
   {
     number: "04",
@@ -296,9 +297,9 @@ const topics = [
     text: copy.cultureText,
     layout: "col-span-12 min-h-[230px] max-[860px]:col-span-1",
     surface:
-      "bg-[radial-gradient(circle_at_10%_90%,rgba(22,180,205,0.18),transparent_26%),linear-gradient(110deg,#F2FAFD,#E3F4FB)] text-[#082449]",
-    iconStyle: "bg-white text-[#087FA8]",
-    mutedStyle: "text-[#56728C]",
+      "bg-[radial-gradient(circle_at_10%_90%,rgba(22,180,205,0.18),transparent_26%),linear-gradient(110deg,#F2F8FC,#E9F6FC)] text-brand-heading",
+    iconStyle: "bg-white text-brand-accent",
+    mutedStyle: "text-brand-copy",
   },
 ] as const;
 
@@ -380,10 +381,10 @@ function SocialConstellation() {
     >
       <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-[#B8D9E8] pb-3">
         <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#3F6683] [[lang=km]_&]:tracking-normal" id="social-signal-title">
-          <Radio className="size-4 text-[#008EB4]" />
+          <Radio className="size-4 text-brand-accent" />
           <LocalizedText value={copy.constellationTitle} />
         </div>
-        <span className="flex items-center gap-2 text-xs font-black text-[#006F94] max-[420px]:hidden">
+        <span className="flex items-center gap-2 text-xs font-black text-brand-accent max-[420px]:hidden">
           <span className="social-signal-dot size-1.5 rounded-full bg-[#16B8CB]" />
           <LocalizedText value={copy.fiveChannels} />
         </span>
@@ -418,9 +419,11 @@ function SocialConstellation() {
           <Image
             alt=""
             className="h-auto w-[58px] object-contain max-[640px]:w-[45px]"
-            height={46}
+            height={47}
             src="/img/fastone_mini_logo.png"
             width={62}
+            quality={100}
+            sizes="58px"
           />
         </span>
       </div>
@@ -456,7 +459,7 @@ function ChannelCard({ channel }: { channel: (typeof channels)[number] }) {
   return (
     <li className={`flex ${channel.layout}`}>
       <a
-        className={`group relative isolate flex flex-1 overflow-hidden p-8 text-white transition duration-300 hover:-translate-y-1 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6DE5ED] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071E3E] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${channel.compactMobile ? "max-[620px]:p-5" : "max-[620px]:p-6"} ${channel.surface}`}
+        className={`group relative isolate flex flex-1 overflow-hidden p-8 text-white transition duration-300 hover:-translate-y-1 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-4 focus-visible:ring-offset-brand-dark motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${channel.compactMobile ? "max-[620px]:p-5" : "max-[620px]:p-6"} ${channel.surface}`}
         href={channel.href}
         rel="noreferrer"
         target="_blank"
@@ -478,7 +481,7 @@ function ChannelCard({ channel }: { channel: (typeof channels)[number] }) {
           <h3 className="m-0 text-[clamp(1.55rem,2.6vw,2.25rem)] font-black leading-[1.15] tracking-[-0.01em] [[lang=km]_&]:leading-[1.55] [[lang=km]_&]:tracking-normal">
             {channel.name}
           </h3>
-          <p className="mb-0 mt-2 text-[0.78rem] font-bold text-[#71E2EC]" dir="ltr">
+          <p className="mb-0 mt-2 text-[0.78rem] font-bold text-brand-dark-accent" dir="ltr">
             {channel.handle}
           </p>
           <p className="mb-0 mt-4 max-w-[540px] text-[0.88rem] leading-[1.65] text-white/72">
@@ -493,7 +496,7 @@ function ChannelCard({ channel }: { channel: (typeof channels)[number] }) {
                 </span>
               ))}
             </div>
-            <span className="inline-flex items-center gap-2 text-[0.72rem] font-black text-[#72E5ED]">
+            <span className="inline-flex items-center gap-2 text-[0.72rem] font-black text-brand-dark-accent">
               <LocalizedText value={copy.openChannel} />
               <ArrowRight className="size-4 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
               <ExternalNotice />
@@ -514,14 +517,14 @@ function ChannelCard({ channel }: { channel: (typeof channels)[number] }) {
             <strong className="mt-1.5 block text-[1.15rem] font-black leading-[1.35] [[lang=km]_&]:leading-[1.58]">
               {channel.name}
             </strong>
-            <span className="mt-1 block text-[0.72rem] font-bold text-[#71E2EC]" dir="ltr">
+            <span className="mt-1 block text-[0.72rem] font-bold text-brand-dark-accent" dir="ltr">
               {channel.handle}
             </span>
             <span className="mt-2 block text-[0.78rem] leading-[1.55] text-white/70">
               <LocalizedText value={channel.description} />
             </span>
           </span>
-          <span className="flex size-8 items-center justify-center rounded-full border border-white/20 text-[#72E5ED]">
+          <span className="flex size-8 items-center justify-center rounded-full border border-white/20 text-brand-dark-accent">
             <ArrowRight className="size-3.5 transition group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
           </span>
           <ExternalNotice />
@@ -566,25 +569,25 @@ function DecisionCard({ item }: { item: (typeof decisionPaths)[number] }) {
   const Icon = item.icon;
   const content = (
     <>
-      <span className="flex size-12 flex-none items-center justify-center rounded-[14px] bg-white text-[#087FA8] shadow-[0_12px_30px_rgba(8,87,132,0.08)]">
+      <span className="flex size-12 flex-none items-center justify-center rounded-[14px] bg-brand-soft text-brand-accent shadow-[0_12px_30px_rgba(8,87,132,0.08)]">
         <Icon className="size-[21px]" />
       </span>
       <span className="min-w-0 flex-1">
-        <strong className="block text-[1rem] font-black leading-[1.45] text-[#082449] [[lang=km]_&]:leading-[1.62]">
+        <strong className="block text-[1rem] font-black leading-[1.45] text-brand-heading [[lang=km]_&]:leading-[1.62]">
           <LocalizedText value={item.title} />
         </strong>
-        <span className="mt-2 block text-[0.84rem] leading-[1.58] text-[#4C6880]">
+        <span className="mt-2 block text-[0.84rem] leading-[1.58] text-brand-copy">
           <LocalizedText value={item.text} />
         </span>
       </span>
-      <span className="flex size-10 flex-none items-center justify-center rounded-full border border-[#B9D9E7] text-[#087FA8] transition group-hover:border-[#087FA8] group-hover:bg-[#087FA8] group-hover:text-white motion-reduce:transition-none">
+      <span className="flex size-10 flex-none items-center justify-center rounded-full border border-brand-border text-brand-accent transition group-hover:border-brand-accent group-hover:bg-brand-primary group-hover:text-white motion-reduce:transition-none">
         <ArrowRight className="size-4 transition group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
       </span>
       {item.external ? <ExternalNotice /> : null}
     </>
   );
   const className =
-    "group grid min-h-[124px] grid-cols-[48px_minmax(0,1fr)_40px] items-center gap-5 border-b border-[#C9DEE8] py-6 transition hover:border-[#7ABFD5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087FA8] focus-visible:ring-offset-2 motion-reduce:transition-none";
+    "group grid min-h-[124px] grid-cols-[48px_minmax(0,1fr)_40px] items-center gap-5 border-b border-brand-border-subtle py-6 transition hover:border-brand-border-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 motion-reduce:transition-none";
 
   if (item.external) {
     return (
@@ -603,31 +606,31 @@ function DecisionCard({ item }: { item: (typeof decisionPaths)[number] }) {
 
 export default function SocialMediaPage() {
   return (
-    <main className="overflow-hidden bg-white text-[#081B37]">
-      <section className="relative isolate overflow-hidden border-b border-[#CFE3EF] bg-[#F6FAFF]">
+    <main className="overflow-hidden bg-white text-brand-ink">
+      <section className="relative isolate overflow-hidden border-b border-brand-border-subtle bg-brand-surface-hero">
         <div className="pointer-events-none absolute inset-0 -z-30 bg-[radial-gradient(circle_at_79%_25%,rgba(0,190,218,0.17),transparent_31%),linear-gradient(120deg,#FFFFFF_0%,#F7FBFF_48%,#E7F7FC_100%)]" />
         <div className="pointer-events-none absolute inset-0 -z-20 opacity-40 [background-image:linear-gradient(rgba(0,119,185,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,119,185,0.06)_1px,transparent_1px)] [background-size:54px_54px] [mask-image:linear-gradient(to_right,transparent,black_48%,black)]" />
         <div className={`${pageInner} grid min-h-[760px] grid-cols-[minmax(0,0.92fr)_minmax(460px,0.88fr)] items-center gap-[76px] py-[72px] max-[1080px]:grid-cols-1 max-[1080px]:gap-12 max-[640px]:py-[54px]`}>
-          <div className="max-w-[660px]">
-            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[#A9D8E9] bg-white/78 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0077A8] shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
+          <div className={`${heroEnterCopy} max-w-[660px]`}>
+            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-brand-border bg-white/78 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
               <Sparkles className="size-3.5" />
               <LocalizedText value={copy.heroEyebrow} />
             </p>
 
-            <h1 className="m-0 text-[clamp(2.75rem,5.2vw,4.7rem)] font-black leading-[1.12] tracking-[-0.01em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
+            <h1 className="m-0 text-[clamp(2.75rem,5.2vw,4.7rem)] font-black leading-[1.12] tracking-[-0.01em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.heroTitleLead} />{" "}
-              <span className="text-[#009ABF]">
+              <span className="text-brand-highlight">
                 <LocalizedText value={copy.heroTitleAccent} />
               </span>
             </h1>
 
-            <p className="mb-0 mt-6 max-w-[610px] text-[1.05rem] leading-[1.76] text-[#526F8D] max-[640px]:text-[1rem]">
+            <p className="mb-0 mt-6 max-w-[610px] text-[1.05rem] leading-[1.76] text-brand-copy max-[640px]:text-[1rem]">
               <LocalizedText value={copy.heroCopy} />
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid max-[520px]:grid-cols-1">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-[#0875B7] px-6 py-3 text-center text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(8,117,183,0.22)] transition hover:-translate-y-0.5 hover:bg-[#006BA8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0875B7] focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-brand-primary px-6 py-3 text-center text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                 href={socialUrls.facebook}
                 rel="noreferrer"
                 target="_blank"
@@ -637,7 +640,7 @@ export default function SocialMediaPage() {
                 <ExternalNotice />
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-[#9FCDE2] bg-white/78 px-6 py-3 text-center text-[0.94rem] font-bold text-[#075A85] transition hover:-translate-y-0.5 hover:border-[#50B4D1] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0875B7] focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-brand-border bg-white/78 px-6 py-3 text-center text-[0.94rem] font-bold text-brand-link transition hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                 href={socialUrls.tiktok}
                 rel="noreferrer"
                 target="_blank"
@@ -648,28 +651,30 @@ export default function SocialMediaPage() {
               </a>
             </div>
 
-            <a className="mt-3 inline-flex min-h-11 items-center gap-2 py-2 text-[0.82rem] font-black text-[#0875A3] hover:text-[#005D93] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0875B7] focus-visible:ring-offset-2" href="#social-channels">
+            <a className="mt-3 inline-flex min-h-11 items-center gap-2 py-2 text-[0.82rem] font-black text-brand-link hover:text-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2" href="#social-channels">
               <LocalizedText value={copy.browseChannels} />
               <ArrowRight className="size-4" />
             </a>
           </div>
 
-          <SocialConstellation />
+          <div className={heroEnterVisual}>
+            <SocialConstellation />
+          </div>
         </div>
       </section>
 
-      <section className="scroll-mt-[90px] bg-[#071E3E] py-[108px] text-white max-[640px]:py-[74px]" id="social-channels">
+      <section className="scroll-mt-[90px] bg-brand-dark py-[108px] text-white max-[640px]:py-[74px]" id="social-channels">
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(280px,0.72fr)_minmax(0,0.78fr)] items-end justify-between gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-6">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#6DE1EC] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-dark-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.directoryEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2.1rem,4vw,3.45rem)] font-black leading-[1.18] tracking-[-0.015em] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.directoryTitle} />
               </h2>
             </div>
-            <p className="m-0 max-w-[590px] text-[1rem] leading-[1.72] text-[#B8CCDE]">
+            <p className="m-0 max-w-[590px] text-[1rem] leading-[1.72] text-brand-dark-copy">
               <LocalizedText value={copy.directoryCopy} />
             </p>
           </div>
@@ -686,7 +691,7 @@ export default function SocialMediaPage() {
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(280px,0.8fr)_minmax(0,0.72fr)] items-end gap-20 max-[900px]:grid-cols-1 max-[900px]:gap-6">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#087FA8] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.topicsEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2.05rem,4vw,3.35rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal">
@@ -706,10 +711,10 @@ export default function SocialMediaPage() {
         </div>
       </section>
 
-      <section className="bg-[#EDF8FC] py-[108px] max-[640px]:py-[74px]">
+      <section className="bg-brand-surface-soft py-[108px] max-[640px]:py-[74px]">
         <div className={`${pageInner} grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.08fr)] items-start gap-[88px] max-[980px]:grid-cols-1 max-[980px]:gap-10`}>
           <div className="max-w-[510px]">
-            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#006F94] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.decisionEyebrow} />
             </p>
             <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.18] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.58] [[lang=km]_&]:tracking-normal" id="social-decision-title">

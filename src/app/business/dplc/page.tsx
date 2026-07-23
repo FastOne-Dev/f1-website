@@ -22,6 +22,7 @@ import LocalizedText, {
   type LocalizedString,
 } from "@/components/LocalizedText";
 import { salesUrl } from "@/lib/site-data";
+import { heroEnterCopy, heroEnterVisual } from "@/lib/ui-classes";
 
 export const metadata: Metadata = {
   title: "DPLC | Fast One Cambodia",
@@ -385,9 +386,9 @@ function CircuitBlueprint() {
       >
         <defs>
           <linearGradient id="dplcRoute" x1="92" y1="116" x2="534" y2="300" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#0067AC" />
-            <stop offset="0.55" stopColor="#00A0C2" />
-            <stop offset="1" stopColor="#32C6D5" />
+            <stop stopColor="#0077B9" />
+            <stop offset="0.55" stopColor="#00A9C7" />
+            <stop offset="1" stopColor="#48CDDD" />
           </linearGradient>
           <radialGradient id="dplcCore" cx="0" cy="0" r="1" gradientTransform="translate(312 205) rotate(90) scale(82)">
             <stop stopColor="#08A9CC" stopOpacity="0.2" />
@@ -468,33 +469,33 @@ function CircuitBlueprint() {
 
 export default function DplcPage() {
   return (
-    <main className="overflow-hidden bg-white text-[#081B37]">
-      <section className="relative isolate overflow-hidden border-b border-[#CFE3EF] bg-[#F5FAFF]">
+    <main className="overflow-hidden bg-white text-brand-ink">
+      <section className="relative isolate overflow-hidden border-b border-brand-border-subtle bg-brand-surface-hero">
         <div className="pointer-events-none absolute inset-0 -z-30 bg-[radial-gradient(circle_at_77%_24%,rgba(0,190,218,0.18),transparent_31%),linear-gradient(120deg,#FFFFFF_0%,#F5FAFF_48%,#E3F6FB_100%)]" />
         <div className="pointer-events-none absolute inset-0 -z-20 opacity-45 [background-image:linear-gradient(rgba(0,119,185,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,119,185,0.06)_1px,transparent_1px)] [background-size:54px_54px] [mask-image:linear-gradient(to_right,transparent,black_46%,black)]" />
         <div className="pointer-events-none absolute -bottom-44 -left-28 -z-10 size-[480px] rounded-full bg-[#38BDF8]/10 blur-[110px]" />
 
         <div className={`${pageInner} grid min-h-[680px] grid-cols-[minmax(0,0.92fr)_minmax(440px,0.88fr)] items-center gap-[72px] py-[72px] max-[1080px]:grid-cols-1 max-[1080px]:gap-12 max-[1080px]:py-[68px] max-[640px]:py-[52px]`}>
-          <div className="max-w-[670px]">
-            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[#A9D8E9] bg-white/70 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0077A8] shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
+          <div className={`${heroEnterCopy} max-w-[670px]`}>
+            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-brand-border bg-white/70 px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent shadow-[0_8px_24px_rgba(11,94,137,0.06)] [[lang=km]_&]:tracking-normal">
               <span className="size-1.5 rounded-full bg-[#08A9CC] shadow-[0_0_12px_rgba(8,169,204,0.45)]" />
               <LocalizedText value={copy.heroEyebrow} />
             </p>
 
-            <h1 className="m-0 text-[clamp(2.7rem,5.2vw,4.65rem)] font-black leading-[1.12] tracking-[-0.01em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
+            <h1 className="m-0 text-[clamp(2.7rem,5.2vw,4.65rem)] font-black leading-[1.12] tracking-[-0.01em] text-brand-ink [text-wrap:balance] [[lang=km]_&]:leading-[1.5] [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.heroTitleLead} />{" "}
-              <span className="text-[#009ABF]">
+              <span className="text-brand-highlight">
                 <LocalizedText value={copy.heroTitleAccent} />
               </span>
             </h1>
 
-            <p className="mb-0 mt-6 max-w-[610px] text-[1.08rem] leading-[1.72] text-[#526F8D] max-[640px]:text-[1rem]">
+            <p className="mb-0 mt-6 max-w-[610px] text-[1.08rem] leading-[1.72] text-brand-copy max-[640px]:text-[1rem]">
               <LocalizedText value={copy.heroCopy} />
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 max-[520px]:grid max-[520px]:grid-cols-1">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-[#0067AC] px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#008FC1]"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-brand-primary px-6 text-[0.94rem] font-black text-white shadow-[0_16px_34px_rgba(0,103,172,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -503,7 +504,7 @@ export default function DplcPage() {
                 <ArrowRight className="size-4.5" />
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-[#9FCDE2] bg-white/70 px-6 text-[0.94rem] font-bold text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:border-[#50B4D1] hover:bg-white"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-brand-border bg-white/70 px-6 text-[0.94rem] font-bold text-brand-link transition duration-200 hover:-translate-y-0.5 hover:border-brand-border-hover hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2"
                 href="#how-dplc-connects"
               >
                 <LocalizedText value={copy.exploreDplc} />
@@ -511,11 +512,13 @@ export default function DplcPage() {
             </div>
           </div>
 
-          <CircuitBlueprint />
+          <div className={heroEnterVisual}>
+            <CircuitBlueprint />
+          </div>
         </div>
       </section>
 
-      <section className="border-b border-[#DDE9F2] bg-white" aria-label="DPLC service values">
+      <section className="border-b border-brand-border-subtle bg-white" aria-label="DPLC service values">
         <div className={`${pageInner} grid grid-cols-3 max-[860px]:grid-cols-1`}>
           {valueRail.map((item, index) => {
             const Icon = item.icon;
@@ -525,14 +528,14 @@ export default function DplcPage() {
                 className={`flex min-h-[176px] gap-4 px-8 py-9 max-[980px]:px-5 max-[860px]:min-h-0 max-[860px]:px-0 ${index > 0 ? "border-l border-[#DDE9F2] max-[860px]:border-l-0 max-[860px]:border-t" : ""}`}
                 key={item.title.en}
               >
-                <span className="flex size-11 flex-none items-center justify-center rounded-[10px] bg-[#E9F7FA] text-[#0083A8]">
+                <span className="flex size-11 flex-none items-center justify-center rounded-[10px] bg-brand-soft text-brand-accent">
                   <Icon className="size-[22px]" />
                 </span>
                 <div>
-                  <h2 className="m-0 text-[1.05rem] font-black leading-[1.38] text-[#092448] [[lang=km]_&]:leading-[1.58]">
+                  <h2 className="m-0 text-[1.05rem] font-black leading-[1.38] text-brand-heading [[lang=km]_&]:leading-[1.58]">
                     <LocalizedText value={item.title} />
                   </h2>
-                  <p className="mb-0 mt-2 text-[0.9rem] leading-[1.64] text-[#58738B]">
+                  <p className="mb-0 mt-2 text-[0.9rem] leading-[1.64] text-brand-copy">
                     <LocalizedText value={item.text} />
                   </p>
                 </div>
@@ -545,7 +548,7 @@ export default function DplcPage() {
       <section className="py-[112px] max-[640px]:py-[76px]">
         <div className={`${pageInner} grid grid-cols-[minmax(280px,0.78fr)_minmax(0,1.12fr)] items-start gap-[88px] max-[980px]:grid-cols-1 max-[980px]:gap-12`}>
           <div className="max-w-[520px]">
-            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0082A8] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.togetherEyebrow} />
             </p>
             <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.25rem)] font-black leading-[1.16] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.55] [[lang=km]_&]:tracking-normal">
@@ -562,7 +565,7 @@ export default function DplcPage() {
 
               return (
                 <article className="grid grid-cols-[52px_minmax(0,1fr)] gap-5 border-b border-[#D9E5ED] py-7" key={item.title.en}>
-                  <span className="flex size-[52px] items-center justify-center rounded-full border border-[#B9D6E8] text-[#0083A8]">
+                  <span className="flex size-[52px] items-center justify-center rounded-full border border-brand-border text-brand-accent">
                     <Icon className="size-[22px]" />
                   </span>
                   <div>
@@ -580,11 +583,11 @@ export default function DplcPage() {
         </div>
       </section>
 
-      <section className="scroll-mt-[90px] bg-[#F1F8FB] py-[108px] max-[640px]:py-[74px]" id="how-dplc-connects">
+      <section className="scroll-mt-[90px] bg-brand-surface-soft py-[108px] max-[640px]:py-[74px]" id="how-dplc-connects">
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(0,0.78fr)_minmax(400px,1fr)] items-end gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-8">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0082A8] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.architectureEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.16] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.55] [[lang=km]_&]:tracking-normal">
@@ -614,7 +617,7 @@ export default function DplcPage() {
                       </div>
                     )}
                     <article className="text-center">
-                      <span className="mx-auto flex size-[76px] items-center justify-center rounded-full border border-[#A6D4E3] bg-[#EDF8FA] text-[#0083A8]">
+                      <span className="mx-auto flex size-[76px] items-center justify-center rounded-full border border-brand-border bg-brand-soft text-brand-accent">
                         <Icon className="size-8" />
                       </span>
                       <h3 className="mb-0 mt-5 text-[1.08rem] font-black leading-[1.4] text-[#092448] [[lang=km]_&]:leading-[1.58]">
@@ -636,7 +639,7 @@ export default function DplcPage() {
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(0,0.82fr)_minmax(320px,0.55fr)] items-end gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-6">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0082A8] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.inputsEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.16] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.55] [[lang=km]_&]:tracking-normal">
@@ -655,7 +658,7 @@ export default function DplcPage() {
               return (
                 <article className="relative min-h-[286px] border-b border-r border-[#D4E2EB] p-[clamp(26px,4vw,46px)] transition-colors duration-200 hover:bg-[#F5FAFC] max-[760px]:min-h-0" key={item.number}>
                   <div className="flex items-start justify-between gap-6">
-                    <span className="flex size-12 items-center justify-center rounded-[10px] bg-[#E8F6F9] text-[#0083A8]">
+                    <span className="flex size-12 items-center justify-center rounded-[10px] bg-brand-soft text-brand-accent">
                       <Icon className="size-6" />
                     </span>
                     <span className="text-[0.76rem] font-black tracking-[0.12em] text-[#9CB0C1]">{item.number}</span>
@@ -673,17 +676,17 @@ export default function DplcPage() {
         </div>
       </section>
 
-      <section className="bg-[#071E3E] py-[108px] text-white max-[640px]:py-[74px]">
+      <section className="bg-brand-dark py-[108px] text-white max-[640px]:py-[74px]">
         <div className={pageInner}>
           <div className="grid grid-cols-[minmax(280px,0.7fr)_minmax(0,1.1fr)] gap-[88px] max-[980px]:grid-cols-1 max-[980px]:gap-12">
             <div>
-              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#69E1EC] [[lang=km]_&]:tracking-normal">
+              <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-dark-accent [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.useCasesEyebrow} />
               </p>
               <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.16] tracking-[-0.015em] [text-wrap:balance] [[lang=km]_&]:leading-[1.55] [[lang=km]_&]:tracking-normal">
                 <LocalizedText value={copy.useCasesTitle} />
               </h2>
-              <p className="mb-0 mt-6 text-[1rem] leading-[1.74] text-[#B8CCDE]">
+              <p className="mb-0 mt-6 text-[1rem] leading-[1.74] text-brand-dark-copy">
                 <LocalizedText value={copy.useCasesCopy} />
               </p>
             </div>
@@ -694,7 +697,7 @@ export default function DplcPage() {
 
                 return (
                   <article className="grid grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-5 border-b border-white/16 py-7 max-[520px]:grid-cols-[44px_minmax(0,1fr)]" key={item.title.en}>
-                    <span className="flex size-11 items-center justify-center rounded-[10px] bg-white/[0.07] text-[#71E2EC]">
+                    <span className="flex size-11 items-center justify-center rounded-[10px] bg-white/[0.07] text-brand-dark-accent">
                       <Icon className="size-[21px]" />
                     </span>
                     <div>
@@ -714,10 +717,10 @@ export default function DplcPage() {
         </div>
       </section>
 
-      <section className="bg-[#F4F9FB] py-[108px] max-[640px]:py-[74px]">
+      <section className="bg-brand-surface-alt py-[108px] max-[640px]:py-[74px]">
         <div className={pageInner}>
           <div className="max-w-[740px]">
-            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-[#0082A8] [[lang=km]_&]:tracking-normal">
+            <p className="m-0 text-[0.72rem] font-black uppercase tracking-[0.13em] text-brand-accent [[lang=km]_&]:tracking-normal">
               <LocalizedText value={copy.processEyebrow} />
             </p>
             <h2 className="mb-0 mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.16] tracking-[-0.015em] text-[#071D3B] [text-wrap:balance] [[lang=km]_&]:leading-[1.55] [[lang=km]_&]:tracking-normal">
@@ -728,8 +731,8 @@ export default function DplcPage() {
           <ol className="m-0 mt-14 grid list-none grid-cols-3 border-t border-[#B8D0DF] p-0 max-[800px]:grid-cols-1">
             {processSteps.map((step, index) => (
               <li className={`relative pt-8 ${index > 0 ? "border-l border-[#D3E2EB] pl-8 max-[800px]:border-l-0 max-[800px]:border-t max-[800px]:pl-0" : "pr-8 max-[800px]:pr-0"} ${index === 1 ? "pr-8 max-[800px]:pr-0" : ""} max-[800px]:py-8`} key={step.number}>
-                <span className="absolute -top-[5px] left-0 size-2.5 rounded-full border-2 border-[#F4F9FB] bg-[#08A9C5] shadow-[0_0_0_2px_#08A9C5] max-[800px]:hidden" />
-                <span className="text-[0.72rem] font-black tracking-[0.12em] text-[#008EAE]">{step.number}</span>
+                <span className="absolute -top-[5px] left-0 size-2.5 rounded-full border-2 border-brand-surface-alt bg-[#0AAACA] shadow-[0_0_0_2px_#0AAACA] max-[800px]:hidden" />
+                <span className="text-[0.72rem] font-black tracking-[0.12em] text-brand-accent">{step.number}</span>
                 <h3 className="mb-0 mt-4 text-[1.18rem] font-black leading-[1.4] text-[#092448] [[lang=km]_&]:leading-[1.58]">
                   <LocalizedText value={step.title} />
                 </h3>
@@ -744,7 +747,7 @@ export default function DplcPage() {
 
       <section className="bg-white py-[96px] max-[640px]:py-[64px]">
         <div className={pageInner}>
-          <div className="relative isolate grid min-h-[330px] grid-cols-[minmax(0,1fr)_auto] items-center gap-12 overflow-hidden bg-[#0A3159] px-[clamp(28px,6vw,76px)] py-14 text-white shadow-[0_28px_70px_rgba(8,49,89,0.2)] max-[820px]:grid-cols-1">
+          <div className="relative isolate grid min-h-[330px] grid-cols-[minmax(0,1fr)_auto] items-center gap-12 overflow-hidden bg-brand-dark-cta px-[clamp(28px,6vw,76px)] py-14 text-white shadow-[0_28px_70px_rgba(8,49,89,0.2)] max-[820px]:grid-cols-1">
             <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_82%_35%,rgba(62,223,238,0.2),transparent_26%),linear-gradient(112deg,#082744,#0A4772)]" />
             <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-1/2 opacity-20 [background-image:linear-gradient(rgba(125,211,252,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,0.13)_1px,transparent_1px)] [background-size:38px_38px]" />
             <div className="max-w-[720px]">
@@ -760,7 +763,7 @@ export default function DplcPage() {
             </div>
             <div className="grid min-w-[250px] gap-3 max-[820px]:min-w-0">
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-[#075A85] transition duration-200 hover:-translate-y-0.5 hover:bg-[#E9FBFD]"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] bg-white px-6 text-[0.94rem] font-black text-brand-link transition duration-200 hover:-translate-y-0.5 hover:bg-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark-cta"
                 href={salesUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -769,7 +772,7 @@ export default function DplcPage() {
                 <ArrowRight className="size-4.5" />
               </a>
               <Link
-                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-white/22 px-6 text-[0.94rem] font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/45"
+                className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-[8px] border border-white/22 px-6 text-[0.94rem] font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-white/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark-cta"
                 href="/business"
               >
                 <LocalizedText value={copy.businessOverview} />
